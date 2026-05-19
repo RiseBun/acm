@@ -67,8 +67,14 @@ cangku/
 
 # Unzipped/backup paper directories
 final_unzipped/
-Typed_Budgets_for_Object_Relational_Driving_World_Models_edit/
 overleaf_gfa_tpami/
+
+# macOS metadata
+__MACOSX/
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 
 # Temp/empty files
 Untitled
