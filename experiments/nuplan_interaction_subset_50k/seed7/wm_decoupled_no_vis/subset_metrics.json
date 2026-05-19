@@ -1,0 +1,43 @@
+{
+  "condition": "wm_decoupled_no_vis",
+  "variant": "object_relation_decoupled",
+  "seed": 7,
+  "subsets": {
+    "all_val": {
+      "n_samples": 10000,
+      "teacher_action_mse": 6.741657441711426,
+      "latent_return_mean": 15.840871226501465,
+      "imagined_collision_rate": 0.3066
+    },
+    "dense_agents": {
+      "n_samples": 8694,
+      "teacher_action_mse": 6.503372652217496,
+      "latent_return_mean": 15.806387601843202,
+      "imagined_collision_rate": 0.32286634460547503
+    },
+    "high_interaction_union": {
+      "n_samples": 9601,
+      "teacher_action_mse": 6.720771291307852,
+      "latent_return_mean": 15.810351619396641,
+      "imagined_collision_rate": 0.318820956150401
+    },
+    "lane_conflict": {
+      "n_samples": 6650,
+      "teacher_action_mse": 4.2899956231368215,
+      "latent_return_mean": 15.210607146069519,
+      "imagined_collision_rate": 0.24766917293233082
+    },
+    "low_ttc_proxy": {
+      "n_samples": 4804,
+      "teacher_action_mse": 11.752865441931377,
+      "latent_return_mean": 16.14562901092707,
+      "imagined_collision_rate": 0.6328059950041632
+    },
+    "rare_agent_dense": {
+      "n_samples": 7260,
+      "teacher_action_mse": 6.648836040759546,
+      "latent_return_mean": 15.818152397723237,
+      "imagined_collision_rate": 0.3205234159779614
+    }
+  }
+}

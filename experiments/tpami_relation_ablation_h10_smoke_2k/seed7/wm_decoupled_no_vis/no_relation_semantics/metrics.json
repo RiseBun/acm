@@ -1,0 +1,12 @@
+{
+  "seed": 7,
+  "n_samples": 2000,
+  "teacher_action_mse": 9.127811431884766,
+  "teacher_action_delta_l2": 3.5503900051116943,
+  "latent_return_mean": 27.506610870361328,
+  "latent_return_std": 8.763346672058105,
+  "imagined_collision_rate": 0.984499990940094,
+  "collision_mean": 0.9831473231315613,
+  "collision_step_mean": 0.1875123232603073,
+  "rollout_stability": 0.11249701678752899
+}

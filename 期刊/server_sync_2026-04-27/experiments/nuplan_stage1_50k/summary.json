@@ -1,0 +1,114 @@
+{
+  "setup": {
+    "dataset": "nuplan",
+    "num_samples": 50000,
+    "subset": "experiments/nuplan_50k_balanced_paths_seed7.json",
+    "seeds": [
+      7,
+      42,
+      123
+    ],
+    "epochs": 10,
+    "batch_size": 128,
+    "horizon": 5,
+    "stage0_root": "experiments/nuplan_stage0_50k_seed7",
+    "nuplan_lazy": true,
+    "loader_workers_per_seed": 32
+  },
+  "conditions": {
+    "wm_object": {
+      "mean": {
+        "latent_return_mean": 1.723242203394572,
+        "latent_return_std": 4.005209128061931,
+        "imagined_collision_rate": 0.6100999812285105,
+        "collision_mean": 0.6138206322987875,
+        "rollout_stability": 0.36740265289942425,
+        "rollout_stability_global": 0.025256508961319923
+      },
+      "std_across_seeds": {
+        "latent_return_mean": 17.88620703182702,
+        "latent_return_std": 0.44976185313983896,
+        "imagined_collision_rate": 0.14582614930158014,
+        "collision_mean": 0.11316574918420212,
+        "rollout_stability": 0.24629581232246997,
+        "rollout_stability_global": 0.017544748655695077
+      },
+      "seeds": [
+        {
+          "seed": 7,
+          "latent_return_mean": 1.8339455127716064,
+          "latent_return_std": 3.544156074523926,
+          "imagined_collision_rate": 0.6553999781608582,
+          "collision_mean": 0.662026047706604,
+          "rollout_stability": 0.21413543820381165,
+          "rollout_stability_global": 0.016408788040280342
+        },
+        {
+          "seed": 42,
+          "latent_return_mean": 19.55384063720703,
+          "latent_return_std": 4.442758083343506,
+          "imagined_collision_rate": 0.727899968624115,
+          "collision_mean": 0.6949018836021423,
+          "rollout_stability": 0.6515055298805237,
+          "rollout_stability_global": 0.045463480055332184
+        },
+        {
+          "seed": 123,
+          "latent_return_mean": -16.218059539794922,
+          "latent_return_std": 4.028713226318359,
+          "imagined_collision_rate": 0.44699999690055847,
+          "collision_mean": 0.48453396558761597,
+          "rollout_stability": 0.23656699061393738,
+          "rollout_stability_global": 0.013897258788347244
+        }
+      ]
+    },
+    "wm_decoupled_no_vis": {
+      "mean": {
+        "latent_return_mean": 14.510944366455078,
+        "latent_return_std": 5.727051575978597,
+        "imagined_collision_rate": 0.25946666797002155,
+        "collision_mean": 0.2768410344918569,
+        "rollout_stability": 0.2219937245051066,
+        "rollout_stability_global": 0.042641417433818184
+      },
+      "std_across_seeds": {
+        "latent_return_mean": 2.9250562022297513,
+        "latent_return_std": 0.7349234924020072,
+        "imagined_collision_rate": 0.04532387645978532,
+        "collision_mean": 0.03305450698885872,
+        "rollout_stability": 0.04510223551989069,
+        "rollout_stability_global": 0.015717124052403723
+      },
+      "seeds": [
+        {
+          "seed": 7,
+          "latent_return_mean": 15.832658767700195,
+          "latent_return_std": 4.882654190063477,
+          "imagined_collision_rate": 0.30660000443458557,
+          "collision_mean": 0.3117826581001282,
+          "rollout_stability": 0.2248280644416809,
+          "rollout_stability_global": 0.025475427508354187
+        },
+        {
+          "seed": 42,
+          "latent_return_mean": 16.541881561279297,
+          "latent_return_std": 6.2224440574646,
+          "imagined_collision_rate": 0.21619999408721924,
+          "collision_mean": 0.24606937170028687,
+          "rollout_stability": 0.17554116249084473,
+          "rollout_stability_global": 0.04612298309803009
+        },
+        {
+          "seed": 123,
+          "latent_return_mean": 11.158292770385742,
+          "latent_return_std": 6.076056480407715,
+          "imagined_collision_rate": 0.2556000053882599,
+          "collision_mean": 0.27267107367515564,
+          "rollout_stability": 0.2656119465827942,
+          "rollout_stability_global": 0.05632584169507027
+        }
+      ]
+    }
+  }
+}

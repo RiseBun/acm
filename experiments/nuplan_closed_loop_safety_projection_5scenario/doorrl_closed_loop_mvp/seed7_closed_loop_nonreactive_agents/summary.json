@@ -1,0 +1,165 @@
+{
+  "run_dir": "experiments/nuplan_closed_loop_safety_projection_5scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents",
+  "n_planners": 2,
+  "planners": [
+    "doorrl_wm_decoupled_no_vis",
+    "doorrl_wm_object"
+  ],
+  "summary": {
+    "doorrl_wm_decoupled_no_vis": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 1.0,
+      "drivable_area_compliance": 0.2,
+      "ego_is_making_progress": 0.2,
+      "ego_progress_along_expert_route": 0.2672865144562827,
+      "ego_is_comfortable": 0.0,
+      "time_to_collision_within_bound": 1.0,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.6
+    },
+    "doorrl_wm_object": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 1.0,
+      "drivable_area_compliance": 0.2,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.032585735275185775,
+      "ego_is_comfortable": 0.0,
+      "time_to_collision_within_bound": 0.6,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.4
+    }
+  },
+  "runner_report": [
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.399648851,
+      "end_time": 5276669.046352042,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 481.64670319110155
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.399851514,
+      "end_time": 5276664.774820267,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 477.3749687531963
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.400116523,
+      "end_time": 5276663.472999491,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 476.07288296800107
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.400343602,
+      "end_time": 5276664.832525116,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 477.4321815147996
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.400543245,
+      "end_time": 5276684.767480946,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 497.36693770159036
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.400755091,
+      "end_time": 5276666.809916778,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 479.4091616868973
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.401262237,
+      "end_time": 5276663.331383932,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 475.9301216956228
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.401501144,
+      "end_time": 5276669.943819631,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "duration": 482.54231848660856
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.401687011,
+      "end_time": 5276657.489145177,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.26706375973610835,
+      "compute_trajectory_runtimes_median": 0.05343357939273119,
+      "compute_trajectory_runtimes_std": 2.83831704442797,
+      "duration": 470.0874581662938
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5276187.401899265,
+      "end_time": 5276645.419470156,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.10243513811020608,
+      "compute_trajectory_runtimes_median": 0.059820580296218395,
+      "compute_trajectory_runtimes_std": 0.6829817341440289,
+      "duration": 458.01757089048624
+    }
+  ],
+  "note": "nuPlan official closed-loop nonreactive simulation MVP; small scenario counts are smoke tests, not final claims."
+}

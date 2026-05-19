@@ -1,0 +1,41 @@
+{
+  "rows": [
+    {
+      "method": "DOOR baseline",
+      "clean_coll": 0.28700000047683716,
+      "clean_coll_std": 0.05271622911095619,
+      "rel_coll": 0.4749999940395355,
+      "rel_coll_std": 0.12803514301776886,
+      "delta_return": -0.8656845092773438,
+      "fp_sel": 0.13908334076404572,
+      "fp_sel_std": 0.06612976640462875,
+      "fp_density": 0.5661666989326477,
+      "true_sel": 0.06466666609048843,
+      "true_sel_std": 0.014331639744341373,
+      "true_density": 0.1316666603088379,
+      "teacher_mse_clean": 6.826179504394531,
+      "teacher_mse_rel": 6.97589111328125
+    },
+    {
+      "method": "DOOR+ proxy",
+      "clean_coll": 0.30799999833106995,
+      "clean_coll_std": 0.06369458138942719,
+      "rel_coll": 0.5113333463668823,
+      "rel_coll_std": 0.3281193971633911,
+      "delta_return": -1.5481739044189453,
+      "fp_sel": 0.05183333158493042,
+      "fp_sel_std": 0.003556097624823451,
+      "fp_density": 0.5611667037010193,
+      "true_sel": 0.06041666865348816,
+      "true_sel_std": 0.010921117849647999,
+      "true_density": 0.13199999928474426,
+      "teacher_mse_clean": 6.8399434089660645,
+      "teacher_mse_rel": 6.837797164916992
+    }
+  ],
+  "fp_reduction": 0.6273217820323611,
+  "collision_rate_increase": {
+    "door": 0.18799999356269836,
+    "doorplus_proxy": 0.20333334803581238
+  }
+}

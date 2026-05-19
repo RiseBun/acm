@@ -1,0 +1,44 @@
+[
+  {
+    "k": 16,
+    "variant": "door",
+    "model_variant": "object_relation_decoupled",
+    "top_k_dyn": 14,
+    "top_k_rel": 2,
+    "batch_size": 128,
+    "horizon": 10,
+    "forward_ms": 3.1194168090820313,
+    "rollout_h10_ms": 55.599100748697914,
+    "peak_mem_forward_mb": 68.53955078125,
+    "peak_mem_rollout_mb": 110.896484375,
+    "params": 609331
+  },
+  {
+    "k": 32,
+    "variant": "door",
+    "model_variant": "object_relation_decoupled",
+    "top_k_dyn": 24,
+    "top_k_rel": 8,
+    "batch_size": 128,
+    "horizon": 10,
+    "forward_ms": 2.9688275146484373,
+    "rollout_h10_ms": 56.42912292480469,
+    "peak_mem_forward_mb": 68.53955078125,
+    "peak_mem_rollout_mb": 166.8037109375,
+    "params": 609331
+  },
+  {
+    "k": 64,
+    "variant": "door",
+    "model_variant": "object_relation_decoupled",
+    "top_k_dyn": 52,
+    "top_k_rel": 12,
+    "batch_size": 128,
+    "horizon": 10,
+    "forward_ms": 3.158547058105469,
+    "rollout_h10_ms": 55.41643269856771,
+    "peak_mem_forward_mb": 83.08935546875,
+    "peak_mem_rollout_mb": 288.2958984375,
+    "params": 609331
+  }
+]

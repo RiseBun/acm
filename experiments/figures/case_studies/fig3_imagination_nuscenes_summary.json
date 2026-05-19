@@ -1,0 +1,18 @@
+{
+  "wm_object": {
+    "n_samples": 5622,
+    "return_sum_mean": 22.079286575317383,
+    "return_sum_std": 6.98556661605835,
+    "imagined_collision_rate": 0.5980078263963002,
+    "ego_cos_step_mean": 0.19555076956748962,
+    "action_norm_mean_max": 3.846811294555664
+  },
+  "wm_decoupled": {
+    "n_samples": 5622,
+    "return_sum_mean": -1.428631067276001,
+    "return_sum_std": 11.97801399230957,
+    "imagined_collision_rate": 0.8376022767698328,
+    "ego_cos_step_mean": 0.7262378931045532,
+    "action_norm_mean_max": 4.205405235290527
+  }
+}

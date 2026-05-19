@@ -31,7 +31,12 @@ from doorrl.models.doorrl_variant import DoorRLModelVariant, ModelVariant
 from doorrl.schema import SceneBatch
 from doorrl.training import DoorRLTrainer
 from doorrl.utils import set_seed
-from doorrl.evaluation.table3_metrics import Table3Metrics, evaluate_stage0
+from doorrl.evaluation.table3_metrics import (
+    Table3Metrics,
+    collect_stage0_sample_metrics,
+    compute_stage0_group_metrics,
+    evaluate_stage0,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -96,16 +101,35 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--nuplan-workers",
+        type=int,
+        default=0,
+        help="Parallel workers for nuPlan NPZ tokenisation. 0/1 = serial.",
+    )
+    parser.add_argument(
+        "--nuplan-lazy",
+        action="store_true",
+        help="Do not pre-materialise nuPlan samples; convert NPZ in DataLoader workers.",
+    )
+    parser.add_argument(
+        "--loader-workers",
+        type=int,
+        default=2,
+        help="PyTorch DataLoader workers. Increase for --nuplan-lazy.",
+    )
+    parser.add_argument(
         "--variant",
         type=str,
         choices=[
             "holistic",
             "holistic_16slot",
+            "set_transformer_pma",
             "object_only",
             "object_relation",
             "object_relation_visibility",
             "object_relation_decoupled",
             "object_relation_decoupled_visibility",
+            "object_relation_decoupled_uncertainty",
             "all",
             "all_with_decoupled",
         ],
@@ -177,6 +201,46 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Wrap the model with torch.compile(mode='reduce-overhead').",
     )
+    parser.add_argument(
+        "--top-k", type=int, default=None,
+        help="Override config.model.top_k for capacity-scaling experiments.",
+    )
+    parser.add_argument(
+        "--top-k-dyn", type=int, default=None,
+        help="Override config.model.top_k_dyn (decoupled variants). "
+             "Must satisfy top_k_dyn + top_k_rel == top_k.",
+    )
+    parser.add_argument(
+        "--top-k-rel", type=int, default=None,
+        help="Override config.model.top_k_rel (decoupled variants). "
+             "Must satisfy top_k_dyn + top_k_rel == top_k.",
+    )
+    parser.add_argument(
+        "--dump-per-sample-metrics",
+        action="store_true",
+        help=(
+            "Dump additive per-sample and per-scene Stage-0 metrics for "
+            "oracle/adaptive split analysis."
+        ),
+    )
+    parser.add_argument(
+        "--per-sample-metrics-file",
+        type=str,
+        default=None,
+        help=(
+            "Optional output path for per-sample JSONL. Defaults to "
+            "<variant_dir>/per_sample_metrics.jsonl."
+        ),
+    )
+    parser.add_argument(
+        "--per-scene-metrics-file",
+        type=str,
+        default=None,
+        help=(
+            "Optional output path for per-scene JSONL. Defaults to "
+            "<variant_dir>/per_scene_metrics.jsonl."
+        ),
+    )
 
     return parser.parse_args()
 
@@ -204,6 +268,8 @@ def _build_loaders(args: argparse.Namespace, config: DoorRLConfig):
             num_samples=args.nuplan_num_samples,
             index_json=args.nuplan_index_json,
             seed=args.seed,
+            num_workers=getattr(args, "nuplan_workers", 0),
+            materialize_cache=not getattr(args, "nuplan_lazy", False),
         )
     else:
         print("Loading nuScenes data...")
@@ -247,16 +313,28 @@ def _build_loaders(args: argparse.Namespace, config: DoorRLConfig):
     # collate + pin_memory overlap. 2 workers + persistent + prefetch is the
     # sweet spot; more doesn't help because __getitem__ is an O(1) dict
     # lookup into self._cache.
+    loader_workers = int(getattr(args, "loader_workers", 2))
     loader_kwargs = dict(
         batch_size=config.training.batch_size,
         collate_fn=SceneBatch.collate,
-        num_workers=2,
+        num_workers=loader_workers,
         pin_memory=True,
-        persistent_workers=True,
-        prefetch_factor=4,
     )
+    if loader_workers > 0:
+        loader_kwargs.update(persistent_workers=True, prefetch_factor=4)
     train_loader = DataLoader(train_dataset, shuffle=True, **loader_kwargs)
     val_loader = DataLoader(val_dataset, shuffle=False, **loader_kwargs)
+    # Validation loader remains a normal SceneBatch loader for training and
+    # aggregate evaluation. Metadata is attached out-of-band only for optional
+    # per-sample metric dumps.
+    val_loader.sample_metadata = [
+        {
+            "dataset_index": int(idx),
+            "scene_id": str(full_dataset.cache_scene_names[idx]),
+            "sample_id": str(full_dataset.cache_scene_names[idx]),
+        }
+        for idx in val_indices
+    ]
     return train_loader, val_loader
 
 
@@ -281,6 +359,24 @@ def run_stage0_experiment(
     config.training.epochs = args.epochs
     config.training.batch_size = args.batch_size
     config.seed = args.seed
+    if getattr(args, "top_k", None) is not None:
+        config.model.top_k = int(args.top_k)
+    if getattr(args, "top_k_dyn", None) is not None:
+        config.model.top_k_dyn = int(args.top_k_dyn)
+    if getattr(args, "top_k_rel", None) is not None:
+        config.model.top_k_rel = int(args.top_k_rel)
+    if (getattr(args, "top_k_dyn", None) is not None
+            or getattr(args, "top_k_rel", None) is not None):
+        if config.model.top_k_dyn + config.model.top_k_rel != config.model.top_k:
+            raise ValueError(
+                f"Typed-budget override violates top_k constraint: "
+                f"top_k_dyn ({config.model.top_k_dyn}) + top_k_rel "
+                f"({config.model.top_k_rel}) != top_k ({config.model.top_k})."
+            )
+        print(f"[budget] top_k_dyn={config.model.top_k_dyn}, "
+              f"top_k_rel={config.model.top_k_rel}")
+    elif getattr(args, "top_k", None) is not None:
+        print(f"[budget] top_k={config.model.top_k}")
     # Learning rate override / scaling for large-batch training.
     base_lr = config.training.learning_rate
     if getattr(args, "lr", None) is not None:
@@ -376,6 +472,76 @@ def run_stage0_experiment(
     results_path.write_text(json.dumps(results, indent=2))
     
     print(f"\nResults saved to {results_path}")
+
+    if getattr(args, "dump_per_sample_metrics", False):
+        print("\nCollecting per-sample Stage-0 metrics...")
+        sample_rows = collect_stage0_sample_metrics(
+            model=model,
+            data_loader=val_loader,
+            device=device,
+            sample_metadata=getattr(val_loader, "sample_metadata", None),
+        )
+        split_name = None
+        if getattr(args, "top_k_dyn", None) is not None:
+            split_name = f"{int(args.top_k_dyn)}/{int(args.top_k_rel)}"
+        for row in sample_rows:
+            row["variant"] = args.variant
+            row["seed"] = int(args.seed)
+            row["top_k"] = int(config.model.top_k)
+            row["top_k_dyn"] = int(config.model.top_k_dyn)
+            row["top_k_rel"] = int(config.model.top_k_rel)
+            row["split"] = split_name
+
+        per_sample_path = (
+            Path(args.per_sample_metrics_file)
+            if getattr(args, "per_sample_metrics_file", None)
+            else exp_dir / "per_sample_metrics.jsonl"
+        )
+        per_sample_path.parent.mkdir(parents=True, exist_ok=True)
+        per_sample_path.write_text(
+            "\n".join(json.dumps(row, sort_keys=True) for row in sample_rows)
+            + ("\n" if sample_rows else "")
+        )
+
+        scene_rows = []
+        by_scene: Dict[str, List[Dict]] = {}
+        for row in sample_rows:
+            scene_id = str(row.get("scene_id", row.get("sample_id", "")))
+            by_scene.setdefault(scene_id, []).append(row)
+        for scene_id, rows in sorted(by_scene.items()):
+            scene_metric = compute_stage0_group_metrics(rows)
+            scene_metric.update({
+                "scene_id": scene_id,
+                "variant": args.variant,
+                "seed": int(args.seed),
+                "top_k": int(config.model.top_k),
+                "top_k_dyn": int(config.model.top_k_dyn),
+                "top_k_rel": int(config.model.top_k_rel),
+                "split": split_name,
+                "num_dynamic_tokens_mean": sum(
+                    int(r.get("num_dynamic_tokens", 0) or 0) for r in rows
+                ) / max(1, len(rows)),
+                "num_relation_tokens_mean": sum(
+                    int(r.get("num_relation_tokens", 0) or 0) for r in rows
+                ) / max(1, len(rows)),
+                "num_risky_relation_tokens_mean": sum(
+                    int(r.get("num_risky_relation_tokens", 0) or 0) for r in rows
+                ) / max(1, len(rows)),
+            })
+            scene_rows.append(scene_metric)
+
+        per_scene_path = (
+            Path(args.per_scene_metrics_file)
+            if getattr(args, "per_scene_metrics_file", None)
+            else exp_dir / "per_scene_metrics.jsonl"
+        )
+        per_scene_path.parent.mkdir(parents=True, exist_ok=True)
+        per_scene_path.write_text(
+            "\n".join(json.dumps(row, sort_keys=True) for row in scene_rows)
+            + ("\n" if scene_rows else "")
+        )
+        print(f"Per-sample metrics saved to {per_sample_path}")
+        print(f"Per-scene metrics saved to {per_scene_path}")
     
     return results
 
@@ -387,6 +553,7 @@ def run_all_variants(args: argparse.Namespace) -> None:
     # world model. ``holistic`` (97-token upper bound) is kept as reference.
     base_variants = [
         "holistic_16slot",
+        "set_transformer_pma",
         "object_only",
         "object_relation",
         "object_relation_visibility",
@@ -410,6 +577,8 @@ def run_all_variants(args: argparse.Namespace) -> None:
     shared_config.training.epochs = args.epochs
     shared_config.training.batch_size = args.batch_size
     shared_config.seed = args.seed
+    if getattr(args, "top_k", None) is not None:
+        shared_config.model.top_k = int(args.top_k)
     set_seed(shared_config.seed)
     shared_loaders = _build_loaders(args, shared_config)
 
@@ -428,6 +597,7 @@ def run_all_variants(args: argparse.Namespace) -> None:
     # --- Print fair Table 3 (Decision-Oriented Representation Analysis) ---
     variant_names = {
         "holistic_16slot": "Holistic-16Slot",
+        "set_transformer_pma": "SetTransformer-PMA",
         "object_only": "Object-only-16",
         "object_relation": "Object+Relation-16",
         "object_relation_visibility": "Obj+Rel+Visibility-16",
@@ -436,12 +606,13 @@ def run_all_variants(args: argparse.Namespace) -> None:
         "holistic": "Holistic-full (ref)",
     }
     context_budget = {
-        "holistic_16slot": 16,
-        "object_only": 16,
-        "object_relation": 16,
-        "object_relation_visibility": 16,
-        "object_relation_decoupled": 16,
-        "object_relation_decoupled_visibility": 16,
+        "holistic_16slot": args.top_k or 16,
+        "set_transformer_pma": args.top_k or 16,
+        "object_only": args.top_k or 16,
+        "object_relation": args.top_k or 16,
+        "object_relation_visibility": args.top_k or 16,
+        "object_relation_decoupled": args.top_k or 16,
+        "object_relation_decoupled_visibility": args.top_k or 16,
         "holistic": 97,
     }
 

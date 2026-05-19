@@ -1,0 +1,264 @@
+{
+  "note": "post-hoc DOOR+ uncertainty gating; no retraining",
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage1_root": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k",
+    "output_dir": "experiments/tpami_doorplus_gating_smoke_500",
+    "seeds": [
+      7
+    ],
+    "conditions": [
+      "door",
+      "doorplus_posthoc"
+    ],
+    "corruptions": [
+      "clean",
+      "relfp0.2"
+    ],
+    "batch_size": 128,
+    "loader_workers": 4,
+    "horizon": 10,
+    "max_val_samples": 500,
+    "fp_confidence": 0.05,
+    "safe_ttc": 10.0
+  },
+  "summary": {
+    "door": {
+      "clean": {
+        "mean": {
+          "teacher_action_mse": 7.091187477111816,
+          "teacher_action_delta_l2": 2.04886531829834,
+          "latent_return_mean": 34.836978912353516,
+          "imagined_collision_rate": 0.2879999876022339,
+          "collision_mean": 0.29399630427360535,
+          "collision_step_mean": 0.036361418664455414,
+          "rollout_stability": 0.11395396292209625,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 500,
+            "teacher_action_mse": 7.091187477111816,
+            "teacher_action_delta_l2": 2.04886531829834,
+            "latent_return_mean": 34.836978912353516,
+            "latent_return_std": 6.922227382659912,
+            "imagined_collision_rate": 0.2879999876022339,
+            "collision_mean": 0.29399630427360535,
+            "collision_step_mean": 0.036361418664455414,
+            "rollout_stability": 0.11395396292209625,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0
+          }
+        ]
+      },
+      "relfp0.2": {
+        "mean": {
+          "teacher_action_mse": 7.421428680419922,
+          "teacher_action_delta_l2": 2.4716098308563232,
+          "latent_return_mean": 33.59154510498047,
+          "imagined_collision_rate": 0.5839999914169312,
+          "collision_mean": 0.5789585709571838,
+          "collision_step_mean": 0.0670921579003334,
+          "rollout_stability": 0.11382988840341568,
+          "selected_fp_rel_at_k": 0.1875,
+          "fp_rel_density_per_k": 0.5699999928474426
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 500,
+            "teacher_action_mse": 7.421428680419922,
+            "teacher_action_delta_l2": 2.4716098308563232,
+            "latent_return_mean": 33.59154510498047,
+            "latent_return_std": 7.412931442260742,
+            "imagined_collision_rate": 0.5839999914169312,
+            "collision_mean": 0.5789585709571838,
+            "collision_step_mean": 0.0670921579003334,
+            "rollout_stability": 0.11382988840341568,
+            "selected_fp_rel_at_k": 0.1875,
+            "fp_rel_density_per_k": 0.5699999928474426
+          }
+        ]
+      }
+    },
+    "doorplus_posthoc": {
+      "clean": {
+        "mean": {
+          "teacher_action_mse": 7.091187477111816,
+          "teacher_action_delta_l2": 2.04886531829834,
+          "latent_return_mean": 34.81782150268555,
+          "imagined_collision_rate": 0.2879999876022339,
+          "collision_mean": 0.2939940094947815,
+          "collision_step_mean": 0.03556264564394951,
+          "rollout_stability": 0.11383175849914551,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 500,
+            "teacher_action_mse": 7.091187477111816,
+            "teacher_action_delta_l2": 2.04886531829834,
+            "latent_return_mean": 34.81782150268555,
+            "latent_return_std": 6.958054542541504,
+            "imagined_collision_rate": 0.2879999876022339,
+            "collision_mean": 0.2939940094947815,
+            "collision_step_mean": 0.03556264564394951,
+            "rollout_stability": 0.11383175849914551,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0
+          }
+        ]
+      },
+      "relfp0.2": {
+        "mean": {
+          "teacher_action_mse": 7.0916666984558105,
+          "teacher_action_delta_l2": 2.0438179969787598,
+          "latent_return_mean": 34.940032958984375,
+          "imagined_collision_rate": 0.27799999713897705,
+          "collision_mean": 0.28080594539642334,
+          "collision_step_mean": 0.03316248580813408,
+          "rollout_stability": 0.11394279450178146,
+          "selected_fp_rel_at_k": 0.10050000250339508,
+          "fp_rel_density_per_k": 0.5730000138282776
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 500,
+            "teacher_action_mse": 7.0916666984558105,
+            "teacher_action_delta_l2": 2.0438179969787598,
+            "latent_return_mean": 34.940032958984375,
+            "latent_return_std": 6.871669292449951,
+            "imagined_collision_rate": 0.27799999713897705,
+            "collision_mean": 0.28080594539642334,
+            "collision_step_mean": 0.03316248580813408,
+            "rollout_stability": 0.11394279450178146,
+            "selected_fp_rel_at_k": 0.10050000250339508,
+            "fp_rel_density_per_k": 0.5730000138282776
+          }
+        ]
+      }
+    }
+  },
+  "raw": {
+    "door": {
+      "clean": {
+        "7": {
+          "seed": 7,
+          "n_samples": 500,
+          "teacher_action_mse": 7.091187477111816,
+          "teacher_action_delta_l2": 2.04886531829834,
+          "latent_return_mean": 34.836978912353516,
+          "latent_return_std": 6.922227382659912,
+          "imagined_collision_rate": 0.2879999876022339,
+          "collision_mean": 0.29399630427360535,
+          "collision_step_mean": 0.036361418664455414,
+          "rollout_stability": 0.11395396292209625,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        }
+      },
+      "relfp0.2": {
+        "7": {
+          "seed": 7,
+          "n_samples": 500,
+          "teacher_action_mse": 7.421428680419922,
+          "teacher_action_delta_l2": 2.4716098308563232,
+          "latent_return_mean": 33.59154510498047,
+          "latent_return_std": 7.412931442260742,
+          "imagined_collision_rate": 0.5839999914169312,
+          "collision_mean": 0.5789585709571838,
+          "collision_step_mean": 0.0670921579003334,
+          "rollout_stability": 0.11382988840341568,
+          "selected_fp_rel_at_k": 0.1875,
+          "fp_rel_density_per_k": 0.5699999928474426
+        }
+      }
+    },
+    "doorplus_posthoc": {
+      "clean": {
+        "7": {
+          "seed": 7,
+          "n_samples": 500,
+          "teacher_action_mse": 7.091187477111816,
+          "teacher_action_delta_l2": 2.04886531829834,
+          "latent_return_mean": 34.81782150268555,
+          "latent_return_std": 6.958054542541504,
+          "imagined_collision_rate": 0.2879999876022339,
+          "collision_mean": 0.2939940094947815,
+          "collision_step_mean": 0.03556264564394951,
+          "rollout_stability": 0.11383175849914551,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        }
+      },
+      "relfp0.2": {
+        "7": {
+          "seed": 7,
+          "n_samples": 500,
+          "teacher_action_mse": 7.0916666984558105,
+          "teacher_action_delta_l2": 2.0438179969787598,
+          "latent_return_mean": 34.940032958984375,
+          "latent_return_std": 6.871669292449951,
+          "imagined_collision_rate": 0.27799999713897705,
+          "collision_mean": 0.28080594539642334,
+          "collision_step_mean": 0.03316248580813408,
+          "rollout_stability": 0.11394279450178146,
+          "selected_fp_rel_at_k": 0.10050000250339508,
+          "fp_rel_density_per_k": 0.5730000138282776
+        }
+      }
+    }
+  }
+}

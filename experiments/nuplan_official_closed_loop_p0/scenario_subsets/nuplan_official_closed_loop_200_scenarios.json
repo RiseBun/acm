@@ -1,0 +1,2014 @@
+{
+  "name": "nuplan_official_closed_loop_200",
+  "date": "2026-04-28",
+  "seed": 20260428,
+  "requested_size": 200,
+  "actual_size": 200,
+  "db_files": [
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_00566_00754.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_00765_01072.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01102_01213.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01710_01858.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01884_01991.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_00624_00689.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_00730_00915.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_01501_01579.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_01590_01865.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_02060_02498.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_02509_02927.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03389_03511.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03522_03611.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03622_03844.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_04124_04196.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05251_05336.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05509_05665.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05676_05776.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00008_00092.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00103_00274.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00480_00695.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_01777_02078.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02294_02427.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02445_02843.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02952_03124.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00010_00107.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00118_00247.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00267_00880.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00891_01175.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_00077_00282.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_00836_00969.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_01574_01665.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_01885_02063.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_02186_02256.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_02725_02941.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03352_03437.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03448_03552.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03769_03851.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03907_03999.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_04177_04249.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_00689_00802.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_00835_00945.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_01034_01146.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_00005_00785.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_00796_00870.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_01772_02337.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_02426_02551.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_02607_03120.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03131_03401.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03412_03549.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03983_04073.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00286_00403.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00414_00524.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00751_00890.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_01826_01898.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02170_02260.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02271_02339.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02350_02698.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_03392_03579.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_04107_04300.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_04705_04782.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_00016_00530.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_00561_01239.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01289_01354.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01711_01779.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01842_01923.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02047_02161.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02172_02270.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02526_02700.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03025_03119.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03180_03245.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03797_03875.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04093_04260.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04546_04650.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04681_04751.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_05273_05367.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_00049_00824.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_01069_01662.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_01901_01969.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_04807_04969.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_05231_05546.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.53.26_veh-26_00438_00615.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.53.26_veh-26_00894_01148.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_00933_01014.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_01315_01489.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_02615_02779.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_02790_02994.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_03005_03160.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.43.00_veh-35_01997_02072.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.43.00_veh-35_03090_03191.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_00275_00338.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_00677_01057.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01084_01145.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01156_01416.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01700_01785.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01796_01893.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_00034_00245.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_00759_00954.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_01356_01711.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_02135_02369.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03451_03644.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03803_03919.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03930_04099.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04110_04230.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04422_04725.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04736_05224.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_05593_05747.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.10.22_veh-38_00505_00600.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00518_00582.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00594_00722.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00994_01185.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_01289_01417.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_01428_01522.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_02088_02219.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_02668_02983.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01085_01163.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01256_01461.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01855_01957.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01968_02204.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03037_03294.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03316_03545.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03592_03682.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03822_04167.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_04660_04834.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_04906_05194.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_00440_00515.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_00538_00655.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01045_01275.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01489_01621.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01953_02059.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_02978_03089.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03110_03173.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03547_03686.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03697_04211.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04358_04444.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04469_04582.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04593_05174.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_01815_02289.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_02600_02918.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_02930_03199.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_04048_04164.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_04291_04586.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_05049_05320.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_05331_05531.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_00594_00813.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_01105_01317.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_01356_01914.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_02246_02541.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_02555_03004.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03141_03324.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03335_03464.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03588_04332.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_04343_04575.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_04995_05088.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.36.49_veh-38_00312_00694.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.36.49_veh-38_01474_01537.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00437_00553.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00667_00795.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00890_01000.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02038_02281.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02315_02456.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02472_02661.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02672_02816.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_03427_03768.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_03795_04016.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04133_04206.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04217_04401.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04412_04567.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04617_04728.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00273_00386.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00553_00703.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00748_01069.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_01589_02072.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03221_03330.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03406_03605.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03941_04118.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_00008_00154.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_00165_00277.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_01375_01666.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_02666_02731.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03075_03265.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03433_03510.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03522_03716.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_04428_04569.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_05236_05328.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_00005_00083.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_02024_02117.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03080_03206.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03696_03865.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03876_03957.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_04558_04629.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_04640_04720.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00016_00413.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00533_00628.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00639_01479.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_01617_01796.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_01807_02223.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_03742_03862.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_04330_04911.db",
+    "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.18.18.30_veh-38_00488_00795.db"
+  ],
+  "scenario_filter": "direct_db_scan",
+  "tokens": [
+    "ffd950f027c35205",
+    "ae11db9ae60e53cc",
+    "a8d71c5f3b3d5784",
+    "f8c690de0d515b32",
+    "2b225357f4d15a1e",
+    "cb6cfd02b3065fe6",
+    "80290e2adfc45f7f",
+    "b0b723251e385ee6",
+    "91a26b27a2dd5baa",
+    "709c3d18f1e15601",
+    "e66b321e384d5795",
+    "36689b38f24457c6",
+    "5fd08892d539502e",
+    "8f63bb7d15e25d3b",
+    "e28be6dd762858f3",
+    "05262ce221f65df1",
+    "0ebfa3e2b4ce5b6f",
+    "d6264a1665a65370",
+    "b4c2a2b404ac5317",
+    "b7dd6f321161551c",
+    "f94ebe86aaae5cff",
+    "12496a2bf0405038",
+    "541130e36f975652",
+    "4cffc3b396805e8f",
+    "aae2446e07be5c64",
+    "6f12e012dc8454fa",
+    "8e5628b6398e527b",
+    "29a95bd617ed5204",
+    "2ca260034b175454",
+    "8574be4fbdc95d8d",
+    "d5e4fec1a4b955a0",
+    "b60a703e04bf5e74",
+    "e2110888ccf25417",
+    "4906b76183b85780",
+    "9fcee08518045318",
+    "69542547bea65984",
+    "bbd0d4f636465605",
+    "699a125225db532b",
+    "70ed798ced4c5bc7",
+    "09c68b6764ee5fc9",
+    "34c80395548858f2",
+    "8d526a27cf3c5a1e",
+    "2e84ce4fbfd65251",
+    "f4c8d46a486a570a",
+    "7d7cac02fd895bef",
+    "78d7578663f95e69",
+    "e2ad12cbe1935c52",
+    "c35e6d0e419c5ec2",
+    "8d0da435a3005829",
+    "57bae4fec044512e",
+    "eb286b158ef25794",
+    "640503057ccf5670",
+    "487b776e7f255327",
+    "9517bb285a025c28",
+    "31fae9529caf5462",
+    "7f8f3ec25abf5f8d",
+    "3a4cfda9f45c5bc8",
+    "cdba2569306854f7",
+    "54933ec0d28255fe",
+    "fd8a21abfbf7597d",
+    "eb0e3945b0415e7f",
+    "0edb328011b351c7",
+    "fe1dbe9174525906",
+    "e71d6ef4b1cf5f87",
+    "f982cf638196537c",
+    "87ec6d5375285ea0",
+    "0093b2b8f3995a06",
+    "d7578fddb8b85f35",
+    "e6e5f744b8d25f39",
+    "48bf8769c9e45ea6",
+    "93b9df04ead75641",
+    "cef469adf6e25a91",
+    "2210dbf61fc45982",
+    "a0d86537d7a5552a",
+    "d653dbda5e455936",
+    "d5974792edb65d9c",
+    "1ad9e51c3a2859b4",
+    "e80ca87e17185ad7",
+    "f1bb3823a3cc536d",
+    "9f45259a21ad58b3",
+    "eed1ee576b58505f",
+    "0937842565ad54e0",
+    "f1385a718b8b5607",
+    "678ef7ccb46f5ec8",
+    "b74e0ef145e45477",
+    "66ebfd916923537f",
+    "b51c7051d7275adf",
+    "fff1bb2289ff5cf1",
+    "592a456b41295d1b",
+    "01f1beb910a95318",
+    "f21b529eff1b54d3",
+    "feb3495a49cd591b",
+    "b88c532571945fcf",
+    "109d95aec9a55a0d",
+    "a7a0012ea4f35bad",
+    "da674b7a87ee5396",
+    "1b4dd6e6c109570e",
+    "e7d03b1e13dd5c7c",
+    "a8b1273f3aa25034",
+    "5b6f28e61c1f57b5",
+    "f422f22fcaf75b20",
+    "6fc390b22e165455",
+    "0202e014ed7050b4",
+    "57073cee9fbd5a8e",
+    "0b05b460a3a35c64",
+    "a98b696168ea5867",
+    "94d37ab1b85b5723",
+    "17696053c01055eb",
+    "fdc3bfc77de454f6",
+    "d2dcdfa4a2fb5263",
+    "d80493929d805b51",
+    "b594eb348f255b4a",
+    "120bfea90ad85816",
+    "91a79ecbdc6e5205",
+    "dbaf7897e2b1581f",
+    "74da6502405d566d",
+    "d58bb1e76e465f22",
+    "1127ed542f295600",
+    "86a85c4cdc43568e",
+    "db85dd5f2d465154",
+    "5a74907a71a75e57",
+    "0c69c855b6145e5c",
+    "cb99592e71b9527c",
+    "b25a0b34ce7654b4",
+    "876e71fce1d95080",
+    "0fe1ca6847655da2",
+    "56e550e763935507",
+    "2a3d2f19044156e7",
+    "2eb2a7640536512b",
+    "3143567ce0a95c7d",
+    "8d2d8407e7735fa9",
+    "1520625cbedb54f8",
+    "bb3b71baedf25e85",
+    "e53e68ad7b69589a",
+    "43f2fa67cdf25579",
+    "3558fc7c7e685da3",
+    "70f5b570b56950ed",
+    "4dbc5c3249f65d85",
+    "c3f368e6d98457fe",
+    "18d7456b83c4524e",
+    "05959c4cb7035df9",
+    "816a1a9f878f5a7c",
+    "733f2ec8107658ce",
+    "09b43ec32f2b58c0",
+    "3c93d22758ca53a8",
+    "042f3f6432205329",
+    "45195cf155fa5d75",
+    "265d8b5090eb59be",
+    "78710e260c4557e1",
+    "c50ad8242f7a5af2",
+    "948b24799802520e",
+    "83d180a395655b74",
+    "e893f0c742df5829",
+    "ecbfc926c8fb515c",
+    "fa995ac2400859c4",
+    "e2a1e90e4f7c5826",
+    "cf1c63e649055141",
+    "23e5bf1959285d8c",
+    "0581fd165acb52f6",
+    "5c8f3bf17eb05e83",
+    "a1ff5b6e39e1525a",
+    "3196f811de6257a9",
+    "3e61fe81b61f5921",
+    "76941dc58e285008",
+    "f63eb6dbd574524b",
+    "4a8ba2cd70105cbc",
+    "798f91af156d56ba",
+    "cf3031598a9c533b",
+    "62b4484835595b80",
+    "2c01a4440999593e",
+    "0e7fa3cee27d53fb",
+    "e0bf0971dddd5d4d",
+    "6a393eaa259359dd",
+    "4f99d83a15155ab0",
+    "6ecf9c417e275c40",
+    "299e227729fa5735",
+    "3d72f79647d65d1f",
+    "b656ba63a07f5469",
+    "13a8e3408b62568e",
+    "f8ffea31c5095498",
+    "43995776c29e5026",
+    "e3042e29a2985880",
+    "827aedf28b915bf5",
+    "de875ce032b85952",
+    "9ccf6b13fa7d55a1",
+    "8eb0d2b7049b567e",
+    "2b86db5d4ab45fdb",
+    "f947998bd9175c09",
+    "7cdc5e273bc95a26",
+    "d2ed809e39da55b4",
+    "3a52cbbced2c51d5",
+    "1fbb2728c84552ba",
+    "da4fbf80bd1651ee",
+    "8fc0cd67f43a5845",
+    "e64bfb5f72dc546c",
+    "b0063a61af63566a",
+    "dadbff14c9565d54",
+    "236b4c1965595afb",
+    "98752342ab525c72",
+    "104f7d7cb5145ec3"
+  ],
+  "scenarios": [
+    {
+      "index": 241,
+      "token": "ffd950f027c35205",
+      "log_name": "2021.06.08.12.00.19_veh-35_00759_00954",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_00759_00954.db",
+      "scenario_name": "ffd950f027c35205",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 114,
+      "token": "ae11db9ae60e53cc",
+      "log_name": "2021.06.07.17.46.49_veh-35_03412_03549",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03412_03549.db",
+      "scenario_name": "ae11db9ae60e53cc",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 298,
+      "token": "a8d71c5f3b3d5784",
+      "log_name": "2021.06.08.13.14.49_veh-47_01968_02204",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01968_02204.db",
+      "scenario_name": "a8d71c5f3b3d5784",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 125,
+      "token": "f8c690de0d515b32",
+      "log_name": "2021.06.07.17.48.02_veh-38_00414_00524",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00414_00524.db",
+      "scenario_name": "f8c690de0d515b32",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 395,
+      "token": "2b225357f4d15a1e",
+      "log_name": "2021.06.08.14.57.07_veh-47_02038_02281",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02038_02281.db",
+      "scenario_name": "2b225357f4d15a1e",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 35,
+      "token": "cb6cfd02b3065fe6",
+      "log_name": "2021.06.07.12.01.13_veh-47_05509_05665",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05509_05665.db",
+      "scenario_name": "cb6cfd02b3065fe6",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 277,
+      "token": "80290e2adfc45f7f",
+      "log_name": "2021.06.08.12.54.54_veh-26_01428_01522",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_01428_01522.db",
+      "scenario_name": "80290e2adfc45f7f",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 77,
+      "token": "b0b723251e385ee6",
+      "log_name": "2021.06.07.13.42.27_veh-47_02186_02256",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_02186_02256.db",
+      "scenario_name": "b0b723251e385ee6",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 135,
+      "token": "91a26b27a2dd5baa",
+      "log_name": "2021.06.07.17.48.02_veh-38_02271_02339",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02271_02339.db",
+      "scenario_name": "91a26b27a2dd5baa",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 292,
+      "token": "709c3d18f1e15601",
+      "log_name": "2021.06.08.13.14.49_veh-47_01085_01163",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01085_01163.db",
+      "scenario_name": "709c3d18f1e15601",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 154,
+      "token": "e66b321e384d5795",
+      "log_name": "2021.06.07.17.49.04_veh-47_01842_01923",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01842_01923.db",
+      "scenario_name": "e66b321e384d5795",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 72,
+      "token": "36689b38f24457c6",
+      "log_name": "2021.06.07.13.42.27_veh-47_01574_01665",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_01574_01665.db",
+      "scenario_name": "36689b38f24457c6",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 308,
+      "token": "5fd08892d539502e",
+      "log_name": "2021.06.08.13.14.49_veh-47_04660_04834",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_04660_04834.db",
+      "scenario_name": "5fd08892d539502e",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 425,
+      "token": "8f63bb7d15e25d3b",
+      "log_name": "2021.06.08.16.31.33_veh-38_03221_03330",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03221_03330.db",
+      "scenario_name": "8f63bb7d15e25d3b",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 333,
+      "token": "e28be6dd762858f3",
+      "log_name": "2021.06.08.13.23.30_veh-16_04593_05174",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04593_05174.db",
+      "scenario_name": "e28be6dd762858f3",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 157,
+      "token": "05262ce221f65df1",
+      "log_name": "2021.06.07.17.49.04_veh-47_02172_02270",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02172_02270.db",
+      "scenario_name": "05262ce221f65df1",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 232,
+      "token": "0ebfa3e2b4ce5b6f",
+      "log_name": "2021.06.07.19.51.52_veh-47_01084_01145",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01084_01145.db",
+      "scenario_name": "0ebfa3e2b4ce5b6f",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 325,
+      "token": "d6264a1665a65370",
+      "log_name": "2021.06.08.13.23.30_veh-16_03110_03173",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03110_03173.db",
+      "scenario_name": "d6264a1665a65370",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 3,
+      "token": "b4c2a2b404ac5317",
+      "log_name": "2021.06.07.11.59.52_veh-35_00765_01072",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_00765_01072.db",
+      "scenario_name": "b4c2a2b404ac5317",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 84,
+      "token": "b7dd6f321161551c",
+      "log_name": "2021.06.07.13.42.27_veh-47_03448_03552",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03448_03552.db",
+      "scenario_name": "b7dd6f321161551c",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 309,
+      "token": "f94ebe86aaae5cff",
+      "log_name": "2021.06.08.13.14.49_veh-47_04906_05194",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_04906_05194.db",
+      "scenario_name": "f94ebe86aaae5cff",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 491,
+      "token": "12496a2bf0405038",
+      "log_name": "2021.06.08.17.36.50_veh-26_03742_03862",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_03742_03862.db",
+      "scenario_name": "12496a2bf0405038",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 448,
+      "token": "541130e36f975652",
+      "log_name": "2021.06.08.17.25.03_veh-35_03433_03510",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03433_03510.db",
+      "scenario_name": "541130e36f975652",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 38,
+      "token": "4cffc3b396805e8f",
+      "log_name": "2021.06.07.12.42.11_veh-38_00103_00274",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00103_00274.db",
+      "scenario_name": "4cffc3b396805e8f",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 376,
+      "token": "aae2446e07be5c64",
+      "log_name": "2021.06.08.14.35.24_veh-26_04995_05088",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_04995_05088.db",
+      "scenario_name": "aae2446e07be5c64",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 449,
+      "token": "6f12e012dc8454fa",
+      "log_name": "2021.06.08.17.25.03_veh-35_03522_03716",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03522_03716.db",
+      "scenario_name": "6f12e012dc8454fa",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 191,
+      "token": "8e5628b6398e527b",
+      "log_name": "2021.06.07.18.29.03_veh-16_04807_04969",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_04807_04969.db",
+      "scenario_name": "8e5628b6398e527b",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 368,
+      "token": "29a95bd617ed5204",
+      "log_name": "2021.06.08.14.35.24_veh-26_03141_03324",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03141_03324.db",
+      "scenario_name": "29a95bd617ed5204",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 353,
+      "token": "2ca260034b175454",
+      "log_name": "2021.06.08.14.14.51_veh-35_04291_04586",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_04291_04586.db",
+      "scenario_name": "2ca260034b175454",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 55,
+      "token": "8574be4fbdc95d8d",
+      "log_name": "2021.06.07.12.54.00_veh-35_00118_00247",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00118_00247.db",
+      "scenario_name": "8574be4fbdc95d8d",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 283,
+      "token": "d5e4fec1a4b955a0",
+      "log_name": "2021.06.08.12.54.54_veh-26_02668_02983",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_02668_02983.db",
+      "scenario_name": "d5e4fec1a4b955a0",
+      "scenario_type": "near_construction_zone_sign"
+    },
+    {
+      "index": 302,
+      "token": "b60a703e04bf5e74",
+      "log_name": "2021.06.08.13.14.49_veh-47_03316_03545",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03316_03545.db",
+      "scenario_name": "b60a703e04bf5e74",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 371,
+      "token": "e2110888ccf25417",
+      "log_name": "2021.06.08.14.35.24_veh-26_03588_04332",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03588_04332.db",
+      "scenario_name": "e2110888ccf25417",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 478,
+      "token": "4906b76183b85780",
+      "log_name": "2021.06.08.17.29.54_veh-16_04558_04629",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_04558_04629.db",
+      "scenario_name": "4906b76183b85780",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 110,
+      "token": "9fcee08518045318",
+      "log_name": "2021.06.07.17.46.49_veh-35_01772_02337",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_01772_02337.db",
+      "scenario_name": "9fcee08518045318",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 13,
+      "token": "69542547bea65984",
+      "log_name": "2021.06.07.12.01.13_veh-47_00624_00689",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_00624_00689.db",
+      "scenario_name": "69542547bea65984",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 169,
+      "token": "bbd0d4f636465605",
+      "log_name": "2021.06.07.17.49.04_veh-47_04093_04260",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04093_04260.db",
+      "scenario_name": "bbd0d4f636465605",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 75,
+      "token": "699a125225db532b",
+      "log_name": "2021.06.07.13.42.27_veh-47_01885_02063",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_01885_02063.db",
+      "scenario_name": "699a125225db532b",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 134,
+      "token": "70ed798ced4c5bc7",
+      "log_name": "2021.06.07.17.48.02_veh-38_02170_02260",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02170_02260.db",
+      "scenario_name": "70ed798ced4c5bc7",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 144,
+      "token": "09c68b6764ee5fc9",
+      "log_name": "2021.06.07.17.48.02_veh-38_04107_04300",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_04107_04300.db",
+      "scenario_name": "09c68b6764ee5fc9",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 7,
+      "token": "34c80395548858f2",
+      "log_name": "2021.06.07.11.59.52_veh-35_01710_01858",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01710_01858.db",
+      "scenario_name": "34c80395548858f2",
+      "scenario_type": "stopping_with_lead"
+    },
+    {
+      "index": 258,
+      "token": "8d526a27cf3c5a1e",
+      "log_name": "2021.06.08.12.00.19_veh-35_04422_04725",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04422_04725.db",
+      "scenario_name": "8d526a27cf3c5a1e",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 40,
+      "token": "2e84ce4fbfd65251",
+      "log_name": "2021.06.07.12.42.11_veh-38_00480_00695",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00480_00695.db",
+      "scenario_name": "2e84ce4fbfd65251",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 45,
+      "token": "f4c8d46a486a570a",
+      "log_name": "2021.06.07.12.42.11_veh-38_02294_02427",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02294_02427.db",
+      "scenario_name": "f4c8d46a486a570a",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 276,
+      "token": "7d7cac02fd895bef",
+      "log_name": "2021.06.08.12.54.54_veh-26_01289_01417",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_01289_01417.db",
+      "scenario_name": "7d7cac02fd895bef",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 465,
+      "token": "78d7578663f95e69",
+      "log_name": "2021.06.08.17.29.54_veh-16_02024_02117",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_02024_02117.db",
+      "scenario_name": "78d7578663f95e69",
+      "scenario_type": "near_long_vehicle"
+    },
+    {
+      "index": 458,
+      "token": "e2ad12cbe1935c52",
+      "log_name": "2021.06.08.17.29.54_veh-16_00005_00083",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_00005_00083.db",
+      "scenario_name": "e2ad12cbe1935c52",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 405,
+      "token": "c35e6d0e419c5ec2",
+      "log_name": "2021.06.08.14.57.07_veh-47_04133_04206",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04133_04206.db",
+      "scenario_name": "c35e6d0e419c5ec2",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 252,
+      "token": "8d0da435a3005829",
+      "log_name": "2021.06.08.12.00.19_veh-35_03451_03644",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03451_03644.db",
+      "scenario_name": "8d0da435a3005829",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 18,
+      "token": "57bae4fec044512e",
+      "log_name": "2021.06.07.12.01.13_veh-47_01590_01865",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_01590_01865.db",
+      "scenario_name": "57bae4fec044512e",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 315,
+      "token": "eb286b158ef25794",
+      "log_name": "2021.06.08.13.23.30_veh-16_01045_01275",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01045_01275.db",
+      "scenario_name": "eb286b158ef25794",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 274,
+      "token": "640503057ccf5670",
+      "log_name": "2021.06.08.12.54.54_veh-26_00994_01185",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00994_01185.db",
+      "scenario_name": "640503057ccf5670",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 485,
+      "token": "487b776e7f255327",
+      "log_name": "2021.06.08.17.36.50_veh-26_01617_01796",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_01617_01796.db",
+      "scenario_name": "487b776e7f255327",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 24,
+      "token": "9517bb285a025c28",
+      "log_name": "2021.06.07.12.01.13_veh-47_03389_03511",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03389_03511.db",
+      "scenario_name": "9517bb285a025c28",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 313,
+      "token": "31fae9529caf5462",
+      "log_name": "2021.06.08.13.23.30_veh-16_00538_00655",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_00538_00655.db",
+      "scenario_name": "31fae9529caf5462",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 162,
+      "token": "7f8f3ec25abf5f8d",
+      "log_name": "2021.06.07.17.49.04_veh-47_03025_03119",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03025_03119.db",
+      "scenario_name": "7f8f3ec25abf5f8d",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 388,
+      "token": "3a4cfda9f45c5bc8",
+      "log_name": "2021.06.08.14.57.07_veh-47_00667_00795",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00667_00795.db",
+      "scenario_name": "3a4cfda9f45c5bc8",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 68,
+      "token": "cdba2569306854f7",
+      "log_name": "2021.06.07.13.42.27_veh-47_00836_00969",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_00836_00969.db",
+      "scenario_name": "cdba2569306854f7",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 167,
+      "token": "54933ec0d28255fe",
+      "log_name": "2021.06.07.17.49.04_veh-47_03797_03875",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03797_03875.db",
+      "scenario_name": "54933ec0d28255fe",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 106,
+      "token": "fd8a21abfbf7597d",
+      "log_name": "2021.06.07.17.46.49_veh-35_00005_00785",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_00005_00785.db",
+      "scenario_name": "fd8a21abfbf7597d",
+      "scenario_type": "near_long_vehicle"
+    },
+    {
+      "index": 312,
+      "token": "eb0e3945b0415e7f",
+      "log_name": "2021.06.08.13.23.30_veh-16_00440_00515",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_00440_00515.db",
+      "scenario_name": "eb0e3945b0415e7f",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 233,
+      "token": "0edb328011b351c7",
+      "log_name": "2021.06.07.19.51.52_veh-47_01156_01416",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01156_01416.db",
+      "scenario_name": "0edb328011b351c7",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 255,
+      "token": "fe1dbe9174525906",
+      "log_name": "2021.06.08.12.00.19_veh-35_03930_04099",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03930_04099.db",
+      "scenario_name": "fe1dbe9174525906",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 211,
+      "token": "e71d6ef4b1cf5f87",
+      "log_name": "2021.06.07.19.29.59_veh-38_02615_02779",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_02615_02779.db",
+      "scenario_name": "e71d6ef4b1cf5f87",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 36,
+      "token": "f982cf638196537c",
+      "log_name": "2021.06.07.12.01.13_veh-47_05676_05776",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05676_05776.db",
+      "scenario_name": "f982cf638196537c",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 446,
+      "token": "87ec6d5375285ea0",
+      "log_name": "2021.06.08.17.25.03_veh-35_03075_03265",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_03075_03265.db",
+      "scenario_name": "87ec6d5375285ea0",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 25,
+      "token": "0093b2b8f3995a06",
+      "log_name": "2021.06.07.12.01.13_veh-47_03522_03611",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03522_03611.db",
+      "scenario_name": "0093b2b8f3995a06",
+      "scenario_type": "near_pedestrian_at_pickup_dropoff"
+    },
+    {
+      "index": 95,
+      "token": "d7578fddb8b85f35",
+      "log_name": "2021.06.07.13.53.57_veh-35_00835_00945",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_00835_00945.db",
+      "scenario_name": "d7578fddb8b85f35",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 203,
+      "token": "e6e5f744b8d25f39",
+      "log_name": "2021.06.07.19.29.59_veh-38_00933_01014",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_00933_01014.db",
+      "scenario_name": "e6e5f744b8d25f39",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 329,
+      "token": "48bf8769c9e45ea6",
+      "log_name": "2021.06.08.13.23.30_veh-16_03697_04211",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03697_04211.db",
+      "scenario_name": "48bf8769c9e45ea6",
+      "scenario_type": "near_pedestrian_at_pickup_dropoff"
+    },
+    {
+      "index": 4,
+      "token": "93b9df04ead75641",
+      "log_name": "2021.06.07.11.59.52_veh-35_01102_01213",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01102_01213.db",
+      "scenario_name": "93b9df04ead75641",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 177,
+      "token": "cef469adf6e25a91",
+      "log_name": "2021.06.07.17.49.04_veh-47_05273_05367",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_05273_05367.db",
+      "scenario_name": "cef469adf6e25a91",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 132,
+      "token": "2210dbf61fc45982",
+      "log_name": "2021.06.07.17.48.02_veh-38_01826_01898",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_01826_01898.db",
+      "scenario_name": "2210dbf61fc45982",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 352,
+      "token": "a0d86537d7a5552a",
+      "log_name": "2021.06.08.14.14.51_veh-35_04048_04164",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_04048_04164.db",
+      "scenario_name": "a0d86537d7a5552a",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 127,
+      "token": "d653dbda5e455936",
+      "log_name": "2021.06.07.17.48.02_veh-38_00751_00890",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00751_00890.db",
+      "scenario_name": "d653dbda5e455936",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 419,
+      "token": "d5974792edb65d9c",
+      "log_name": "2021.06.08.16.31.33_veh-38_01589_02072",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_01589_02072.db",
+      "scenario_name": "d5974792edb65d9c",
+      "scenario_type": "near_pedestrian_at_pickup_dropoff"
+    },
+    {
+      "index": 14,
+      "token": "1ad9e51c3a2859b4",
+      "log_name": "2021.06.07.12.01.13_veh-47_00730_00915",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_00730_00915.db",
+      "scenario_name": "1ad9e51c3a2859b4",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 403,
+      "token": "e80ca87e17185ad7",
+      "log_name": "2021.06.08.14.57.07_veh-47_03795_04016",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_03795_04016.db",
+      "scenario_name": "e80ca87e17185ad7",
+      "scenario_type": "near_pedestrian_at_pickup_dropoff"
+    },
+    {
+      "index": 457,
+      "token": "f1bb3823a3cc536d",
+      "log_name": "2021.06.08.17.25.03_veh-35_05236_05328",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_05236_05328.db",
+      "scenario_name": "f1bb3823a3cc536d",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 231,
+      "token": "9f45259a21ad58b3",
+      "log_name": "2021.06.07.19.51.52_veh-47_00677_01057",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_00677_01057.db",
+      "scenario_name": "9f45259a21ad58b3",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 317,
+      "token": "eed1ee576b58505f",
+      "log_name": "2021.06.08.13.23.30_veh-16_01489_01621",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01489_01621.db",
+      "scenario_name": "eed1ee576b58505f",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 345,
+      "token": "0937842565ad54e0",
+      "log_name": "2021.06.08.14.14.51_veh-35_02600_02918",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_02600_02918.db",
+      "scenario_name": "0937842565ad54e0",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 90,
+      "token": "f1385a718b8b5607",
+      "log_name": "2021.06.07.13.42.27_veh-47_04177_04249",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_04177_04249.db",
+      "scenario_name": "f1385a718b8b5607",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 183,
+      "token": "678ef7ccb46f5ec8",
+      "log_name": "2021.06.07.18.29.03_veh-16_01901_01969",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_01901_01969.db",
+      "scenario_name": "678ef7ccb46f5ec8",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 408,
+      "token": "b74e0ef145e45477",
+      "log_name": "2021.06.08.14.57.07_veh-47_04617_04728",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04617_04728.db",
+      "scenario_name": "b74e0ef145e45477",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 303,
+      "token": "66ebfd916923537f",
+      "log_name": "2021.06.08.13.14.49_veh-47_03592_03682",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03592_03682.db",
+      "scenario_name": "66ebfd916923537f",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 118,
+      "token": "b51c7051d7275adf",
+      "log_name": "2021.06.07.17.46.49_veh-35_03983_04073",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03983_04073.db",
+      "scenario_name": "b51c7051d7275adf",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 294,
+      "token": "fff1bb2289ff5cf1",
+      "log_name": "2021.06.08.13.14.49_veh-47_01256_01461",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01256_01461.db",
+      "scenario_name": "fff1bb2289ff5cf1",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 205,
+      "token": "592a456b41295d1b",
+      "log_name": "2021.06.07.19.29.59_veh-38_01315_01489",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_01315_01489.db",
+      "scenario_name": "592a456b41295d1b",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 331,
+      "token": "01f1beb910a95318",
+      "log_name": "2021.06.08.13.23.30_veh-16_04358_04444",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04358_04444.db",
+      "scenario_name": "01f1beb910a95318",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 196,
+      "token": "f21b529eff1b54d3",
+      "log_name": "2021.06.07.18.53.26_veh-26_00438_00615",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.53.26_veh-26_00438_00615.db",
+      "scenario_name": "f21b529eff1b54d3",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 150,
+      "token": "feb3495a49cd591b",
+      "log_name": "2021.06.07.17.49.04_veh-47_00561_01239",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_00561_01239.db",
+      "scenario_name": "feb3495a49cd591b",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 140,
+      "token": "b88c532571945fcf",
+      "log_name": "2021.06.07.17.48.02_veh-38_03392_03579",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_03392_03579.db",
+      "scenario_name": "b88c532571945fcf",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 428,
+      "token": "109d95aec9a55a0d",
+      "log_name": "2021.06.08.16.31.33_veh-38_03941_04118",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03941_04118.db",
+      "scenario_name": "109d95aec9a55a0d",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 454,
+      "token": "a7a0012ea4f35bad",
+      "log_name": "2021.06.08.17.25.03_veh-35_04428_04569",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_04428_04569.db",
+      "scenario_name": "a7a0012ea4f35bad",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 46,
+      "token": "da674b7a87ee5396",
+      "log_name": "2021.06.07.12.42.11_veh-38_02445_02843",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02445_02843.db",
+      "scenario_name": "da674b7a87ee5396",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 149,
+      "token": "1b4dd6e6c109570e",
+      "log_name": "2021.06.07.17.49.04_veh-47_00016_00530",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_00016_00530.db",
+      "scenario_name": "1b4dd6e6c109570e",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 193,
+      "token": "e7d03b1e13dd5c7c",
+      "log_name": "2021.06.07.18.29.03_veh-16_05231_05546",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_05231_05546.db",
+      "scenario_name": "e7d03b1e13dd5c7c",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 163,
+      "token": "a8b1273f3aa25034",
+      "log_name": "2021.06.07.17.49.04_veh-47_03180_03245",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_03180_03245.db",
+      "scenario_name": "a8b1273f3aa25034",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 369,
+      "token": "5b6f28e61c1f57b5",
+      "log_name": "2021.06.08.14.35.24_veh-26_03335_03464",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_03335_03464.db",
+      "scenario_name": "5b6f28e61c1f57b5",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 236,
+      "token": "f422f22fcaf75b20",
+      "log_name": "2021.06.07.19.51.52_veh-47_01796_01893",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01796_01893.db",
+      "scenario_name": "f422f22fcaf75b20",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 173,
+      "token": "6fc390b22e165455",
+      "log_name": "2021.06.07.17.49.04_veh-47_04681_04751",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04681_04751.db",
+      "scenario_name": "6fc390b22e165455",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 17,
+      "token": "0202e014ed7050b4",
+      "log_name": "2021.06.07.12.01.13_veh-47_01501_01579",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_01501_01579.db",
+      "scenario_name": "0202e014ed7050b4",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 153,
+      "token": "57073cee9fbd5a8e",
+      "log_name": "2021.06.07.17.49.04_veh-47_01711_01779",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01711_01779.db",
+      "scenario_name": "57073cee9fbd5a8e",
+      "scenario_type": "following_lane_with_slow_lead"
+    },
+    {
+      "index": 482,
+      "token": "0b05b460a3a35c64",
+      "log_name": "2021.06.08.17.36.50_veh-26_00533_00628",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00533_00628.db",
+      "scenario_name": "0b05b460a3a35c64",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 26,
+      "token": "a98b696168ea5867",
+      "log_name": "2021.06.07.12.01.13_veh-47_03622_03844",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_03622_03844.db",
+      "scenario_name": "a98b696168ea5867",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 212,
+      "token": "94d37ab1b85b5723",
+      "log_name": "2021.06.07.19.29.59_veh-38_02790_02994",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_02790_02994.db",
+      "scenario_name": "94d37ab1b85b5723",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 33,
+      "token": "17696053c01055eb",
+      "log_name": "2021.06.07.12.01.13_veh-47_05251_05336",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_05251_05336.db",
+      "scenario_name": "17696053c01055eb",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 416,
+      "token": "fdc3bfc77de454f6",
+      "log_name": "2021.06.08.16.31.33_veh-38_00748_01069",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00748_01069.db",
+      "scenario_name": "fdc3bfc77de454f6",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 124,
+      "token": "d2dcdfa4a2fb5263",
+      "log_name": "2021.06.07.17.48.02_veh-38_00286_00403",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_00286_00403.db",
+      "scenario_name": "d2dcdfa4a2fb5263",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 301,
+      "token": "d80493929d805b51",
+      "log_name": "2021.06.08.13.14.49_veh-47_03037_03294",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03037_03294.db",
+      "scenario_name": "d80493929d805b51",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 8,
+      "token": "b594eb348f255b4a",
+      "log_name": "2021.06.07.11.59.52_veh-35_01884_01991",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_01884_01991.db",
+      "scenario_name": "b594eb348f255b4a",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 198,
+      "token": "120bfea90ad85816",
+      "log_name": "2021.06.07.18.53.26_veh-26_00894_01148",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.53.26_veh-26_00894_01148.db",
+      "scenario_name": "120bfea90ad85816",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 342,
+      "token": "91a79ecbdc6e5205",
+      "log_name": "2021.06.08.14.14.51_veh-35_01815_02289",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_01815_02289.db",
+      "scenario_name": "91a79ecbdc6e5205",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 271,
+      "token": "dbaf7897e2b1581f",
+      "log_name": "2021.06.08.12.54.54_veh-26_00518_00582",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00518_00582.db",
+      "scenario_name": "dbaf7897e2b1581f",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 407,
+      "token": "74da6502405d566d",
+      "log_name": "2021.06.08.14.57.07_veh-47_04412_04567",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04412_04567.db",
+      "scenario_name": "74da6502405d566d",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 356,
+      "token": "d58bb1e76e465f22",
+      "log_name": "2021.06.08.14.14.51_veh-35_05331_05531",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_05331_05531.db",
+      "scenario_name": "d58bb1e76e465f22",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 297,
+      "token": "1127ed542f295600",
+      "log_name": "2021.06.08.13.14.49_veh-47_01855_01957",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_01855_01957.db",
+      "scenario_name": "1127ed542f295600",
+      "scenario_type": "near_trafficcone_on_driveable"
+    },
+    {
+      "index": 235,
+      "token": "86a85c4cdc43568e",
+      "log_name": "2021.06.07.19.51.52_veh-47_01700_01785",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_01700_01785.db",
+      "scenario_name": "86a85c4cdc43568e",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 80,
+      "token": "db85dd5f2d465154",
+      "log_name": "2021.06.07.13.42.27_veh-47_02725_02941",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_02725_02941.db",
+      "scenario_name": "db85dd5f2d465154",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 113,
+      "token": "5a74907a71a75e57",
+      "log_name": "2021.06.07.17.46.49_veh-35_03131_03401",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_03131_03401.db",
+      "scenario_name": "5a74907a71a75e57",
+      "scenario_type": "near_multiple_vehicles"
+    },
+    {
+      "index": 54,
+      "token": "0c69c855b6145e5c",
+      "log_name": "2021.06.07.12.54.00_veh-35_00010_00107",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00010_00107.db",
+      "scenario_name": "0c69c855b6145e5c",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 159,
+      "token": "cb99592e71b9527c",
+      "log_name": "2021.06.07.17.49.04_veh-47_02526_02700",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02526_02700.db",
+      "scenario_name": "cb99592e71b9527c",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 413,
+      "token": "b25a0b34ce7654b4",
+      "log_name": "2021.06.08.16.31.33_veh-38_00273_00386",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00273_00386.db",
+      "scenario_name": "b25a0b34ce7654b4",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 434,
+      "token": "876e71fce1d95080",
+      "log_name": "2021.06.08.17.25.03_veh-35_00008_00154",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_00008_00154.db",
+      "scenario_name": "876e71fce1d95080",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 398,
+      "token": "0fe1ca6847655da2",
+      "log_name": "2021.06.08.14.57.07_veh-47_02672_02816",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02672_02816.db",
+      "scenario_name": "0fe1ca6847655da2",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 279,
+      "token": "56e550e763935507",
+      "log_name": "2021.06.08.12.54.54_veh-26_02088_02219",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_02088_02219.db",
+      "scenario_name": "56e550e763935507",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 365,
+      "token": "2a3d2f19044156e7",
+      "log_name": "2021.06.08.14.35.24_veh-26_02246_02541",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_02246_02541.db",
+      "scenario_name": "2a3d2f19044156e7",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 319,
+      "token": "2eb2a7640536512b",
+      "log_name": "2021.06.08.13.23.30_veh-16_01953_02059",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_01953_02059.db",
+      "scenario_name": "2eb2a7640536512b",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 402,
+      "token": "3143567ce0a95c7d",
+      "log_name": "2021.06.08.14.57.07_veh-47_03427_03768",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_03427_03768.db",
+      "scenario_name": "3143567ce0a95c7d",
+      "scenario_type": "on_stopline_traffic_light"
+    },
+    {
+      "index": 305,
+      "token": "8d2d8407e7735fa9",
+      "log_name": "2021.06.08.13.14.49_veh-47_03822_04167",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.14.49_veh-47_03822_04167.db",
+      "scenario_name": "8d2d8407e7735fa9",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 156,
+      "token": "1520625cbedb54f8",
+      "log_name": "2021.06.07.17.49.04_veh-47_02047_02161",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_02047_02161.db",
+      "scenario_name": "1520625cbedb54f8",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 2,
+      "token": "bb3b71baedf25e85",
+      "log_name": "2021.06.07.11.59.52_veh-35_00566_00754",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.11.59.52_veh-35_00566_00754.db",
+      "scenario_name": "bb3b71baedf25e85",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 107,
+      "token": "e53e68ad7b69589a",
+      "log_name": "2021.06.07.17.46.49_veh-35_00796_00870",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_00796_00870.db",
+      "scenario_name": "e53e68ad7b69589a",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 151,
+      "token": "43f2fa67cdf25579",
+      "log_name": "2021.06.07.17.49.04_veh-47_01289_01354",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_01289_01354.db",
+      "scenario_name": "43f2fa67cdf25579",
+      "scenario_type": "on_stopline_traffic_light"
+    },
+    {
+      "index": 238,
+      "token": "3558fc7c7e685da3",
+      "log_name": "2021.06.08.12.00.19_veh-35_00034_00245",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_00034_00245.db",
+      "scenario_name": "3558fc7c7e685da3",
+      "scenario_type": "on_stopline_traffic_light"
+    },
+    {
+      "index": 372,
+      "token": "70f5b570b56950ed",
+      "log_name": "2021.06.08.14.35.24_veh-26_04343_04575",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_04343_04575.db",
+      "scenario_name": "70f5b570b56950ed",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 111,
+      "token": "4dbc5c3249f65d85",
+      "log_name": "2021.06.07.17.46.49_veh-35_02426_02551",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_02426_02551.db",
+      "scenario_name": "4dbc5c3249f65d85",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 362,
+      "token": "c3f368e6d98457fe",
+      "log_name": "2021.06.08.14.35.24_veh-26_01105_01317",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_01105_01317.db",
+      "scenario_name": "c3f368e6d98457fe",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 472,
+      "token": "18d7456b83c4524e",
+      "log_name": "2021.06.08.17.29.54_veh-16_03876_03957",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03876_03957.db",
+      "scenario_name": "18d7456b83c4524e",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 244,
+      "token": "05959c4cb7035df9",
+      "log_name": "2021.06.08.12.00.19_veh-35_01356_01711",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_01356_01711.db",
+      "scenario_name": "05959c4cb7035df9",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 20,
+      "token": "816a1a9f878f5a7c",
+      "log_name": "2021.06.07.12.01.13_veh-47_02060_02498",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_02060_02498.db",
+      "scenario_name": "816a1a9f878f5a7c",
+      "scenario_type": "on_stopline_crosswalk"
+    },
+    {
+      "index": 213,
+      "token": "733f2ec8107658ce",
+      "log_name": "2021.06.07.19.29.59_veh-38_03005_03160",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.29.59_veh-38_03005_03160.db",
+      "scenario_name": "733f2ec8107658ce",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 56,
+      "token": "09b43ec32f2b58c0",
+      "log_name": "2021.06.07.12.54.00_veh-35_00267_00880",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00267_00880.db",
+      "scenario_name": "09b43ec32f2b58c0",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 112,
+      "token": "3c93d22758ca53a8",
+      "log_name": "2021.06.07.17.46.49_veh-35_02607_03120",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.46.49_veh-35_02607_03120.db",
+      "scenario_name": "3c93d22758ca53a8",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 498,
+      "token": "042f3f6432205329",
+      "log_name": "2021.06.08.18.18.30_veh-38_00488_00795",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.18.18.30_veh-38_00488_00795.db",
+      "scenario_name": "042f3f6432205329",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 471,
+      "token": "45195cf155fa5d75",
+      "log_name": "2021.06.08.17.29.54_veh-16_03696_03865",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03696_03865.db",
+      "scenario_name": "45195cf155fa5d75",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 396,
+      "token": "265d8b5090eb59be",
+      "log_name": "2021.06.08.14.57.07_veh-47_02315_02456",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02315_02456.db",
+      "scenario_name": "265d8b5090eb59be",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 147,
+      "token": "78710e260c4557e1",
+      "log_name": "2021.06.07.17.48.02_veh-38_04705_04782",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_04705_04782.db",
+      "scenario_name": "78710e260c4557e1",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 57,
+      "token": "c50ad8242f7a5af2",
+      "log_name": "2021.06.07.12.54.00_veh-35_00891_01175",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.54.00_veh-35_00891_01175.db",
+      "scenario_name": "c50ad8242f7a5af2",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 88,
+      "token": "948b24799802520e",
+      "log_name": "2021.06.07.13.42.27_veh-47_03907_03999",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03907_03999.db",
+      "scenario_name": "948b24799802520e",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 227,
+      "token": "83d180a395655b74",
+      "log_name": "2021.06.07.19.43.00_veh-35_03090_03191",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.43.00_veh-35_03090_03191.db",
+      "scenario_name": "83d180a395655b74",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 438,
+      "token": "e893f0c742df5829",
+      "log_name": "2021.06.08.17.25.03_veh-35_01375_01666",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_01375_01666.db",
+      "scenario_name": "e893f0c742df5829",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 223,
+      "token": "ecbfc926c8fb515c",
+      "log_name": "2021.06.07.19.43.00_veh-35_01997_02072",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.43.00_veh-35_01997_02072.db",
+      "scenario_name": "ecbfc926c8fb515c",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 28,
+      "token": "fa995ac2400859c4",
+      "log_name": "2021.06.07.12.01.13_veh-47_04124_04196",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_04124_04196.db",
+      "scenario_name": "fa995ac2400859c4",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 136,
+      "token": "e2a1e90e4f7c5826",
+      "log_name": "2021.06.07.17.48.02_veh-38_02350_02698",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.48.02_veh-38_02350_02698.db",
+      "scenario_name": "e2a1e90e4f7c5826",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 435,
+      "token": "cf1c63e649055141",
+      "log_name": "2021.06.08.17.25.03_veh-35_00165_00277",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_00165_00277.db",
+      "scenario_name": "cf1c63e649055141",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 254,
+      "token": "23e5bf1959285d8c",
+      "log_name": "2021.06.08.12.00.19_veh-35_03803_03919",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_03803_03919.db",
+      "scenario_name": "23e5bf1959285d8c",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 180,
+      "token": "0581fd165acb52f6",
+      "log_name": "2021.06.07.18.29.03_veh-16_01069_01662",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_01069_01662.db",
+      "scenario_name": "0581fd165acb52f6",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 366,
+      "token": "5c8f3bf17eb05e83",
+      "log_name": "2021.06.08.14.35.24_veh-26_02555_03004",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_02555_03004.db",
+      "scenario_name": "5c8f3bf17eb05e83",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 47,
+      "token": "a1ff5b6e39e1525a",
+      "log_name": "2021.06.07.12.42.11_veh-38_02952_03124",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_02952_03124.db",
+      "scenario_name": "a1ff5b6e39e1525a",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 479,
+      "token": "3196f811de6257a9",
+      "log_name": "2021.06.08.17.29.54_veh-16_04640_04720",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_04640_04720.db",
+      "scenario_name": "3196f811de6257a9",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 96,
+      "token": "3e61fe81b61f5921",
+      "log_name": "2021.06.07.13.53.57_veh-35_01034_01146",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_01034_01146.db",
+      "scenario_name": "3e61fe81b61f5921",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 387,
+      "token": "76941dc58e285008",
+      "log_name": "2021.06.08.14.57.07_veh-47_00437_00553",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00437_00553.db",
+      "scenario_name": "76941dc58e285008",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 443,
+      "token": "f63eb6dbd574524b",
+      "log_name": "2021.06.08.17.25.03_veh-35_02666_02731",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.25.03_veh-35_02666_02731.db",
+      "scenario_name": "f63eb6dbd574524b",
+      "scenario_type": "near_long_vehicle"
+    },
+    {
+      "index": 328,
+      "token": "4a8ba2cd70105cbc",
+      "log_name": "2021.06.08.13.23.30_veh-16_03547_03686",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_03547_03686.db",
+      "scenario_name": "4a8ba2cd70105cbc",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 426,
+      "token": "798f91af156d56ba",
+      "log_name": "2021.06.08.16.31.33_veh-38_03406_03605",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_03406_03605.db",
+      "scenario_name": "798f91af156d56ba",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 43,
+      "token": "cf3031598a9c533b",
+      "log_name": "2021.06.07.12.42.11_veh-38_01777_02078",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_01777_02078.db",
+      "scenario_name": "cf3031598a9c533b",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 406,
+      "token": "62b4484835595b80",
+      "log_name": "2021.06.08.14.57.07_veh-47_04217_04401",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_04217_04401.db",
+      "scenario_name": "62b4484835595b80",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 355,
+      "token": "2c01a4440999593e",
+      "log_name": "2021.06.08.14.14.51_veh-35_05049_05320",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_05049_05320.db",
+      "scenario_name": "2c01a4440999593e",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 383,
+      "token": "0e7fa3cee27d53fb",
+      "log_name": "2021.06.08.14.36.49_veh-38_01474_01537",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.36.49_veh-38_01474_01537.db",
+      "scenario_name": "0e7fa3cee27d53fb",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 94,
+      "token": "e0bf0971dddd5d4d",
+      "log_name": "2021.06.07.13.53.57_veh-35_00689_00802",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.53.57_veh-35_00689_00802.db",
+      "scenario_name": "e0bf0971dddd5d4d",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 480,
+      "token": "6a393eaa259359dd",
+      "log_name": "2021.06.08.17.36.50_veh-26_00016_00413",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00016_00413.db",
+      "scenario_name": "6a393eaa259359dd",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 381,
+      "token": "4f99d83a15155ab0",
+      "log_name": "2021.06.08.14.36.49_veh-38_00312_00694",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.36.49_veh-38_00312_00694.db",
+      "scenario_name": "4f99d83a15155ab0",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 483,
+      "token": "6ecf9c417e275c40",
+      "log_name": "2021.06.08.17.36.50_veh-26_00639_01479",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_00639_01479.db",
+      "scenario_name": "6ecf9c417e275c40",
+      "scenario_type": "near_pedestrian_on_crosswalk"
+    },
+    {
+      "index": 178,
+      "token": "299e227729fa5735",
+      "log_name": "2021.06.07.18.29.03_veh-16_00049_00824",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.18.29.03_veh-16_00049_00824.db",
+      "scenario_name": "299e227729fa5735",
+      "scenario_type": "on_intersection"
+    },
+    {
+      "index": 37,
+      "token": "3d72f79647d65d1f",
+      "log_name": "2021.06.07.12.42.11_veh-38_00008_00092",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.42.11_veh-38_00008_00092.db",
+      "scenario_name": "3d72f79647d65d1f",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 390,
+      "token": "b656ba63a07f5469",
+      "log_name": "2021.06.08.14.57.07_veh-47_00890_01000",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_00890_01000.db",
+      "scenario_name": "b656ba63a07f5469",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 21,
+      "token": "13a8e3408b62568e",
+      "log_name": "2021.06.07.12.01.13_veh-47_02509_02927",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.12.01.13_veh-47_02509_02927.db",
+      "scenario_name": "13a8e3408b62568e",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 468,
+      "token": "f8ffea31c5095498",
+      "log_name": "2021.06.08.17.29.54_veh-16_03080_03206",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.29.54_veh-16_03080_03206.db",
+      "scenario_name": "f8ffea31c5095498",
+      "scenario_type": "near_high_speed_vehicle"
+    },
+    {
+      "index": 261,
+      "token": "43995776c29e5026",
+      "log_name": "2021.06.08.12.00.19_veh-35_05593_05747",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_05593_05747.db",
+      "scenario_name": "43995776c29e5026",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 272,
+      "token": "e3042e29a2985880",
+      "log_name": "2021.06.08.12.54.54_veh-26_00594_00722",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.54.54_veh-26_00594_00722.db",
+      "scenario_name": "e3042e29a2985880",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 229,
+      "token": "827aedf28b915bf5",
+      "log_name": "2021.06.07.19.51.52_veh-47_00275_00338",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.19.51.52_veh-47_00275_00338.db",
+      "scenario_name": "827aedf28b915bf5",
+      "scenario_type": "near_long_vehicle"
+    },
+    {
+      "index": 172,
+      "token": "de875ce032b85952",
+      "log_name": "2021.06.07.17.49.04_veh-47_04546_04650",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.17.49.04_veh-47_04546_04650.db",
+      "scenario_name": "de875ce032b85952",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 486,
+      "token": "9ccf6b13fa7d55a1",
+      "log_name": "2021.06.08.17.36.50_veh-26_01807_02223",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_01807_02223.db",
+      "scenario_name": "9ccf6b13fa7d55a1",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 65,
+      "token": "8eb0d2b7049b567e",
+      "log_name": "2021.06.07.13.42.27_veh-47_00077_00282",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_00077_00282.db",
+      "scenario_name": "8eb0d2b7049b567e",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 360,
+      "token": "2b86db5d4ab45fdb",
+      "log_name": "2021.06.08.14.35.24_veh-26_00594_00813",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_00594_00813.db",
+      "scenario_name": "2b86db5d4ab45fdb",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 415,
+      "token": "f947998bd9175c09",
+      "log_name": "2021.06.08.16.31.33_veh-38_00553_00703",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.16.31.33_veh-38_00553_00703.db",
+      "scenario_name": "f947998bd9175c09",
+      "scenario_type": "near_pedestrian_at_pickup_dropoff"
+    },
+    {
+      "index": 259,
+      "token": "7cdc5e273bc95a26",
+      "log_name": "2021.06.08.12.00.19_veh-35_04736_05224",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04736_05224.db",
+      "scenario_name": "7cdc5e273bc95a26",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 363,
+      "token": "d2ed809e39da55b4",
+      "log_name": "2021.06.08.14.35.24_veh-26_01356_01914",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.35.24_veh-26_01356_01914.db",
+      "scenario_name": "d2ed809e39da55b4",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 87,
+      "token": "3a52cbbced2c51d5",
+      "log_name": "2021.06.07.13.42.27_veh-47_03769_03851",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03769_03851.db",
+      "scenario_name": "3a52cbbced2c51d5",
+      "scenario_type": "stationary"
+    },
+    {
+      "index": 256,
+      "token": "1fbb2728c84552ba",
+      "log_name": "2021.06.08.12.00.19_veh-35_04110_04230",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_04110_04230.db",
+      "scenario_name": "1fbb2728c84552ba",
+      "scenario_type": "on_stopline_traffic_light"
+    },
+    {
+      "index": 264,
+      "token": "da4fbf80bd1651ee",
+      "log_name": "2021.06.08.12.10.22_veh-38_00505_00600",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.10.22_veh-38_00505_00600.db",
+      "scenario_name": "da4fbf80bd1651ee",
+      "scenario_type": "low_magnitude_speed"
+    },
+    {
+      "index": 346,
+      "token": "8fc0cd67f43a5845",
+      "log_name": "2021.06.08.14.14.51_veh-35_02930_03199",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.14.51_veh-35_02930_03199.db",
+      "scenario_name": "8fc0cd67f43a5845",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 324,
+      "token": "e64bfb5f72dc546c",
+      "log_name": "2021.06.08.13.23.30_veh-16_02978_03089",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_02978_03089.db",
+      "scenario_name": "e64bfb5f72dc546c",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 246,
+      "token": "b0063a61af63566a",
+      "log_name": "2021.06.08.12.00.19_veh-35_02135_02369",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.12.00.19_veh-35_02135_02369.db",
+      "scenario_name": "b0063a61af63566a",
+      "scenario_type": "on_pickup_dropoff"
+    },
+    {
+      "index": 494,
+      "token": "dadbff14c9565d54",
+      "log_name": "2021.06.08.17.36.50_veh-26_04330_04911",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.17.36.50_veh-26_04330_04911.db",
+      "scenario_name": "dadbff14c9565d54",
+      "scenario_type": "medium_magnitude_speed"
+    },
+    {
+      "index": 397,
+      "token": "236b4c1965595afb",
+      "log_name": "2021.06.08.14.57.07_veh-47_02472_02661",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.14.57.07_veh-47_02472_02661.db",
+      "scenario_name": "236b4c1965595afb",
+      "scenario_type": "on_stopline_traffic_light"
+    },
+    {
+      "index": 332,
+      "token": "98752342ab525c72",
+      "log_name": "2021.06.08.13.23.30_veh-16_04469_04582",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.08.13.23.30_veh-16_04469_04582.db",
+      "scenario_name": "98752342ab525c72",
+      "scenario_type": "high_magnitude_speed"
+    },
+    {
+      "index": 83,
+      "token": "104f7d7cb5145ec3",
+      "log_name": "2021.06.07.13.42.27_veh-47_03352_03437",
+      "db_file": "/mnt/datasets/e2e-nuplan/20260302/val/2021.06.07.13.42.27_veh-47_03352_03437.db",
+      "scenario_name": "104f7d7cb5145ec3",
+      "scenario_type": "low_magnitude_speed"
+    }
+  ]
+}

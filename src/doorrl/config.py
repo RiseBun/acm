@@ -27,6 +27,15 @@ class ModelConfig:
     # 16-slot variants in the fair Stage 0 comparison.
     top_k_dyn: int = 12
     top_k_rel: int = 4
+    # DOOR+ uncertainty-aware relation selection. These dimensions live in the
+    # reserved part of the 40-D raw token. Existing datasets leave them at zero;
+    # the model treats zero confidence as "unspecified" and falls back to 1.0.
+    relation_confidence_dim: int = 15
+    relation_uncertainty_dim: int = 16
+    relation_confidence_gamma: float = 1.0
+    relation_confidence_score_weight: float = 2.0
+    relation_uncertainty_score_weight: float = 1.0
+    relation_min_confidence: float = 0.05
 
 
 @dataclass

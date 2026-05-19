@@ -1,0 +1,16 @@
+{
+  "dyn_rollout_mse": 0.04598394166276596,
+  "dyn_rollout_std": 0.02203289100776583,
+  "action_mse": 0.24206377100116766,
+  "action_mse_std": 0.39212190526007773,
+  "collision_f1": 0.9356885611387413,
+  "collision_precision": 0.9432918395573997,
+  "collision_recall": 0.9282068730860837,
+  "collision_accuracy": 0.933404368673415,
+  "collision_base_rate_pos": 0.521932161250222,
+  "rare_ade": 0.3155355492687374,
+  "rare_ade_count": 14464,
+  "interaction_recall_at_1m": 1.0,
+  "interaction_total": 9233,
+  "interaction_hit": 9233
+}

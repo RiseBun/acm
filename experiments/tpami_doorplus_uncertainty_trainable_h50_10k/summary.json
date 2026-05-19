@@ -1,0 +1,261 @@
+{
+  "note": "post-hoc DOOR+ uncertainty gating; no retraining",
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage1_root": "experiments/nuplan_stage1_doorplus_uncertainty_50k_lr5e4",
+    "output_dir": "experiments/tpami_doorplus_uncertainty_trainable_h50_10k",
+    "seeds": [
+      7,
+      42,
+      123
+    ],
+    "conditions": [
+      "doorplus_uncertainty"
+    ],
+    "corruptions": [
+      "clean",
+      "relfp0.2"
+    ],
+    "batch_size": 128,
+    "loader_workers": 8,
+    "horizon": 50,
+    "max_val_samples": 10000,
+    "fp_confidence": 0.05,
+    "safe_ttc": 10.0
+  },
+  "summary": {
+    "doorplus_uncertainty": {
+      "clean": {
+        "mean": {
+          "teacher_action_mse": 6.839179515838623,
+          "teacher_action_delta_l2": 2.3662993907928467,
+          "latent_return_mean": 143.91343688964844,
+          "imagined_collision_rate": 0.9529333114624023,
+          "collision_mean": 0.9051206111907959,
+          "collision_step_mean": 0.018381208181381226,
+          "rollout_stability": 0.009960432536900043,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.2429441660642624,
+          "teacher_action_delta_l2": 0.21300095319747925,
+          "latent_return_mean": 34.885154724121094,
+          "imagined_collision_rate": 0.012950806878507137,
+          "collision_mean": 0.014551944099366665,
+          "collision_step_mean": 0.00041158893145620823,
+          "rollout_stability": 0.00149589276406914,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 10000,
+            "teacher_action_mse": 7.0742506980896,
+            "teacher_action_delta_l2": 2.491549253463745,
+            "latent_return_mean": 183.95431518554688,
+            "latent_return_std": 36.69001388549805,
+            "imagined_collision_rate": 0.944100022315979,
+            "collision_mean": 0.8908120393753052,
+            "collision_step_mean": 0.017999397590756416,
+            "rollout_stability": 0.009399203583598137,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0
+          },
+          {
+            "seed": 42,
+            "n_samples": 10000,
+            "teacher_action_mse": 6.854225158691406,
+            "teacher_action_delta_l2": 2.486987590789795,
+            "latent_return_mean": 127.7034912109375,
+            "latent_return_std": 123.05319213867188,
+            "imagined_collision_rate": 0.9469000101089478,
+            "collision_mean": 0.9046455025672913,
+            "collision_step_mean": 0.0183270163834095,
+            "rollout_stability": 0.0116557776927948,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0
+          },
+          {
+            "seed": 123,
+            "n_samples": 10000,
+            "teacher_action_mse": 6.589061737060547,
+            "teacher_action_delta_l2": 2.120361089706421,
+            "latent_return_mean": 120.0824966430664,
+            "latent_return_std": 31.78417205810547,
+            "imagined_collision_rate": 0.9678000211715698,
+            "collision_mean": 0.9199042916297913,
+            "collision_step_mean": 0.018817206844687462,
+            "rollout_stability": 0.008826317265629768,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0
+          }
+        ]
+      },
+      "relfp0.2": {
+        "mean": {
+          "teacher_action_mse": 6.814948558807373,
+          "teacher_action_delta_l2": 2.3178718090057373,
+          "latent_return_mean": 144.0271453857422,
+          "imagined_collision_rate": 0.9670000076293945,
+          "collision_mean": 0.916283905506134,
+          "collision_step_mean": 0.018563559278845787,
+          "rollout_stability": 0.009952940046787262,
+          "selected_fp_rel_at_k": 0.007258333265781403,
+          "fp_rel_density_per_k": 0.5560333132743835
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.22633759677410126,
+          "teacher_action_delta_l2": 0.18370671570301056,
+          "latent_return_mean": 35.501625061035156,
+          "imagined_collision_rate": 0.00821644440293312,
+          "collision_mean": 0.013862363994121552,
+          "collision_step_mean": 0.000294392928481102,
+          "rollout_stability": 0.0014919176464900374,
+          "selected_fp_rel_at_k": 0.0003752775664906949,
+          "fp_rel_density_per_k": 0.0035911514423787594
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 10000,
+            "teacher_action_mse": 7.043673515319824,
+            "teacher_action_delta_l2": 2.391268253326416,
+            "latent_return_mean": 184.8680877685547,
+            "latent_return_std": 36.41534423828125,
+            "imagined_collision_rate": 0.9599000215530396,
+            "collision_mean": 0.9015223383903503,
+            "collision_step_mean": 0.018266020342707634,
+            "rollout_stability": 0.009385171346366405,
+            "selected_fp_rel_at_k": 0.006825000047683716,
+            "fp_rel_density_per_k": 0.5587999820709229
+          },
+          {
+            "seed": 42,
+            "n_samples": 10000,
+            "teacher_action_mse": 6.810095310211182,
+            "teacher_action_delta_l2": 2.453533172607422,
+            "latent_return_mean": 126.6690902709961,
+            "latent_return_std": 124.01278686523438,
+            "imagined_collision_rate": 0.9650999903678894,
+            "collision_mean": 0.918303906917572,
+            "collision_step_mean": 0.018569957464933395,
+            "rollout_stability": 0.011645386926829815,
+            "selected_fp_rel_at_k": 0.007474999874830246,
+            "fp_rel_density_per_k": 0.5519750118255615
+          },
+          {
+            "seed": 123,
+            "n_samples": 10000,
+            "teacher_action_mse": 6.591076374053955,
+            "teacher_action_delta_l2": 2.108813762664795,
+            "latent_return_mean": 120.54425048828125,
+            "latent_return_std": 31.6087646484375,
+            "imagined_collision_rate": 0.9760000109672546,
+            "collision_mean": 0.929025411605835,
+            "collision_step_mean": 0.01885470189154148,
+            "rollout_stability": 0.00882826279848814,
+            "selected_fp_rel_at_k": 0.007474999874830246,
+            "fp_rel_density_per_k": 0.557325005531311
+          }
+        ]
+      }
+    }
+  },
+  "raw": {
+    "doorplus_uncertainty": {
+      "clean": {
+        "7": {
+          "seed": 7,
+          "n_samples": 10000,
+          "teacher_action_mse": 7.0742506980896,
+          "teacher_action_delta_l2": 2.491549253463745,
+          "latent_return_mean": 183.95431518554688,
+          "latent_return_std": 36.69001388549805,
+          "imagined_collision_rate": 0.944100022315979,
+          "collision_mean": 0.8908120393753052,
+          "collision_step_mean": 0.017999397590756416,
+          "rollout_stability": 0.009399203583598137,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "42": {
+          "seed": 42,
+          "n_samples": 10000,
+          "teacher_action_mse": 6.854225158691406,
+          "teacher_action_delta_l2": 2.486987590789795,
+          "latent_return_mean": 127.7034912109375,
+          "latent_return_std": 123.05319213867188,
+          "imagined_collision_rate": 0.9469000101089478,
+          "collision_mean": 0.9046455025672913,
+          "collision_step_mean": 0.0183270163834095,
+          "rollout_stability": 0.0116557776927948,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        },
+        "123": {
+          "seed": 123,
+          "n_samples": 10000,
+          "teacher_action_mse": 6.589061737060547,
+          "teacher_action_delta_l2": 2.120361089706421,
+          "latent_return_mean": 120.0824966430664,
+          "latent_return_std": 31.78417205810547,
+          "imagined_collision_rate": 0.9678000211715698,
+          "collision_mean": 0.9199042916297913,
+          "collision_step_mean": 0.018817206844687462,
+          "rollout_stability": 0.008826317265629768,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0
+        }
+      },
+      "relfp0.2": {
+        "7": {
+          "seed": 7,
+          "n_samples": 10000,
+          "teacher_action_mse": 7.043673515319824,
+          "teacher_action_delta_l2": 2.391268253326416,
+          "latent_return_mean": 184.8680877685547,
+          "latent_return_std": 36.41534423828125,
+          "imagined_collision_rate": 0.9599000215530396,
+          "collision_mean": 0.9015223383903503,
+          "collision_step_mean": 0.018266020342707634,
+          "rollout_stability": 0.009385171346366405,
+          "selected_fp_rel_at_k": 0.006825000047683716,
+          "fp_rel_density_per_k": 0.5587999820709229
+        },
+        "42": {
+          "seed": 42,
+          "n_samples": 10000,
+          "teacher_action_mse": 6.810095310211182,
+          "teacher_action_delta_l2": 2.453533172607422,
+          "latent_return_mean": 126.6690902709961,
+          "latent_return_std": 124.01278686523438,
+          "imagined_collision_rate": 0.9650999903678894,
+          "collision_mean": 0.918303906917572,
+          "collision_step_mean": 0.018569957464933395,
+          "rollout_stability": 0.011645386926829815,
+          "selected_fp_rel_at_k": 0.007474999874830246,
+          "fp_rel_density_per_k": 0.5519750118255615
+        },
+        "123": {
+          "seed": 123,
+          "n_samples": 10000,
+          "teacher_action_mse": 6.591076374053955,
+          "teacher_action_delta_l2": 2.108813762664795,
+          "latent_return_mean": 120.54425048828125,
+          "latent_return_std": 31.6087646484375,
+          "imagined_collision_rate": 0.9760000109672546,
+          "collision_mean": 0.929025411605835,
+          "collision_step_mean": 0.01885470189154148,
+          "rollout_stability": 0.00882826279848814,
+          "selected_fp_rel_at_k": 0.007474999874830246,
+          "fp_rel_density_per_k": 0.557325005531311
+        }
+      }
+    }
+  }
+}

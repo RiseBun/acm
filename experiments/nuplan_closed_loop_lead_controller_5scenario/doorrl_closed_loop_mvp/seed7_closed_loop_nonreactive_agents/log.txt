@@ -1,0 +1,199 @@
+2026-04-26 15:57:05,224 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:19}  Building WorkerPool...
+2026-04-26 15:57:05,225 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:101}  Worker: SingleMachineParallelExecutor
+2026-04-26 15:57:05,225 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:102}  Number of nodes: 1
+Number of CPUs per node: 192
+Number of GPUs per node: 0
+Number of threads across all nodes: 192
+2026-04-26 15:57:05,225 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:27}  Building WorkerPool...DONE!
+2026-04-26 15:57:05,225 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:32}  Building experiment folders...
+2026-04-26 15:57:05,225 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:35}  
+
+	Folder where all results are stored: experiments/nuplan_closed_loop_lead_controller_5scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents
+
+2026-04-26 15:57:05,273 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:70}  Building experiment folders...DONE!
+2026-04-26 15:57:05,273 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:52}  Building AbstractCallback...
+2026-04-26 15:57:05,274 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:68}  Building AbstractCallback: 0...DONE!
+2026-04-26 15:57:05,274 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:47}  Building simulations...
+2026-04-26 15:57:05,274 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:53}  Extracting scenarios...
+2026-04-26 15:57:05,274 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/common/utils/distributed_scenario_filter.py:83}  Building Scenarios in mode DistributedMode.SINGLE_NODE
+2026-04-26 15:57:05,274 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:18}  Building AbstractScenarioBuilder...
+2026-04-26 15:57:05,289 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:21}  Building AbstractScenarioBuilder...DONE!
+2026-04-26 15:57:05,289 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:35}  Building ScenarioFilter...
+2026-04-26 15:57:05,290 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:44}  Building ScenarioFilter...DONE!
+2026-04-26 15:57:05,534 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:74}  Building metric engines...
+2026-04-26 15:57:05,614 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:76}  Building metric engines...DONE
+2026-04-26 15:57:05,614 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:80}  Building simulations from 5 scenarios...
+2026-04-26 15:57:17,067 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:133}  Building simulations...DONE!
+2026-04-26 15:57:17,067 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/run_simulation.py:78}  Running simulation...
+2026-04-26 15:57:17,067 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:138}  Executing runners...
+2026-04-26 15:57:17,067 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:82}  Starting 10 simulations using SingleMachineParallelExecutor!
+2026-04-26 16:06:31,891 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running speed_limit_compliance with error: 
+2026-04-26 16:06:31,907 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-26 16:06:31,909 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-26 16:06:31,909 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 693ca17ec8b251d7]
+
+2026-04-26 16:06:31,909 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-26 16:06:33,704 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running speed_limit_compliance with error: 
+2026-04-26 16:06:33,705 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-26 16:06:33,705 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-26 16:06:33,705 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 336d83c2bf6e5efd]
+
+2026-04-26 16:06:33,705 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-26 16:06:34,896 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running speed_limit_compliance with error: 
+2026-04-26 16:06:34,896 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-26 16:06:34,896 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-26 16:06:34,896 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 336d83c2bf6e5efd]
+
+2026-04-26 16:06:34,896 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-26 16:06:40,030 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running speed_limit_compliance with error: 
+2026-04-26 16:06:40,030 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-26 16:06:40,031 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-26 16:06:40,031 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 693ca17ec8b251d7]
+
+2026-04-26 16:06:40,031 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-26 16:06:44,383 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/speed_limit_compliance.py", line 218, in compute
+    time_series = TimeSeries(
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-26 16:06:44,383 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/speed_limit_compliance.py", line 218, in compute
+    time_series = TimeSeries(
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-26 16:06:44,383 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/speed_limit_compliance.py", line 218, in compute
+    time_series = TimeSeries(
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-26 16:06:44,383 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/speed_limit_compliance.py", line 218, in compute
+    time_series = TimeSeries(
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-26 16:06:44,383 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:127}  Number of successful simulations: 6
+2026-04-26 16:06:44,384 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:128}  Number of failed simulations: 4
+2026-04-26 16:06:44,384 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:132}  Failed simulations [log, token]:
+[2021.06.07.11.59.52_veh-35_00008_00083, 336d83c2bf6e5efd] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 336d83c2bf6e5efd] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 693ca17ec8b251d7] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 693ca17ec8b251d7] 
+
+2026-04-26 16:06:44,384 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:147}  Finished executing runners!
+2026-04-26 16:06:44,539 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:74}  Saved runner reports to experiments/nuplan_closed_loop_lead_controller_5scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents/runner_report.parquet
+2026-04-26 16:06:44,540 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/time_callback.py:27}  Simulation duration: 00:09:39 [HH:MM:SS]
+2026-04-26 16:06:46,126 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_file_callback.py:79}  Metric files integration: 00:00:01 [HH:MM:SS]
+2026-04-26 16:06:46,449 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_aggregator_callback.py:58}  Running metric aggregator: closed_loop_nonreactive_agents_weighted_average
+2026-04-26 16:06:46,505 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_aggregator_callback.py:69}  Metric aggregator: 00:00:00 [HH:MM:SS]

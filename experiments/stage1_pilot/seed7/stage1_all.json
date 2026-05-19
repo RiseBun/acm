@@ -1,0 +1,47 @@
+{
+  "bc": {
+    "condition": "bc",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 14.303756713867188,
+      "latent_return_std": 17.81537628173828,
+      "imagined_collision_rate": 0.5353966355323792,
+      "collision_mean": 0.5290557146072388,
+      "rollout_stability": 0.09157101809978485,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": NaN,
+      "latent_return_std": NaN,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": NaN,
+      "rollout_stability": NaN,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": NaN,
+      "latent_return_std": NaN,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": NaN,
+      "rollout_stability": NaN,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  }
+}

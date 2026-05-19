@@ -1,0 +1,170 @@
+{
+  "note": "post-hoc DOOR+ uncertainty gating; no retraining",
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage1_root": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_stage1_clean_k_scaling_seed7/K64",
+    "output_dir": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_doorplus_proxy_confidence_seed7/doorplus_normal",
+    "seeds": [
+      7
+    ],
+    "conditions": [
+      "doorplus_uncertainty"
+    ],
+    "corruptions": [
+      "clean",
+      "relfp0.2"
+    ],
+    "batch_size": 128,
+    "loader_workers": 4,
+    "horizon": 10,
+    "max_val_samples": 1000,
+    "fp_confidence": 0.05,
+    "safe_ttc": 10.0,
+    "true_risk_threshold": 0.5,
+    "true_ttc_threshold": 3.0,
+    "confidence_mode": "normal"
+  },
+  "summary": {
+    "doorplus_uncertainty": {
+      "clean": {
+        "mean": {
+          "teacher_action_mse": 7.109123229980469,
+          "teacher_action_delta_l2": 2.2671780586242676,
+          "latent_return_mean": -2.8238441944122314,
+          "imagined_collision_rate": 0.4880000054836273,
+          "collision_mean": 0.521083414554596,
+          "collision_step_mean": 0.1768089234828949,
+          "rollout_stability": 0.06243289262056351,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0,
+          "selected_true_risk_rel_at_k": 0.01425000000745058,
+          "true_risk_rel_density_per_k": 0.16224999725818634
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0,
+          "selected_true_risk_rel_at_k": 0.0,
+          "true_risk_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 1000,
+            "teacher_action_mse": 7.109123229980469,
+            "teacher_action_delta_l2": 2.2671780586242676,
+            "latent_return_mean": -2.8238441944122314,
+            "latent_return_std": 13.899964332580566,
+            "imagined_collision_rate": 0.4880000054836273,
+            "collision_mean": 0.521083414554596,
+            "collision_step_mean": 0.1768089234828949,
+            "rollout_stability": 0.06243289262056351,
+            "selected_fp_rel_at_k": 0.0,
+            "fp_rel_density_per_k": 0.0,
+            "selected_true_risk_rel_at_k": 0.01425000000745058,
+            "true_risk_rel_density_per_k": 0.16224999725818634,
+            "confidence_mode": "normal"
+          }
+        ]
+      },
+      "relfp0.2": {
+        "mean": {
+          "teacher_action_mse": 7.193568229675293,
+          "teacher_action_delta_l2": 2.2825815677642822,
+          "latent_return_mean": -2.705576181411743,
+          "imagined_collision_rate": 0.4880000054836273,
+          "collision_mean": 0.5261366367340088,
+          "collision_step_mean": 0.17424674332141876,
+          "rollout_stability": 0.06286286562681198,
+          "selected_fp_rel_at_k": 0.006500000134110451,
+          "fp_rel_density_per_k": 0.5687500238418579,
+          "selected_true_risk_rel_at_k": 0.017500000074505806,
+          "true_risk_rel_density_per_k": 0.12999999523162842
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.0,
+          "teacher_action_delta_l2": 0.0,
+          "latent_return_mean": 0.0,
+          "imagined_collision_rate": 0.0,
+          "collision_mean": 0.0,
+          "collision_step_mean": 0.0,
+          "rollout_stability": 0.0,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0,
+          "selected_true_risk_rel_at_k": 0.0,
+          "true_risk_rel_density_per_k": 0.0
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 1000,
+            "teacher_action_mse": 7.193568229675293,
+            "teacher_action_delta_l2": 2.2825815677642822,
+            "latent_return_mean": -2.705576181411743,
+            "latent_return_std": 13.624370574951172,
+            "imagined_collision_rate": 0.4880000054836273,
+            "collision_mean": 0.5261366367340088,
+            "collision_step_mean": 0.17424674332141876,
+            "rollout_stability": 0.06286286562681198,
+            "selected_fp_rel_at_k": 0.006500000134110451,
+            "fp_rel_density_per_k": 0.5687500238418579,
+            "selected_true_risk_rel_at_k": 0.017500000074505806,
+            "true_risk_rel_density_per_k": 0.12999999523162842,
+            "confidence_mode": "normal"
+          }
+        ]
+      }
+    }
+  },
+  "raw": {
+    "doorplus_uncertainty": {
+      "clean": {
+        "7": {
+          "seed": 7,
+          "n_samples": 1000,
+          "teacher_action_mse": 7.109123229980469,
+          "teacher_action_delta_l2": 2.2671780586242676,
+          "latent_return_mean": -2.8238441944122314,
+          "latent_return_std": 13.899964332580566,
+          "imagined_collision_rate": 0.4880000054836273,
+          "collision_mean": 0.521083414554596,
+          "collision_step_mean": 0.1768089234828949,
+          "rollout_stability": 0.06243289262056351,
+          "selected_fp_rel_at_k": 0.0,
+          "fp_rel_density_per_k": 0.0,
+          "selected_true_risk_rel_at_k": 0.01425000000745058,
+          "true_risk_rel_density_per_k": 0.16224999725818634,
+          "confidence_mode": "normal"
+        }
+      },
+      "relfp0.2": {
+        "7": {
+          "seed": 7,
+          "n_samples": 1000,
+          "teacher_action_mse": 7.193568229675293,
+          "teacher_action_delta_l2": 2.2825815677642822,
+          "latent_return_mean": -2.705576181411743,
+          "latent_return_std": 13.624370574951172,
+          "imagined_collision_rate": 0.4880000054836273,
+          "collision_mean": 0.5261366367340088,
+          "collision_step_mean": 0.17424674332141876,
+          "rollout_stability": 0.06286286562681198,
+          "selected_fp_rel_at_k": 0.006500000134110451,
+          "fp_rel_density_per_k": 0.5687500238418579,
+          "selected_true_risk_rel_at_k": 0.017500000074505806,
+          "true_risk_rel_density_per_k": 0.12999999523162842,
+          "confidence_mode": "normal"
+        }
+      }
+    }
+  }
+}

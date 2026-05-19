@@ -1,0 +1,246 @@
+{
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "output_dir": "experiments/dataset_token_stats",
+    "seed": 7,
+    "batch_size": 256,
+    "loader_workers": 16,
+    "nuscenes_root": "/mnt/datasets/e2e-nuscenes/20260302",
+    "nuscenes_num_scenes": 700,
+    "token_cache_dir": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/_token_cache",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "max_samples": 0
+  },
+  "nuscenes": {
+    "dataset": "nuscenes",
+    "n_samples": 28096,
+    "expected_samples": 28096,
+    "metrics": {
+      "dynamic_tokens_per_sample": {
+        "mean": 9.715084075927734,
+        "std": 3.846559762954712,
+        "p50": 12.0,
+        "p90": 13.0
+      },
+      "vehicle_tokens_per_sample": {
+        "mean": 6.276018142700195,
+        "std": 3.783754587173462,
+        "p50": 6.0,
+        "p90": 11.0
+      },
+      "pedestrian_tokens_per_sample": {
+        "mean": 2.2243380546569824,
+        "std": 2.78994083404541,
+        "p50": 1.0,
+        "p90": 6.0
+      },
+      "cyclist_tokens_per_sample": {
+        "mean": 0.21472807228565216,
+        "std": 0.5968281030654907,
+        "p50": 0.0,
+        "p90": 1.0
+      },
+      "rare_tokens_per_sample": {
+        "mean": 2.439066171646118,
+        "std": 2.9057796001434326,
+        "p50": 1.0,
+        "p90": 7.0
+      },
+      "map_tokens_per_sample": {
+        "mean": 9.439635276794434,
+        "std": 13.496474266052246,
+        "p50": 2.0,
+        "p90": 35.0
+      },
+      "relation_tokens_per_sample": {
+        "mean": 11.318159103393555,
+        "std": 2.117722272872925,
+        "p50": 12.0,
+        "p90": 12.0
+      },
+      "visibility_dynamic": {
+        "mean": 0.745556116104126,
+        "std": 0.2654717266559601,
+        "p50": 0.8999999761581421,
+        "p90": 1.0
+      },
+      "visibility_all_valid": {
+        "mean": 0.798920214176178,
+        "std": 0.25352901220321655,
+        "p50": 0.8999999761581421,
+        "p90": 1.0
+      },
+      "relation_ttc": {
+        "mean": 15.363129615783691,
+        "std": 7.209838390350342,
+        "p50": 20.0,
+        "p90": 20.0
+      },
+      "relation_lane_conflict": {
+        "mean": 0.11141370236873627,
+        "std": 0.3146442472934723,
+        "p50": 0.0,
+        "p90": 1.0
+      },
+      "relation_priority": {
+        "mean": 0.6128753423690796,
+        "std": 0.12753112614154816,
+        "p50": 0.6000000238418579,
+        "p90": 0.800000011920929
+      },
+      "teacher_action_l2": {
+        "mean": 0.5388349890708923,
+        "std": 0.6317568421363831,
+        "p50": 0.3511260449886322,
+        "p90": 1.182795524597168
+      },
+      "teacher_action_abs_dim0": {
+        "mean": 0.5380587577819824,
+        "std": 0.6319327354431152,
+        "p50": 0.35072213411331177,
+        "p90": 1.182320237159729
+      },
+      "teacher_action_abs_dim1": {
+        "mean": 0.009010168723762035,
+        "std": 0.023076504468917847,
+        "p50": 0.001704601338133216,
+        "p90": 0.026090480387210846
+      },
+      "ego_next_displacement": {
+        "mean": 0.0,
+        "std": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "dynamic_next_displacement": {
+        "mean": 0.0,
+        "std": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "interactive_dynamic_tokens_per_sample": {
+        "mean": 0.0,
+        "std": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      }
+    }
+  },
+  "nuplan_50k": {
+    "dataset": "nuplan_50k",
+    "n_samples": 50000,
+    "expected_samples": 50000,
+    "metrics": {
+      "dynamic_tokens_per_sample": {
+        "mean": 12.16372013092041,
+        "std": 2.4573638439178467,
+        "p50": 13.0,
+        "p90": 13.0
+      },
+      "vehicle_tokens_per_sample": {
+        "mean": 7.2301201820373535,
+        "std": 3.7211451530456543,
+        "p50": 8.0,
+        "p90": 12.0
+      },
+      "pedestrian_tokens_per_sample": {
+        "mean": 3.8330800533294678,
+        "std": 3.486961603164673,
+        "p50": 3.0,
+        "p90": 9.0
+      },
+      "cyclist_tokens_per_sample": {
+        "mean": 0.10051999986171722,
+        "std": 0.3755243718624115,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "rare_tokens_per_sample": {
+        "mean": 3.9335999488830566,
+        "std": 3.4904778003692627,
+        "p50": 3.0,
+        "p90": 9.0
+      },
+      "map_tokens_per_sample": {
+        "mean": 31.76818084716797,
+        "std": 2.3628692626953125,
+        "p50": 32.0,
+        "p90": 32.0
+      },
+      "relation_tokens_per_sample": {
+        "mean": 11.16372013092041,
+        "std": 2.4573638439178467,
+        "p50": 12.0,
+        "p90": 12.0
+      },
+      "visibility_dynamic": {
+        "mean": 1.0,
+        "std": 0.0,
+        "p50": 1.0,
+        "p90": 1.0
+      },
+      "visibility_all_valid": {
+        "mean": 1.0,
+        "std": 0.0,
+        "p50": 1.0,
+        "p90": 1.0
+      },
+      "relation_ttc": {
+        "mean": 16.727210998535156,
+        "std": 6.123991966247559,
+        "p50": 20.0,
+        "p90": 20.0
+      },
+      "relation_lane_conflict": {
+        "mean": 0.11617811769247055,
+        "std": 0.3204386830329895,
+        "p50": 0.0,
+        "p90": 1.0
+      },
+      "relation_priority": {
+        "mean": 0.5,
+        "std": 0.0,
+        "p50": 0.5,
+        "p90": 0.5
+      },
+      "teacher_action_l2": {
+        "mean": 3.419881582260132,
+        "std": 4.178121566772461,
+        "p50": 1.0599455833435059,
+        "p90": 10.274887084960938
+      },
+      "teacher_action_abs_dim0": {
+        "mean": 3.4191253185272217,
+        "std": 4.178129196166992,
+        "p50": 1.0567688941955566,
+        "p90": 10.274886131286621
+      },
+      "teacher_action_abs_dim1": {
+        "mean": 0.02448028139770031,
+        "std": 0.06712660193443298,
+        "p50": 0.0010377985890954733,
+        "p90": 0.07313928753137589
+      },
+      "ego_next_displacement": {
+        "mean": 0.3419393002986908,
+        "std": 0.41780149936676025,
+        "p50": 0.10572129487991333,
+        "p90": 1.027492642402649
+      },
+      "dynamic_next_displacement": {
+        "mean": 0.028111407533288002,
+        "std": 0.152225524187088,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "interactive_dynamic_tokens_per_sample": {
+        "mean": 0.0,
+        "std": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      }
+    }
+  }
+}

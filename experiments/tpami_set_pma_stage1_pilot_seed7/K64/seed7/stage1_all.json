@@ -1,0 +1,18 @@
+{
+  "wm_set_pma": {
+    "condition": "wm_set_pma",
+    "variant": "set_transformer_pma",
+    "seed": 7,
+    "horizon": 10,
+    "metrics": {
+      "latent_return_mean": -15.059342384338379,
+      "latent_return_std": 25.415016174316406,
+      "imagined_collision_rate": 0.29500001668930054,
+      "collision_mean": 0.3750641644001007,
+      "rollout_stability": 7.629394893626795e-09,
+      "rollout_stability_global": 9.715557247602646e-09,
+      "horizon": 10,
+      "n_samples": 1000
+    }
+  }
+}

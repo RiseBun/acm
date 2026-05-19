@@ -1,0 +1,163 @@
+{
+  "run_dir": "experiments/nuplan_closed_loop_smooth_safety_5scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents",
+  "n_planners": 1,
+  "planners": [
+    "doorrl_wm_decoupled_no_vis"
+  ],
+  "summary": {
+    "doorrl_wm_decoupled_no_vis": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 1.0,
+      "drivable_area_compliance": 1.0,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.16371231786424403,
+      "ego_is_comfortable": 1.0,
+      "time_to_collision_within_bound": 1.0,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.0
+    }
+  },
+  "runner_report": [
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.543559213,
+      "end_time": 5282206.733411264,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1388.1898520505056
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.54372587,
+      "end_time": 5282246.58940373,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1428.0456778602675
+    },
+    {
+      "succeeded": false,
+      "error_message": "Traceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 112, in compute_metric_results\n    metric_results[metric.name] = metric.compute(history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py\", line 177, in compute\n    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)\n  File \"<string>\", line 7, in __init__\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py\", line 127, in __post_init__\n    assert len(self.time_stamps) == len(self.values)\nAssertionError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py\", line 27, in run_simulation\n    return sim_runner.run()\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py\", line 128, in run\n    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py\", line 68, in on_simulation_end\n    callback.on_simulation_end(setup, planner, history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 102, in on_simulation_end\n    run_metric_engine(\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 24, in run_metric_engine\n    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 133, in compute\n    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 119, in compute_metric_results\n    raise RuntimeError(f\"Metric Engine failed with: {e}\")\nRuntimeError: Metric Engine failed with: \n",
+      "start_time": 5280818.544439903,
+      "end_time": 5282342.588278924,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1524.0438390206546
+    },
+    {
+      "succeeded": false,
+      "error_message": "Traceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 112, in compute_metric_results\n    metric_results[metric.name] = metric.compute(history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py\", line 177, in compute\n    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)\n  File \"<string>\", line 7, in __init__\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py\", line 127, in __post_init__\n    assert len(self.time_stamps) == len(self.values)\nAssertionError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py\", line 27, in run_simulation\n    return sim_runner.run()\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py\", line 128, in run\n    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py\", line 68, in on_simulation_end\n    callback.on_simulation_end(setup, planner, history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 102, in on_simulation_end\n    run_metric_engine(\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 24, in run_metric_engine\n    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 133, in compute\n    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 119, in compute_metric_results\n    raise RuntimeError(f\"Metric Engine failed with: {e}\")\nRuntimeError: Metric Engine failed with: \n",
+      "start_time": 5280818.544695386,
+      "end_time": 5282341.788921335,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1523.244225949049
+    },
+    {
+      "succeeded": false,
+      "error_message": "Traceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 112, in compute_metric_results\n    metric_results[metric.name] = metric.compute(history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py\", line 177, in compute\n    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)\n  File \"<string>\", line 7, in __init__\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py\", line 127, in __post_init__\n    assert len(self.time_stamps) == len(self.values)\nAssertionError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py\", line 27, in run_simulation\n    return sim_runner.run()\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py\", line 128, in run\n    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py\", line 68, in on_simulation_end\n    callback.on_simulation_end(setup, planner, history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 102, in on_simulation_end\n    run_metric_engine(\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 24, in run_metric_engine\n    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 133, in compute\n    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 119, in compute_metric_results\n    raise RuntimeError(f\"Metric Engine failed with: {e}\")\nRuntimeError: Metric Engine failed with: \n",
+      "start_time": 5280818.544909363,
+      "end_time": 5282342.873630394,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1524.3287210315466
+    },
+    {
+      "succeeded": false,
+      "error_message": "Traceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 112, in compute_metric_results\n    metric_results[metric.name] = metric.compute(history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py\", line 177, in compute\n    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)\n  File \"<string>\", line 7, in __init__\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py\", line 127, in __post_init__\n    assert len(self.time_stamps) == len(self.values)\nAssertionError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py\", line 27, in run_simulation\n    return sim_runner.run()\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py\", line 128, in run\n    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py\", line 68, in on_simulation_end\n    callback.on_simulation_end(setup, planner, history)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 102, in on_simulation_end\n    run_metric_engine(\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py\", line 24, in run_metric_engine\n    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 133, in compute\n    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)\n  File \"/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py\", line 119, in compute_metric_results\n    raise RuntimeError(f\"Metric Engine failed with: {e}\")\nRuntimeError: Metric Engine failed with: \n",
+      "start_time": 5280818.5450901,
+      "end_time": 5282333.58119382,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1515.0361037198454
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.545262285,
+      "end_time": 5282141.983816504,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.5588551439641609,
+      "compute_trajectory_runtimes_median": 0.14454559795558453,
+      "compute_trajectory_runtimes_std": 5.503497201133042,
+      "planner_report": NaN,
+      "duration": 1323.4385542189702
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.545523669,
+      "end_time": 5282194.639604157,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1376.0940804881975
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.545760741,
+      "end_time": 5282175.511059057,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": NaN,
+      "compute_trajectory_runtimes_median": NaN,
+      "compute_trajectory_runtimes_std": NaN,
+      "planner_report": NaN,
+      "duration": 1356.9652983155102
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5280818.546535927,
+      "end_time": 5282171.832827101,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.4608882505389322,
+      "compute_trajectory_runtimes_median": 0.17233575880527496,
+      "compute_trajectory_runtimes_std": 4.866530204270973,
+      "planner_report": NaN,
+      "duration": 1353.2862911745906
+    }
+  ],
+  "note": "nuPlan official closed-loop nonreactive simulation MVP; small scenario counts are smoke tests, not final claims."
+}

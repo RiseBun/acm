@@ -17,6 +17,7 @@ from doorrl.models.encoder import TokenEncoder
 from doorrl.models.policy import ActorCriticHead
 from doorrl.models.world_model import ReactiveObjectRelationalWorldModel
 from doorrl.schema import SceneBatch, TokenType
+from doorrl.utils import batched_index_select, masked_mean
 
 
 class ModelVariant(str, Enum):
@@ -29,15 +30,18 @@ class ModelVariant(str, Enum):
       2. HOLISTIC_16SLOT    : 公平版整体表示. 用 ``top_k`` 个 learned queries 去
                               cross-attend 全部 token, 压缩成 top_k 个 slot
                               (默认 16), 与其他 16-slot variant 严格等 context.
-      3. OBJECT_ONLY        : 仅对象 token, 忽略关系 token, 在其上做 top-k 抽象.
-      4. OBJECT_RELATION    : 对象 + 关系 token + top-k 抽象 (标准 DOOR-RL).
+      3. SET_TRANSFORMER_PMA: 更强 compact compression baseline. 先对全部
+                              token 做 masked self-attention, 再用 top_k 个
+                              learnable seed 通过 PMA pooling 压缩成 slots.
+      4. OBJECT_ONLY        : 仅对象 token, 忽略关系 token, 在其上做 top-k 抽象.
+      5. OBJECT_RELATION    : 对象 + 关系 token + top-k 抽象 (标准 DOOR-RL).
                               在共享 16-slot 预算里同时容纳两类 token, 因此
                               relation 与 dynamic agent 互相竞争名额 ("naive
                               mixing"). Stage-0 表里出现的 dyn 槽位被 relation
                               挤掉的失败模式即来自这里.
-      5. OBJECT_RELATION_VISIBILITY
+      6. OBJECT_RELATION_VISIBILITY
                             : 在 OBJECT_RELATION 基础上对 latent 做可见性加权.
-      6. OBJECT_RELATION_DECOUPLED
+      7. OBJECT_RELATION_DECOUPLED
                             : *Route C* (decoupled / typed-budget abstraction).
                               两路独立 top-k:
                                 - dyn 路 K_dyn (默认 12) over EGO/VEHICLE/PED/CYCLIST
@@ -45,16 +49,21 @@ class ModelVariant(str, Enum):
                               拼接成 K_dyn+K_rel 个 slot 喂给 world model.
                               relation 不再与 dynamic agent 抢预算, 同时下游
                               context budget 仍与其他 16-slot variant 一致.
-      7. OBJECT_RELATION_DECOUPLED_VISIBILITY
+      8. OBJECT_RELATION_DECOUPLED_VISIBILITY
                             : DECOUPLED + 可见性加权 dynamic 路 latent.
+      9. OBJECT_RELATION_DECOUPLED_UNCERTAINTY
+                            : DOOR+ typed budgets + relation confidence/
+                              uncertainty gating for deployable FP suppression.
     """
     HOLISTIC = "holistic"
     HOLISTIC_16SLOT = "holistic_16slot"
+    SET_TRANSFORMER_PMA = "set_transformer_pma"
     OBJECT_ONLY = "object_only"
     OBJECT_RELATION = "object_relation"
     OBJECT_RELATION_VISIBILITY = "object_relation_visibility"
     OBJECT_RELATION_DECOUPLED = "object_relation_decoupled"
     OBJECT_RELATION_DECOUPLED_VISIBILITY = "object_relation_decoupled_visibility"
+    OBJECT_RELATION_DECOUPLED_UNCERTAINTY = "object_relation_decoupled_uncertainty"
 
 
 class DoorRLModelVariant(DoorRLModel):
@@ -79,6 +88,9 @@ class DoorRLModelVariant(DoorRLModel):
         elif variant == ModelVariant.HOLISTIC_16SLOT:
             # Fair holistic: 16 learned queries cross-attend 全部 token -> 16 slot
             self._setup_holistic_16slot_mode(config)
+        elif variant == ModelVariant.SET_TRANSFORMER_PMA:
+            # Strong compact compression: set self-attention + PMA slots.
+            self._setup_set_transformer_pma_mode(config)
         elif variant == ModelVariant.OBJECT_ONLY:
             # Object-only: 只使用对象token，忽略关系
             self._setup_object_only_mode()
@@ -93,6 +105,15 @@ class DoorRLModelVariant(DoorRLModel):
             self._setup_decoupled_mode(config, with_visibility=False)
         elif variant == ModelVariant.OBJECT_RELATION_DECOUPLED_VISIBILITY:
             self._setup_decoupled_mode(config, with_visibility=True)
+        elif variant == ModelVariant.OBJECT_RELATION_DECOUPLED_UNCERTAINTY:
+            self._setup_decoupled_mode(config, with_visibility=False)
+            self.use_relation_uncertainty_gating = True
+            self.relation_confidence_dim = config.relation_confidence_dim
+            self.relation_uncertainty_dim = config.relation_uncertainty_dim
+            self.relation_confidence_gamma = config.relation_confidence_gamma
+            self.relation_confidence_score_weight = config.relation_confidence_score_weight
+            self.relation_uncertainty_score_weight = config.relation_uncertainty_score_weight
+            self.relation_min_confidence = config.relation_min_confidence
     
     def _setup_holistic_mode(self):
         """Holistic表示：不使用abstraction，直接池化所有token"""
@@ -120,6 +141,35 @@ class DoorRLModelVariant(DoorRLModel):
             batch_first=True,
         )
         self.holistic_slot_norm = nn.LayerNorm(config.model_dim)
+
+    def _setup_set_transformer_pma_mode(self, config: ModelConfig):
+        """Set Transformer-style compact baseline.
+
+        This keeps the same output budget as ``holistic_16slot`` and DOOR
+        variants, but gives the compressor one masked self-attention stage
+        before pooling by multihead attention (PMA). It is intentionally
+        label-agnostic: all token types share the same compression path.
+        """
+        self.use_holistic = False
+        self.set_pma_num_slots = config.top_k
+        pma_layer = nn.TransformerEncoderLayer(
+            d_model=config.model_dim,
+            nhead=config.num_heads,
+            dim_feedforward=config.hidden_dim,
+            dropout=config.dropout,
+            batch_first=True,
+        )
+        self.set_pma_encoder = nn.TransformerEncoder(pma_layer, num_layers=1)
+        self.set_pma_queries = nn.Parameter(
+            torch.randn(config.top_k, config.model_dim) * 0.02
+        )
+        self.set_pma_cross_attn = nn.MultiheadAttention(
+            embed_dim=config.model_dim,
+            num_heads=config.num_heads,
+            dropout=config.dropout,
+            batch_first=True,
+        )
+        self.set_pma_slot_norm = nn.LayerNorm(config.model_dim)
 
     def _setup_object_only_mode(self):
         """Object-only表示：过滤掉关系token"""
@@ -149,6 +199,7 @@ class DoorRLModelVariant(DoorRLModel):
         self.use_holistic = False
         self.use_decoupled = True
         self.use_decoupled_visibility = with_visibility
+        self.rel_to_critic_only = False
         self.top_k_dyn = config.top_k_dyn
         self.top_k_rel = config.top_k_rel
         # Sanity: keep the combined budget identical to the shared one,
@@ -184,6 +235,8 @@ class DoorRLModelVariant(DoorRLModel):
             return self._forward_holistic(batch)
         elif self.variant == ModelVariant.HOLISTIC_16SLOT:
             return self._forward_holistic_16slot(batch)
+        elif self.variant == ModelVariant.SET_TRANSFORMER_PMA:
+            return self._forward_set_transformer_pma(batch)
         elif self.variant == ModelVariant.OBJECT_ONLY:
             return self._forward_object_only(batch)
         elif self.variant == ModelVariant.OBJECT_RELATION_VISIBILITY:
@@ -191,6 +244,7 @@ class DoorRLModelVariant(DoorRLModel):
         elif self.variant in (
             ModelVariant.OBJECT_RELATION_DECOUPLED,
             ModelVariant.OBJECT_RELATION_DECOUPLED_VISIBILITY,
+            ModelVariant.OBJECT_RELATION_DECOUPLED_UNCERTAINTY,
         ):
             return self._forward_object_relation_decoupled(batch)
         else:
@@ -319,6 +373,62 @@ class DoorRLModelVariant(DoorRLModel):
             is_set_prediction=True,
         )
 
+        world_model = self.world_model(
+            selected_tokens=slots,
+            selected_mask=slot_mask,
+            actions=batch.actions,
+        )
+        policy = self.policy(global_latent)
+
+        return DoorRLOutput(
+            abstraction=abstraction,
+            world_model=world_model,
+            policy=policy,
+        )
+
+    def _forward_set_transformer_pma(self, batch: SceneBatch) -> DoorRLOutput:
+        """Encode all tokens with set self-attention, then pool to K PMA slots."""
+        from doorrl.models.abstraction import AbstractionOutput
+
+        latent = self.encoder(batch.tokens, batch.token_types)  # [B, S, D]
+        batch_size = latent.size(0)
+        num_slots = self.set_pma_num_slots
+
+        key_padding_mask = ~batch.token_mask
+        all_pad_rows = key_padding_mask.all(dim=1)
+        if all_pad_rows.any():
+            key_padding_mask = key_padding_mask.clone()
+            key_padding_mask[all_pad_rows, 0] = False
+
+        encoded = self.set_pma_encoder(
+            latent,
+            src_key_padding_mask=key_padding_mask,
+        )
+        queries = self.set_pma_queries.unsqueeze(0).expand(batch_size, -1, -1)
+        slots, _ = self.set_pma_cross_attn(
+            queries, encoded, encoded, key_padding_mask=key_padding_mask,
+        )
+        slots = self.set_pma_slot_norm(slots + queries)
+
+        slot_mask = torch.ones(
+            batch_size, num_slots, dtype=torch.bool, device=latent.device
+        )
+        sel_indices = torch.zeros(
+            batch_size, num_slots, dtype=torch.long, device=latent.device
+        )
+        global_latent = slots.mean(dim=1)
+        importance = (
+            torch.ones(batch_size, num_slots, device=latent.device) / float(num_slots)
+        )
+
+        abstraction = AbstractionOutput(
+            selected_tokens=slots,
+            selected_mask=slot_mask,
+            selected_indices=sel_indices,
+            importance=importance,
+            global_latent=global_latent,
+            is_set_prediction=True,
+        )
         world_model = self.world_model(
             selected_tokens=slots,
             selected_mask=slot_mask,
@@ -468,7 +578,15 @@ class DoorRLModelVariant(DoorRLModel):
             dyn_latent = latent
 
         dyn_abs = self.abstraction_dyn(dyn_latent, dyn_mask)
-        rel_abs = self.abstraction_rel(latent, rel_mask)
+        if getattr(self, "use_relation_uncertainty_gating", False):
+            rel_latent, rel_score_bias = self._relation_uncertainty_inputs(
+                latent, batch, rel_mask
+            )
+            rel_abs = self._abstract_with_score_bias(
+                self.abstraction_rel, rel_latent, rel_mask, rel_score_bias
+            )
+        else:
+            rel_abs = self.abstraction_rel(latent, rel_mask)
 
         selected_tokens = torch.cat(
             [dyn_abs.selected_tokens, rel_abs.selected_tokens], dim=1
@@ -487,6 +605,7 @@ class DoorRLModelVariant(DoorRLModel):
         )
         importance = importance / importance.sum(dim=1, keepdim=True).clamp_min(1e-6)
         global_latent = 0.5 * (dyn_abs.global_latent + rel_abs.global_latent)
+        actor_latent = dyn_abs.global_latent if self.rel_to_critic_only else global_latent
 
         abstraction = AbstractionOutput(
             selected_tokens=selected_tokens,
@@ -502,11 +621,93 @@ class DoorRLModelVariant(DoorRLModel):
             selected_mask=selected_mask,
             actions=batch.actions,
         )
-        policy = self.policy(global_latent)
+        policy = self.policy(actor_latent, value_latent=global_latent)
         return DoorRLOutput(
             abstraction=abstraction,
             world_model=world_model,
             policy=policy,
+        )
+
+    def _relation_uncertainty_inputs(
+        self,
+        latent: torch.Tensor,
+        batch: SceneBatch,
+        rel_mask: torch.Tensor,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        """Apply deployable confidence/uncertainty gates to relation tokens.
+
+        The confidence and uncertainty fields are optional raw-token fields. If
+        confidence is absent (all zeros in old token caches), relation tokens
+        default to confidence 1.0 and uncertainty 0.0, making this variant
+        backward compatible with existing checkpoints and datasets.
+        """
+        tokens = batch.tokens
+        conf_dim = int(getattr(self, "relation_confidence_dim", 15))
+        unc_dim = int(getattr(self, "relation_uncertainty_dim", 16))
+        if conf_dim >= tokens.size(-1):
+            confidence = torch.ones_like(tokens[..., 0])
+        else:
+            raw_confidence = tokens[..., conf_dim].clamp(0.0, 1.0)
+            confidence = torch.where(
+                raw_confidence > 0.0,
+                raw_confidence,
+                torch.ones_like(raw_confidence),
+            )
+        if unc_dim >= tokens.size(-1):
+            uncertainty = torch.zeros_like(tokens[..., 0])
+        else:
+            uncertainty = tokens[..., unc_dim].clamp_min(0.0)
+
+        min_conf = float(getattr(self, "relation_min_confidence", 0.05))
+        gamma = float(getattr(self, "relation_confidence_gamma", 1.0))
+        confidence = confidence.clamp(min=min_conf, max=1.0)
+        gate = confidence.pow(gamma)
+        rel_latent = torch.where(rel_mask.unsqueeze(-1), latent * gate.unsqueeze(-1), latent)
+
+        score_bias = (
+            float(getattr(self, "relation_confidence_score_weight", 2.0))
+            * torch.log(confidence.clamp_min(min_conf))
+            - float(getattr(self, "relation_uncertainty_score_weight", 1.0))
+            * uncertainty
+        )
+        score_bias = torch.where(rel_mask, score_bias, torch.zeros_like(score_bias))
+        return rel_latent, score_bias
+
+    def _abstract_with_score_bias(
+        self,
+        abstraction: DecisionSufficientAbstraction,
+        latent: torch.Tensor,
+        token_mask: torch.Tensor,
+        score_bias: torch.Tensor,
+    ) -> AbstractionOutput:
+        ego = latent[:, :1, :]
+        query = abstraction.query_proj(ego)
+        keys = abstraction.key_proj(latent)
+        similarity = (query * keys).sum(dim=-1) / torch.sqrt(
+            torch.tensor(float(latent.size(-1)), device=latent.device)
+        )
+        saliency = abstraction.score_proj(latent).squeeze(-1)
+        scores = similarity + saliency + score_bias
+        scores = scores.masked_fill(~token_mask, float("-inf"))
+        if abstraction.force_ego:
+            scores[:, 0] = float("inf")
+
+        k = min(abstraction.top_k, latent.size(1))
+        selected_scores, selected_indices = torch.topk(scores, k=k, dim=1)
+        selected_tokens = batched_index_select(latent, selected_indices)
+        selected_mask = batched_index_select(
+            token_mask.unsqueeze(-1).float(), selected_indices
+        ).squeeze(-1) > 0.5
+        global_latent = masked_mean(latent, token_mask, dim=1)
+        importance = torch.softmax(
+            selected_scores.masked_fill(~selected_mask, -1e9), dim=1
+        )
+        return AbstractionOutput(
+            selected_tokens=selected_tokens,
+            selected_mask=selected_mask,
+            selected_indices=selected_indices,
+            importance=importance,
+            global_latent=global_latent,
         )
 
 

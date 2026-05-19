@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "k": 32,
+      "model": "Set-PMA",
+      "path": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_set_pma_stage1_pilot_seed7/K32/seed7/wm_set_pma/stage1_metrics.json",
+      "latent_return_mean": 4.032202243804932,
+      "latent_return_std": 17.348896026611328,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": 0.07439006119966507,
+      "rollout_stability": 8.702278897487759e-09,
+      "rollout_stability_global": 6.675720420901143e-09,
+      "horizon": 10,
+      "n_samples": 1000
+    },
+    {
+      "k": 32,
+      "model": "DOOR",
+      "path": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_stage1_clean_k_scaling_seed7/K32/seed7/wm_decoupled_no_vis/stage1_metrics.json",
+      "latent_return_mean": 4.541574478149414,
+      "latent_return_std": 31.768503189086914,
+      "imagined_collision_rate": 0.8250000476837158,
+      "collision_mean": 0.8254855275154114,
+      "rollout_stability": 0.0019176085479557514,
+      "rollout_stability_global": 0.007699002046138048,
+      "horizon": 10,
+      "n_samples": 1000
+    },
+    {
+      "k": 64,
+      "model": "Set-PMA",
+      "path": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_set_pma_stage1_pilot_seed7/K64/seed7/wm_set_pma/stage1_metrics.json",
+      "latent_return_mean": -15.059342384338379,
+      "latent_return_std": 25.415016174316406,
+      "imagined_collision_rate": 0.29500001668930054,
+      "collision_mean": 0.3750641644001007,
+      "rollout_stability": 7.629394893626795e-09,
+      "rollout_stability_global": 9.715557247602646e-09,
+      "horizon": 10,
+      "n_samples": 1000
+    },
+    {
+      "k": 64,
+      "model": "DOOR",
+      "path": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/tpami_stage1_clean_k_scaling_seed7/K64/seed7/wm_decoupled_no_vis/stage1_metrics.json",
+      "latent_return_mean": 15.780977249145508,
+      "latent_return_std": 25.743629455566406,
+      "imagined_collision_rate": 0.5490000247955322,
+      "collision_mean": 0.5621057152748108,
+      "rollout_stability": 1.0251999249533128e-08,
+      "rollout_stability_global": 0.006909572519361973,
+      "horizon": 10,
+      "n_samples": 1000
+    }
+  ]
+}

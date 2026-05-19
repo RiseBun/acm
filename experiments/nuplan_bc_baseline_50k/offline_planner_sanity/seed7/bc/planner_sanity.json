@@ -1,0 +1,21 @@
+{
+  "condition": "bc",
+  "variant": "object_only",
+  "seed": 7,
+  "n_samples": 10000,
+  "metrics": {
+    "teacher_action_mse": 8.953195571899414,
+    "teacher_action_mae": 1.796665072441101,
+    "teacher_action_delta_l2": 3.5534656047821045,
+    "policy_action_l2": 3.0001840591430664,
+    "teacher_action_l2": 3.4481289386749268,
+    "latent_return_mean": 5.308316230773926,
+    "latent_return_std": 14.648975372314453,
+    "imagined_collision_rate": 0.9800999760627747,
+    "collision_mean": 0.901890218257904,
+    "collision_step_mean": 0.6454911828041077,
+    "rollout_stability": 0.006009370554238558,
+    "ego_progress_proxy": 3.0,
+    "horizon": 5
+  }
+}

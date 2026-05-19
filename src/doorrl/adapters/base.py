@@ -152,3 +152,8 @@ class NormalizedSceneConverter:
         target[index, 12] = float(source.get("heading", 0.0))
         target[index, 13] = float(source.get("is_interactive", 0.0))
         target[index, 14] = float(self.type_map.get(token_type, TokenType.PAD))
+        # Optional perception reliability fields used by DOOR+. Existing
+        # records that omit these stay backward-compatible: confidence remains
+        # zero, which the model interprets as "unspecified" and falls back to 1.
+        target[index, 15] = float(source.get("confidence", 0.0))
+        target[index, 16] = float(source.get("uncertainty", 0.0))

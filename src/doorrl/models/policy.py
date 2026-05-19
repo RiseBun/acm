@@ -62,7 +62,19 @@ class ActorCriticHead(nn.Module):
         # see class docstring for rationale.
         self.action_log_std = nn.Parameter(torch.zeros(config.action_dim))
 
-    def forward(self, latent: torch.Tensor) -> PolicyOutput:
+    def forward(
+        self,
+        latent: torch.Tensor,
+        value_latent: torch.Tensor | None = None,
+    ) -> PolicyOutput:
+        """Compute actor and critic outputs.
+
+        ``value_latent`` lets Stage-1 fusion ablations feed relation-aware
+        context to the critic while keeping the actor policy mean on a
+        dynamic-only state.
+        """
+        if value_latent is None:
+            value_latent = latent
         raw_mean = self.policy(latent)
         action_mean = self.ACTION_MEAN_BOUND * torch.tanh(
             raw_mean / self.ACTION_MEAN_BOUND
@@ -70,5 +82,5 @@ class ActorCriticHead(nn.Module):
         log_std = self.action_log_std.clamp(
             self.LOG_STD_MIN, self.LOG_STD_MAX
         ).unsqueeze(0).expand_as(action_mean)
-        value = self.value(latent).squeeze(-1)
+        value = self.value(value_latent).squeeze(-1)
         return PolicyOutput(action_mean=action_mean, action_log_std=log_std, value=value)

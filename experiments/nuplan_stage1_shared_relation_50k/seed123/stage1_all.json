@@ -1,0 +1,18 @@
+{
+  "wm_naive": {
+    "condition": "wm_naive",
+    "variant": "object_relation",
+    "seed": 123,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -2.8071420192718506,
+      "latent_return_std": 0.3371264934539795,
+      "imagined_collision_rate": 1.0,
+      "collision_mean": 0.7252671122550964,
+      "rollout_stability": 0.3278941810131073,
+      "rollout_stability_global": 0.06188022345304489,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  }
+}

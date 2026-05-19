@@ -1,0 +1,104 @@
+{
+  "name": "nuPlan BC baseline 50k",
+  "date": "2026-04-28",
+  "setup": {
+    "condition": "bc",
+    "variant": "object_only",
+    "dataset": "nuplan",
+    "nuplan_num_samples": 50000,
+    "index_json": "experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage0_root": "experiments/nuplan_stage0_50k_seed7",
+    "epochs": 10,
+    "batch_size": 128,
+    "horizon": 5,
+    "loader_workers": 8,
+    "seeds": [
+      7,
+      42,
+      123
+    ]
+  },
+  "aggregate": {
+    "latent_return_mean": {
+      "mean": 0.4331291119257609,
+      "seed_std": 4.229524
+    },
+    "imagined_collision_rate": {
+      "mean": 0.32669999202092487,
+      "seed_std": 0.565859
+    },
+    "collision_mean": {
+      "mean": 0.47902800142765045,
+      "seed_std": 0.367496
+    },
+    "rollout_stability": {
+      "mean": 0.0214650367818967,
+      "seed_std": 0.029458
+    },
+    "rollout_stability_global": {
+      "mean": 0.006104059008066542,
+      "seed_std": 0.0091
+    },
+    "teacher_action_mse": {
+      "mean": 8.82448959350586,
+      "seed_std": 0.11259876936674118
+    },
+    "teacher_action_delta_l2": {
+      "mean": 3.5338237285614014,
+      "seed_std": 0.01704731024801731
+    }
+  },
+  "per_seed": {
+    "7": {
+      "latent_return_mean": 5.308342933654785,
+      "latent_return_std": 14.649011611938477,
+      "imagined_collision_rate": 0.9800999760627747,
+      "collision_mean": 0.9018932580947876,
+      "rollout_stability": 0.006008827593177557,
+      "rollout_stability_global": 0.016576629132032394,
+      "n_samples": 10000,
+      "teacher_action_mse": 8.953195571899414,
+      "teacher_action_delta_l2": 3.5534656047821045
+    },
+    "42": {
+      "latent_return_mean": -2.2551400661468506,
+      "latent_return_std": 0.00032622189610265195,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": 0.2985858917236328,
+      "rollout_stability": 0.05543956160545349,
+      "rollout_stability_global": 0.001609888393431902,
+      "n_samples": 10000,
+      "teacher_action_mse": 8.744181632995605,
+      "teacher_action_delta_l2": 3.5228819847106934
+    },
+    "123": {
+      "latent_return_mean": -1.7538155317306519,
+      "latent_return_std": 0.007665413431823254,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": 0.23660485446453094,
+      "rollout_stability": 0.0029467211570590734,
+      "rollout_stability_global": 0.000125659498735331,
+      "n_samples": 10000,
+      "teacher_action_mse": 8.776091575622559,
+      "teacher_action_delta_l2": 3.525123357772827
+    }
+  },
+  "artifacts": {
+    "summary_md": "experiments/nuplan_bc_baseline_50k/summary.md",
+    "per_seed_metrics": [
+      "experiments/nuplan_bc_baseline_50k/seed7/bc/stage1_metrics.json",
+      "experiments/nuplan_bc_baseline_50k/seed42/bc/stage1_metrics.json",
+      "experiments/nuplan_bc_baseline_50k/seed123/bc/stage1_metrics.json"
+    ],
+    "logs": [
+      "experiments/nuplan_bc_baseline_50k/logs/seed7_workers8.log",
+      "experiments/nuplan_bc_baseline_50k/logs/seed42_workers8.log",
+      "experiments/nuplan_bc_baseline_50k/logs/seed123_workers8.log"
+    ],
+    "offline_planner_sanity": [
+      "experiments/nuplan_bc_baseline_50k/offline_planner_sanity/summary.md",
+      "experiments/nuplan_bc_baseline_50k/offline_planner_sanity/summary.json"
+    ]
+  },
+  "interpretation": "The low-cost BC / planner-target imitation baseline is runnable and provides the requested external-style A1 anchor in the same Stage1 metric format. It is weaker and less stable than wm_decoupled_no_vis on nuPlan 50k, including worse teacher-action alignment: MSE 8.824 +/- 0.113 and delta L2 3.534 +/- 0.017."
+}

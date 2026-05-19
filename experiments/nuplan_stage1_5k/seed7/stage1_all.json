@@ -1,0 +1,66 @@
+{
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -9.275347709655762,
+      "latent_return_std": 6.533163547515869,
+      "imagined_collision_rate": 0.44600000977516174,
+      "collision_mean": 0.4613555371761322,
+      "rollout_stability": 0.2390851229429245,
+      "rollout_stability_global": 0.0020261164754629135,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 0.9610987901687622,
+      "latent_return_std": 6.106028079986572,
+      "imagined_collision_rate": 0.25,
+      "collision_mean": 0.35238152742385864,
+      "rollout_stability": 0.9015412330627441,
+      "rollout_stability_global": 0.08272498846054077,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_no_vis": {
+    "condition": "wm_decoupled_no_vis",
+    "variant": "object_relation_decoupled",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 16.640457153320312,
+      "latent_return_std": 4.054068088531494,
+      "imagined_collision_rate": 0.26100000739097595,
+      "collision_mean": 0.3722602128982544,
+      "rollout_stability": 0.03624250367283821,
+      "rollout_stability_global": 0.018671292811632156,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_rel_to_critic_only": {
+    "condition": "wm_decoupled_rel_to_critic_only",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 6.032121658325195,
+      "latent_return_std": 4.991873264312744,
+      "imagined_collision_rate": 0.30100002884864807,
+      "collision_mean": 0.36725133657455444,
+      "rollout_stability": 0.9001424908638,
+      "rollout_stability_global": 0.08481000363826752,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  }
+}

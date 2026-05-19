@@ -1,0 +1,115 @@
+{
+  "name": "Stage0 typed-budget sensitivity 10/6 on nuScenes",
+  "date": "2026-04-28",
+  "setup": {
+    "dataset": "nuScenes v1.0-trainval",
+    "num_scenes": 700,
+    "variant": "object_relation_decoupled_visibility",
+    "top_k_dyn": 10,
+    "top_k_rel": 6,
+    "epochs": 15,
+    "batch_size": 32,
+    "seeds": [
+      7,
+      42,
+      2026
+    ],
+    "baseline_12_4_source": "experiments/table3_fair_fix2_aggregate.json"
+  },
+  "aggregate": {
+    "dyn_rollout_mse": {
+      "mean": 8.761478863791643,
+      "seed_std": 1.0670772850795303,
+      "values": [
+        8.810155383913337,
+        9.8033848907609,
+        7.670896316700693
+      ]
+    },
+    "action_mse": {
+      "mean": 0.28629275027581025,
+      "seed_std": 0.009416677217647404,
+      "values": [
+        0.29107515408406687,
+        0.27544458259296206,
+        0.2923585141504018
+      ]
+    },
+    "collision_f1": {
+      "mean": 0.8941071158371121,
+      "seed_std": 0.00669274634518388,
+      "values": [
+        0.8957219251336899,
+        0.8867547018807522,
+        0.8998447204968943
+      ]
+    },
+    "rare_ade": {
+      "mean": 1.5744835679625688,
+      "seed_std": 0.4845686340951188,
+      "values": [
+        2.044631574029564,
+        1.6021402263339224,
+        1.0766789035242201
+      ]
+    },
+    "interaction_recall_at_1m": {
+      "mean": 0.8835472363346243,
+      "seed_std": 0.043353461135025737,
+      "values": [
+        0.8337483695007708,
+        0.9128712871287129,
+        0.9040220523743892
+      ]
+    }
+  },
+  "baseline_12_4": {
+    "dyn_rollout_mse": {
+      "mean": 1.876077710714861,
+      "seed_std": 0.22713287725220993
+    },
+    "action_mse": {
+      "mean": 0.2842639126251732,
+      "seed_std": 0.02339106788029049
+    },
+    "collision_f1": {
+      "mean": 0.9256856037540434,
+      "seed_std": 0.029007993795215986
+    },
+    "rare_ade": {
+      "mean": 0.5196986121813061,
+      "seed_std": 0.04948509046821739
+    },
+    "interaction_recall_at_1m": {
+      "mean": 0.978700548185211,
+      "seed_std": 0.007802423901302111
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 7,
+      "dyn_rollout_mse": 8.810155383913337,
+      "action_mse": 0.29107515408406687,
+      "collision_f1": 0.8957219251336899,
+      "rare_ade": 2.044631574029564,
+      "interaction_recall_at_1m": 0.8337483695007708
+    },
+    {
+      "seed": 42,
+      "dyn_rollout_mse": 9.8033848907609,
+      "action_mse": 0.27544458259296206,
+      "collision_f1": 0.8867547018807522,
+      "rare_ade": 1.6021402263339224,
+      "interaction_recall_at_1m": 0.9128712871287129
+    },
+    {
+      "seed": 2026,
+      "dyn_rollout_mse": 7.670896316700693,
+      "action_mse": 0.2923585141504018,
+      "collision_f1": 0.8998447204968943,
+      "rare_ade": 1.0766789035242201,
+      "interaction_recall_at_1m": 0.9040220523743892
+    }
+  ],
+  "interpretation": "10/6 is a relation-heavy typed-budget sensitivity point. It remains runnable and preserves strong interaction recall, but is worse than the default 12/4 on dynamic rollout and rare-agent ADE, so 12/4 is not an arbitrary isolated ratio but the cleaner default."
+}

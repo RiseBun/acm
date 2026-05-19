@@ -1,0 +1,19 @@
+{
+  "source_dataset": "nuplan",
+  "target_dataset": "nuscenes",
+  "seed": 123,
+  "condition": "wm_decoupled_no_vis",
+  "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed123/wm_decoupled_no_vis/model.pt",
+  "target_val_samples": 5622,
+  "horizon": 5,
+  "metrics": {
+    "latent_return_mean": 13.877276420593262,
+    "latent_return_std": 6.994225025177002,
+    "imagined_collision_rate": 0.4176449775695801,
+    "collision_mean": 0.426614373922348,
+    "rollout_stability": 0.1967078596353531,
+    "rollout_stability_global": 0.05651773884892464,
+    "horizon": 5,
+    "n_samples": 5622
+  }
+}

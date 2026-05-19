@@ -1,0 +1,16 @@
+{
+  "condition": "wm_doorplus_uncertainty",
+  "variant": "object_relation_decoupled_uncertainty",
+  "seed": 7,
+  "horizon": 5,
+  "metrics": {
+    "latent_return_mean": 9.434700965881348,
+    "latent_return_std": 8.043732643127441,
+    "imagined_collision_rate": 0.9435999989509583,
+    "collision_mean": 0.890295684337616,
+    "rollout_stability": 0.09313888102769852,
+    "rollout_stability_global": 0.014690780080854893,
+    "horizon": 5,
+    "n_samples": 10000
+  }
+}

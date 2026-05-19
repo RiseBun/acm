@@ -1,0 +1,18 @@
+{
+  "wm_object": {
+    "n_samples": 5000,
+    "n_lane_conflict": 3348,
+    "return_sum_lc_mean": 0.9255880117416382,
+    "imagined_collision_rate_lc": 0.6520310633213859,
+    "ego_cos_step_lc_mean": 0.20856250822544098,
+    "action_norm_lc_max_mean": 3.265627145767212
+  },
+  "wm_decoupled_no_vis": {
+    "n_samples": 5000,
+    "n_lane_conflict": 3348,
+    "return_sum_lc_mean": 15.21111011505127,
+    "imagined_collision_rate_lc": 0.24551971326164876,
+    "ego_cos_step_lc_mean": 0.2270183116197586,
+    "action_norm_lc_max_mean": 1.4037970304489136
+  }
+}

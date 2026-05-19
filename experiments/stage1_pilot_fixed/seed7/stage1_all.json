@@ -1,0 +1,47 @@
+{
+  "bc": {
+    "condition": "bc",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 10.851222038269043,
+      "latent_return_std": 13.914313316345215,
+      "imagined_collision_rate": 0.5601209402084351,
+      "collision_mean": 0.5867714285850525,
+      "rollout_stability": 0.0855063647031784,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 26.847618103027344,
+      "latent_return_std": 7.197165012359619,
+      "imagined_collision_rate": 0.5168979167938232,
+      "collision_mean": 0.5087867975234985,
+      "rollout_stability": 0.2106902152299881,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 9.877307891845703,
+      "latent_return_std": 7.372028827667236,
+      "imagined_collision_rate": 0.48363572359085083,
+      "collision_mean": 0.4932841658592224,
+      "rollout_stability": 0.28928279876708984,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  }
+}

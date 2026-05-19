@@ -1,0 +1,34 @@
+{
+  "holistic": {
+    "rollout_error": 117.4060796101888,
+    "rollout_error_std": 47.664491422303556,
+    "reward_error": 0.013905146469672522,
+    "reward_error_std": 0.003148620165028359,
+    "collision_accuracy": 0.75,
+    "rare_agent_recall": 0.3688212927756654
+  },
+  "object_only": {
+    "rollout_error": 136.91539510091147,
+    "rollout_error_std": 47.82962684871743,
+    "reward_error": 0.014288868444661299,
+    "reward_error_std": 0.0034486173858249403,
+    "collision_accuracy": 0.725,
+    "rare_agent_recall": 0.27756653992395436
+  },
+  "object_relation": {
+    "rollout_error": 122.18066787719727,
+    "rollout_error_std": 42.25102057974918,
+    "reward_error": 0.01298101960370938,
+    "reward_error_std": 0.0022311182855285637,
+    "collision_accuracy": 0.7625,
+    "rare_agent_recall": 0.12167300380228137
+  },
+  "object_relation_visibility": {
+    "rollout_error": 122.55396270751953,
+    "rollout_error_std": 43.6036534013023,
+    "reward_error": 0.011036093346774578,
+    "reward_error_std": 0.0013597625934234664,
+    "collision_accuracy": 0.75,
+    "rare_agent_recall": 0.13688212927756654
+  }
+}

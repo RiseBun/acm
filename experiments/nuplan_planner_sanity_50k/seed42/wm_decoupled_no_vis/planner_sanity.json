@@ -1,0 +1,21 @@
+{
+  "condition": "wm_decoupled_no_vis",
+  "variant": "object_relation_decoupled",
+  "seed": 42,
+  "n_samples": 10000,
+  "metrics": {
+    "teacher_action_mse": 6.520999908447266,
+    "teacher_action_mae": 1.0421292781829834,
+    "teacher_action_delta_l2": 2.0409975051879883,
+    "policy_action_l2": 1.4855347871780396,
+    "teacher_action_l2": 3.4036953449249268,
+    "latent_return_mean": 16.53612518310547,
+    "latent_return_std": 6.2233195304870605,
+    "imagined_collision_rate": 0.21619999408721924,
+    "collision_mean": 0.2460629940032959,
+    "collision_step_mean": 0.05155720189213753,
+    "rollout_stability": 0.17556345462799072,
+    "ego_progress_proxy": 2.4440555572509766,
+    "horizon": 5
+  }
+}

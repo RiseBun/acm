@@ -1,0 +1,230 @@
+[
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 7,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed7/wm_object/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 20.907596588134766,
+      "latent_return_std": 2.5830233097076416,
+      "imagined_collision_rate": 0.3480999767780304,
+      "collision_mean": 0.39550521969795227,
+      "rollout_stability": 0.217590793967247,
+      "rollout_stability_global": 0.05651741847395897,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 7,
+    "condition": "wm_decoupled",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed7/wm_decoupled/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -7.29381799697876,
+      "latent_return_std": 9.096895217895508,
+      "imagined_collision_rate": 0.7336999773979187,
+      "collision_mean": 0.699129581451416,
+      "rollout_stability": 0.8981794714927673,
+      "rollout_stability_global": 0.05494736135005951,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 7,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed7/wm_object/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 5.325901508331299,
+      "latent_return_std": 6.133713245391846,
+      "imagined_collision_rate": 0.5775524973869324,
+      "collision_mean": 0.6013771295547485,
+      "rollout_stability": 0.20181848108768463,
+      "rollout_stability_global": 0.096519336104393,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 7,
+    "condition": "wm_decoupled_no_vis",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed7/wm_decoupled_no_vis/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 16.066518783569336,
+      "latent_return_std": 6.302243232727051,
+      "imagined_collision_rate": 0.4855923056602478,
+      "collision_mean": 0.48748040199279785,
+      "rollout_stability": 0.2103162258863449,
+      "rollout_stability_global": 0.028155120089650154,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 42,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed42/wm_object/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 40.382755279541016,
+      "latent_return_std": 4.271673679351807,
+      "imagined_collision_rate": 0.5622999668121338,
+      "collision_mean": 0.555266797542572,
+      "rollout_stability": 0.5993242263793945,
+      "rollout_stability_global": 0.08758985996246338,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 42,
+    "condition": "wm_decoupled",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed42/wm_decoupled/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 18.017192840576172,
+      "latent_return_std": 6.505465507507324,
+      "imagined_collision_rate": 0.22619999945163727,
+      "collision_mean": 0.27745693922042847,
+      "rollout_stability": 0.7365590929985046,
+      "rollout_stability_global": 0.07668831944465637,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 42,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed42/wm_object/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 17.2497501373291,
+      "latent_return_std": 8.768310546875,
+      "imagined_collision_rate": 0.7760583162307739,
+      "collision_mean": 0.6963776350021362,
+      "rollout_stability": 0.47836968302726746,
+      "rollout_stability_global": 0.23190918564796448,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 42,
+    "condition": "wm_decoupled_no_vis",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed42/wm_decoupled_no_vis/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 18.271610260009766,
+      "latent_return_std": 6.959297180175781,
+      "imagined_collision_rate": 0.39985769987106323,
+      "collision_mean": 0.40983447432518005,
+      "rollout_stability": 0.1370619535446167,
+      "rollout_stability_global": 0.047651808708906174,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 123,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed123/wm_object/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 20.23927116394043,
+      "latent_return_std": 3.9842870235443115,
+      "imagined_collision_rate": 0.8679999709129333,
+      "collision_mean": 0.8435828685760498,
+      "rollout_stability": 0.28988027572631836,
+      "rollout_stability_global": 0.03127150982618332,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuscenes",
+    "target_dataset": "nuplan",
+    "seed": 123,
+    "condition": "wm_decoupled",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/stage1_pilot_x/seed123/wm_decoupled/model.pt",
+    "target_val_samples": 10000,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -15.026246070861816,
+      "latent_return_std": 9.861003875732422,
+      "imagined_collision_rate": 0.8186999559402466,
+      "collision_mean": 0.7253770232200623,
+      "rollout_stability": 0.9238775372505188,
+      "rollout_stability_global": 0.051605504006147385,
+      "horizon": 5,
+      "n_samples": 10000
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 123,
+    "condition": "wm_object",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed123/wm_object/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -6.050264835357666,
+      "latent_return_std": 13.990212440490723,
+      "imagined_collision_rate": 0.5179651379585266,
+      "collision_mean": 0.5520661473274231,
+      "rollout_stability": 0.22256575524806976,
+      "rollout_stability_global": 0.07596202939748764,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  {
+    "source_dataset": "nuplan",
+    "target_dataset": "nuscenes",
+    "seed": 123,
+    "condition": "wm_decoupled_no_vis",
+    "checkpoint": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k/seed123/wm_decoupled_no_vis/model.pt",
+    "target_val_samples": 5622,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 13.877276420593262,
+      "latent_return_std": 6.994225025177002,
+      "imagined_collision_rate": 0.4176449775695801,
+      "collision_mean": 0.426614373922348,
+      "rollout_stability": 0.1967078596353531,
+      "rollout_stability_global": 0.05651773884892464,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  }
+]

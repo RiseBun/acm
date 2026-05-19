@@ -1,0 +1,180 @@
+{
+  "results": {
+    "wm_naive": {
+      "7": {
+        "n_samples": 10000,
+        "mean": {
+          "cdr": 0.2977858696428779,
+          "critical_agent_miss_rate": 0.702214130357122,
+          "relation_wasted_slot_rate": 0.3770053540632809,
+          "relation_overallocation_index": 0.08191474109224109,
+          "selected_relation_ratio": 0.08191474109224109,
+          "relation_density": 0.9019838417138417,
+          "rare_ade": 18.101701249654578,
+          "interaction_recall_at_1m": 0.007191962024195997,
+          "teacher_action_mse": 9.1929703936761,
+          "collision_label": 0.303,
+          "collision_prob": 0.30335998705551026
+        },
+        "correlation": {
+          "miss_rate__vs__rare_ade": {
+            "n": 7506,
+            "pearson": -0.07457071544040675,
+            "spearman": -0.03685828356431311
+          },
+          "miss_rate__vs__interaction_recall_at_1m": {
+            "n": 5673,
+            "pearson": 0.027548555325757954,
+            "spearman": 0.11238895665623667
+          },
+          "miss_rate__vs__collision_label": {
+            "n": 9553,
+            "pearson": -0.053883680719661944,
+            "spearman": -0.07267873387625085
+          },
+          "miss_rate__vs__collision_prob": {
+            "n": 9553,
+            "pearson": -0.01307971339260195,
+            "spearman": 0.16345048456761527
+          },
+          "miss_rate__vs__teacher_action_mse": {
+            "n": 9553,
+            "pearson": -0.10708117305981411,
+            "spearman": -0.14121432361255212
+          },
+          "relation_density__vs__selected_relation_ratio": {
+            "n": 10000,
+            "pearson": 0.06254291782921698,
+            "spearman": -0.11778342461261086
+          },
+          "relation_density__vs__cdr": {
+            "n": 9553,
+            "pearson": -0.23382296217503148,
+            "spearman": -0.11548058965534351
+          },
+          "relation_density__vs__rare_ade": {
+            "n": 7751,
+            "pearson": -0.25891723049203363,
+            "spearman": -0.32389140441498365
+          }
+        }
+      },
+      "42": {
+        "n_samples": 10000,
+        "mean": {
+          "cdr": 0.8119369751322197,
+          "critical_agent_miss_rate": 0.18806302486778026,
+          "relation_wasted_slot_rate": 0.20126226951655812,
+          "relation_overallocation_index": 0.3894039214951715,
+          "selected_relation_ratio": 0.3894039214951715,
+          "relation_density": 0.9005325000000003,
+          "rare_ade": 5.023913373295881,
+          "interaction_recall_at_1m": 0.7647388023410394,
+          "teacher_action_mse": 8.745581112466553,
+          "collision_label": 0.294,
+          "collision_prob": 0.2969294326804637
+        },
+        "correlation": {
+          "miss_rate__vs__rare_ade": {
+            "n": 7494,
+            "pearson": 0.17153354427489453,
+            "spearman": 0.34579027083841735
+          },
+          "miss_rate__vs__interaction_recall_at_1m": {
+            "n": 5734,
+            "pearson": -0.6793626518411252,
+            "spearman": -0.6955018245852548
+          },
+          "miss_rate__vs__collision_label": {
+            "n": 9547,
+            "pearson": -0.1665130964614644,
+            "spearman": -0.16121412035214167
+          },
+          "miss_rate__vs__collision_prob": {
+            "n": 9547,
+            "pearson": -0.18460413271090212,
+            "spearman": -0.08887003299126232
+          },
+          "miss_rate__vs__teacher_action_mse": {
+            "n": 9547,
+            "pearson": -0.13889578437094888,
+            "spearman": -0.0911703484325181
+          },
+          "relation_density__vs__selected_relation_ratio": {
+            "n": 10000,
+            "pearson": 0.39830525333685207,
+            "spearman": 0.19136472733478951
+          },
+          "relation_density__vs__cdr": {
+            "n": 9547,
+            "pearson": -0.20337166543074411,
+            "spearman": -0.3142660382812906
+          },
+          "relation_density__vs__rare_ade": {
+            "n": 7725,
+            "pearson": 0.11052656449179318,
+            "spearman": 0.07098426192616009
+          }
+        }
+      },
+      "123": {
+        "n_samples": 10000,
+        "mean": {
+          "cdr": 0.24746919165462908,
+          "critical_agent_miss_rate": 0.752530808345371,
+          "relation_wasted_slot_rate": 0.27373542768407505,
+          "relation_overallocation_index": 0.16006509573759575,
+          "selected_relation_ratio": 0.16006509573759575,
+          "relation_density": 0.9017277111777113,
+          "rare_ade": 21.942110574495715,
+          "interaction_recall_at_1m": 0.001039444563749876,
+          "teacher_action_mse": 8.796834297995014,
+          "collision_label": 0.3003,
+          "collision_prob": 0.6060272018373013
+        },
+        "correlation": {
+          "miss_rate__vs__rare_ade": {
+            "n": 7580,
+            "pearson": -0.15291625584832705,
+            "spearman": -0.10502618800178165
+          },
+          "miss_rate__vs__interaction_recall_at_1m": {
+            "n": 5745,
+            "pearson": 0.02409211617881896,
+            "spearman": 0.00733524394003158
+          },
+          "miss_rate__vs__collision_label": {
+            "n": 9545,
+            "pearson": 0.03983620065679273,
+            "spearman": 0.015219103113756
+          },
+          "miss_rate__vs__collision_prob": {
+            "n": 9545,
+            "pearson": -0.1795355604129009,
+            "spearman": 0.022380413673345277
+          },
+          "miss_rate__vs__teacher_action_mse": {
+            "n": 9545,
+            "pearson": -0.06745636935748447,
+            "spearman": -0.08755453080132537
+          },
+          "relation_density__vs__selected_relation_ratio": {
+            "n": 10000,
+            "pearson": 0.14677265544399642,
+            "spearman": 0.17384979239911946
+          },
+          "relation_density__vs__cdr": {
+            "n": 9545,
+            "pearson": -0.11513749811520675,
+            "spearman": 0.044494633600517586
+          },
+          "relation_density__vs__rare_ade": {
+            "n": 7812,
+            "pearson": -0.2764614702208219,
+            "spearman": -0.34545872388834614
+          }
+        }
+      }
+    }
+  }
+}

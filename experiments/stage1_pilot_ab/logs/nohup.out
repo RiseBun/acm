@@ -1,0 +1,716 @@
+Loading NuScenes v1.0-trainval from /mnt/datasets/e2e-nuscenes/20260302...
+======
+Loading NuScenes tables for version v1.0-trainval...
+23 category,
+8 attribute,
+4 visibility,
+64386 instance,
+12 sensor,
+10200 calibrated_sensor,
+2631083 ego_pose,
+68 log,
+850 scene,
+34149 sample,
+2631083 sample_data,
+1166187 sample_annotation,
+4 map,
+Done loading in 29.340 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 6.7 seconds.
+======
+CAN bus loaded successfully
+NuScenesSceneDataset: 28096 samples from 700 scenes
+NuScenesSceneDataset: pre-tokenising all samples into memory (one-time cost, avoids per-step nuscenes-devkit overhead)...
+  tokenized 1404/28096 (5.0%)
+  tokenized 2808/28096 (10.0%)
+  tokenized 4212/28096 (15.0%)
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0161 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0162 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0163 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0164 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0165 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0166 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0167 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0168 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0170 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0171 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0172 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0173 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0174 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0175 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+Warning: Failed to extract CAN action: Error: scene-0176 does not have any CAN bus data!
+  tokenized 5616/28096 (20.0%)
+  tokenized 7020/28096 (25.0%)
+  tokenized 8424/28096 (30.0%)
+  tokenized 9828/28096 (35.0%)
+  tokenized 11232/28096 (40.0%)
+  tokenized 12636/28096 (45.0%)
+  tokenized 14040/28096 (50.0%)
+  tokenized 15444/28096 (55.0%)
+  tokenized 16848/28096 (60.0%)
+  tokenized 18252/28096 (65.0%)
+  tokenized 19656/28096 (70.0%)
+  tokenized 21060/28096 (75.0%)
+  tokenized 22464/28096 (80.0%)
+  tokenized 23868/28096 (85.0%)
+  tokenized 25272/28096 (89.9%)
+  tokenized 26676/28096 (94.9%)
+  tokenized 28080/28096 (99.9%)
+  tokenized 28096/28096 (100.0%)
+NuScenesSceneDataset: cache ready, 28096 usable samples (dropped 0)
+scene split: 560 train / 140 val -> 22474 train samples / 5622 val samples
+
+================================================================================
+Stage 1 condition: bc  (variant=object_only, cond=bc)
+================================================================================
+[lr] 1.00e-03 -> 2.00e-03
+[warm-start] loaded experiments/table3_fair_fix2_seed7/object_only/model.pt (missing=0 unexpected=0)
+/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/doorrl/lib/python3.10/site-packages/torch/nn/modules/transformer.py:502: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+epoch=1 train_total=0.567 bc=0.337 sanity=0.230   epoch=1 val_total=0.442 bc=0.298 sanity=0.144
+epoch=2 train_total=0.528 bc=0.335 sanity=0.194   epoch=2 val_total=0.475 bc=0.302 sanity=0.173
+epoch=3 train_total=0.491 bc=0.332 sanity=0.159   epoch=3 val_total=0.449 bc=0.300 sanity=0.149
+epoch=4 train_total=0.475 bc=0.327 sanity=0.148   epoch=4 val_total=0.429 bc=0.303 sanity=0.126
+epoch=5 train_total=0.469 bc=0.325 sanity=0.143   epoch=5 val_total=0.432 bc=0.305 sanity=0.128
+epoch=6 train_total=0.457 bc=0.319 sanity=0.138   epoch=6 val_total=0.460 bc=0.300 sanity=0.161
+epoch=7 train_total=0.461 bc=0.312 sanity=0.149   epoch=7 val_total=0.459 bc=0.306 sanity=0.153
+epoch=8 train_total=0.451 bc=0.308 sanity=0.143   epoch=8 val_total=0.428 bc=0.301 sanity=0.127
+epoch=9 train_total=0.472 bc=0.313 sanity=0.159   epoch=9 val_total=0.468 bc=0.299 sanity=0.169
+epoch=10 train_total=0.455 bc=0.313 sanity=0.142   epoch=10 val_total=0.469 bc=0.317 sanity=0.152
+saved experiments/stage1_pilot_ab/seed7/bc/model.pt
+
+bc: {'latent_return_mean': 10.957269668579102, 'latent_return_std': 13.827600479125977, 'imagined_collision_rate': 0.606367826461792, 'collision_mean': 0.6198041439056396, 'rollout_stability': 0.036419063806533813, 'rollout_stability_global': 0.11081919819116592, 'horizon': 5, 'n_samples': 5622}
+wrote experiments/stage1_pilot_ab/seed7/bc/stage1_metrics.json
+
+================================================================================
+Stage 1 condition: wm_object  (variant=object_only, cond=wm)
+================================================================================
+[lr] 1.00e-03 -> 2.00e-03
+[warm-start] loaded experiments/table3_fair_fix2_seed7/object_only/model.pt (missing=0 unexpected=0)
+epoch=1 train_total=3.096 actor=-0.035 critic=5.305 sanity=0.480 R=-1.495 V=-30.954 Cmax=0.820 |a|max=5.19 log_std=+0.33   epoch=1 val_total=4.309 actor=-0.035 critic=7.069 sanity=0.810 R=0.839 V=-16.950 Cmax=0.875 |a|max=5.73 log_std=+0.50
+epoch=2 train_total=2.248 actor=-0.041 critic=3.631 sanity=0.473 R=0.007 V=-11.655 Cmax=0.776 |a|max=5.75 log_std=+0.50   epoch=2 val_total=2.140 actor=-0.045 critic=3.665 sanity=0.352 R=1.834 V=29.418 Cmax=0.800 |a|max=5.50 log_std=+0.50
+epoch=3 train_total=1.717 actor=-0.040 critic=2.857 sanity=0.328 R=-1.230 V=-14.568 Cmax=0.889 |a|max=5.55 log_std=+0.50   epoch=3 val_total=1.222 actor=-0.052 critic=2.080 sanity=0.234 R=-1.814 V=-12.912 Cmax=0.890 |a|max=5.68 log_std=+0.50
+epoch=4 train_total=1.041 actor=-0.043 critic=1.750 sanity=0.209 R=-1.911 V=-11.353 Cmax=0.830 |a|max=5.78 log_std=+0.50   epoch=4 val_total=0.800 actor=-0.043 critic=1.400 sanity=0.142 R=-2.067 V=-11.971 Cmax=0.888 |a|max=5.99 log_std=+0.50
+epoch=5 train_total=0.647 actor=-0.043 critic=0.999 sanity=0.191 R=-2.655 V=-13.166 Cmax=0.854 |a|max=6.00 log_std=+0.50   epoch=5 val_total=0.802 actor=-0.036 critic=1.218 sanity=0.229 R=-2.580 V=-13.291 Cmax=0.828 |a|max=6.36 log_std=+0.50
+epoch=6 train_total=0.754 actor=-0.037 critic=1.223 sanity=0.180 R=-2.662 V=-16.700 Cmax=0.809 |a|max=6.48 log_std=+0.50   epoch=6 val_total=7.536 actor=-0.042 critic=14.204 sanity=0.476 R=-2.754 V=-2.742 Cmax=0.915 |a|max=6.40 log_std=+0.50
+epoch=7 train_total=0.906 actor=-0.038 critic=1.422 sanity=0.233 R=-2.674 V=-19.389 Cmax=0.820 |a|max=6.06 log_std=+0.50   epoch=7 val_total=0.747 actor=-0.032 critic=1.210 sanity=0.174 R=-2.666 V=-16.142 Cmax=0.944 |a|max=5.92 log_std=+0.50
+epoch=8 train_total=0.679 actor=-0.031 critic=1.071 sanity=0.174 R=-2.061 V=-8.774 Cmax=0.918 |a|max=6.90 log_std=+0.50   epoch=8 val_total=0.987 actor=-0.041 critic=1.750 sanity=0.153 R=-1.984 V=-9.679 Cmax=0.799 |a|max=7.36 log_std=+0.50
+epoch=9 train_total=0.550 actor=-0.040 critic=0.843 sanity=0.168 R=-0.937 V=-1.569 Cmax=0.889 |a|max=7.55 log_std=+0.50   epoch=9 val_total=0.851 actor=-0.032 critic=1.485 sanity=0.140 R=-0.804 V=2.957 Cmax=0.937 |a|max=7.63 log_std=+0.50
+epoch=10 train_total=1.597 actor=-0.031 critic=2.638 sanity=0.310 R=-0.793 V=5.766 Cmax=0.960 |a|max=7.64 log_std=+0.50   epoch=10 val_total=2.236 actor=-0.075 critic=4.289 sanity=0.166 R=-0.890 V=16.008 Cmax=0.987 |a|max=7.71 log_std=+0.50
+saved experiments/stage1_pilot_ab/seed7/wm_object/model.pt
+
+wm_object: {'latent_return_mean': -4.977030277252197, 'latent_return_std': 9.380948066711426, 'imagined_collision_rate': 0.9847029447555542, 'collision_mean': 0.984623372554779, 'rollout_stability': 0.4386240243911743, 'rollout_stability_global': 0.35313963890075684, 'horizon': 5, 'n_samples': 5622}
+wrote experiments/stage1_pilot_ab/seed7/wm_object/stage1_metrics.json
+
+================================================================================
+Stage 1 condition: wm_decoupled  (variant=object_relation_decoupled_visibility, cond=wm)
+================================================================================
+[lr] 1.00e-03 -> 2.00e-03
+[warm-start] loaded experiments/table3_fair_fix2_seed7/object_relation_decoupled_visibility/model.pt (missing=0 unexpected=0)
+epoch=1 train_total=3.750 actor=-0.020 critic=6.395 sanity=0.572 R=-1.148 V=-32.865 Cmax=0.967 |a|max=4.93 log_std=+0.33   epoch=1 val_total=1.611 actor=0.015 critic=2.667 sanity=0.263 R=-1.671 V=-29.089 Cmax=0.975 |a|max=5.61 log_std=+0.50
+epoch=2 train_total=1.724 actor=-0.039 critic=3.034 sanity=0.246 R=-1.310 V=-12.090 Cmax=0.943 |a|max=5.52 log_std=+0.50   epoch=2 val_total=1.268 actor=-0.086 critic=2.211 sanity=0.249 R=-0.474 V=-3.493 Cmax=0.799 |a|max=5.43 log_std=+0.50
+epoch=3 train_total=1.518 actor=-0.040 critic=2.695 sanity=0.211 R=-1.373 V=-13.955 Cmax=0.940 |a|max=5.48 log_std=+0.50   epoch=3 val_total=1.846 actor=0.013 critic=3.159 sanity=0.253 R=-1.610 V=-5.283 Cmax=0.850 |a|max=5.51 log_std=+0.50
+epoch=4 train_total=2.129 actor=-0.043 critic=3.894 sanity=0.225 R=-1.199 V=-20.419 Cmax=0.955 |a|max=5.47 log_std=+0.50   epoch=4 val_total=1.741 actor=-0.039 critic=3.016 sanity=0.272 R=-2.054 V=4.250 Cmax=0.932 |a|max=5.50 log_std=+0.50
+epoch=5 train_total=1.859 actor=-0.069 critic=3.431 sanity=0.212 R=-0.939 V=-14.337 Cmax=0.870 |a|max=5.44 log_std=+0.50   epoch=5 val_total=3.728 actor=-0.047 critic=7.215 sanity=0.168 R=-1.624 V=-19.029 Cmax=0.965 |a|max=5.54 log_std=+0.50
+epoch=6 train_total=1.995 actor=-0.072 critic=3.750 sanity=0.193 R=-1.297 V=-12.147 Cmax=0.876 |a|max=5.48 log_std=+0.50   epoch=6 val_total=3.193 actor=-0.037 critic=6.060 sanity=0.200 R=-1.846 V=-23.251 Cmax=0.978 |a|max=5.66 log_std=+0.50
+epoch=7 train_total=2.214 actor=-0.079 critic=4.180 sanity=0.203 R=-0.279 V=-17.109 Cmax=0.762 |a|max=5.50 log_std=+0.50   epoch=7 val_total=1.521 actor=-0.012 critic=2.554 sanity=0.257 R=-0.522 V=3.549 Cmax=0.690 |a|max=5.54 log_std=+0.50
+epoch=8 train_total=1.757 actor=-0.055 critic=3.059 sanity=0.283 R=0.404 V=5.078 Cmax=0.653 |a|max=5.55 log_std=+0.50   epoch=8 val_total=0.718 actor=-0.079 critic=1.194 sanity=0.200 R=1.772 V=12.336 Cmax=0.722 |a|max=5.68 log_std=+0.50
+epoch=9 train_total=1.084 actor=-0.026 critic=1.758 sanity=0.231 R=1.317 V=14.829 Cmax=0.660 |a|max=5.62 log_std=+0.50   epoch=9 val_total=0.710 actor=-0.040 critic=1.136 sanity=0.182 R=1.425 V=7.877 Cmax=0.740 |a|max=5.50 log_std=+0.50
+epoch=10 train_total=1.102 actor=-0.047 critic=1.881 sanity=0.209 R=1.690 V=17.483 Cmax=0.697 |a|max=5.51 log_std=+0.50   epoch=10 val_total=0.761 actor=-0.051 critic=1.283 sanity=0.170 R=0.862 V=2.587 Cmax=0.774 |a|max=5.49 log_std=+0.50
+saved experiments/stage1_pilot_ab/seed7/wm_decoupled/model.pt
+
+wm_decoupled: {'latent_return_mean': 4.96034574508667, 'latent_return_std': 9.81847095489502, 'imagined_collision_rate': 0.7552472352981567, 'collision_mean': 0.7709745764732361, 'rollout_stability': 2079674.75, 'rollout_stability_global': 0.6043044924736023, 'horizon': 5, 'n_samples': 5622}
+wrote experiments/stage1_pilot_ab/seed7/wm_decoupled/stage1_metrics.json
+
+aggregate -> experiments/stage1_pilot_ab/seed7/stage1_all.json
+
+==========================================================================================
+condition         return_mean   coll_rate   coll_mean   stability
+------------------------------------------------------------------------------------------
+bc                     10.957       0.606       0.620      0.0364
+wm_object              -4.977       0.985       0.985      0.4386
+wm_decoupled            4.960       0.755       0.771 2079674.7500
+pilot done: experiments/stage1_pilot_ab/seed7/stage1_all.json

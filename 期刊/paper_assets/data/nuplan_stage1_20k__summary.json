@@ -1,0 +1,78 @@
+{
+  "setup": {
+    "dataset": "nuplan",
+    "num_samples": 20000,
+    "subset": "experiments/nuplan_20k_balanced_paths_seed7.json",
+    "seeds": [7, 42, 123],
+    "epochs": 10,
+    "batch_size": 128,
+    "horizon": 5,
+    "stage0_root": "experiments/nuplan_stage0_20k_seed7",
+    "nuplan_workers_per_seed": 32
+  },
+  "conditions": {
+    "wm_object": {
+      "mean": {
+        "latent_return_mean": 4.7376866936683655,
+        "imagined_collision_rate": 0.37275002400080365,
+        "collision_mean": 0.3948988616466522,
+        "rollout_stability": 0.4257037242253621,
+        "rollout_stability_global": 0.0470829630891482
+      },
+      "std_across_seeds": {
+        "latent_return_mean": 13.946,
+        "imagined_collision_rate": 0.083,
+        "collision_mean": 0.057,
+        "rollout_stability": 0.099,
+        "rollout_stability_global": 0.009
+      },
+      "seeds": [
+        {"seed": 7, "latent_return_mean": 20.58104133605957, "imagined_collision_rate": 0.27650001645088196, "collision_mean": 0.3293059170246124, "rollout_stability": 0.5402531027793884, "rollout_stability_global": 0.03736864775419235},
+        {"seed": 42, "latent_return_mean": -0.6938169598579407, "imagined_collision_rate": 0.41825002431869507, "collision_mean": 0.4351464509963989, "rollout_stability": 0.37278565764427185, "rollout_stability_global": 0.053793925791978836},
+        {"seed": 123, "latent_return_mean": -5.674164295196533, "imagined_collision_rate": 0.42350003123283386, "collision_mean": 0.4202442169189453, "rollout_stability": 0.36407241225242615, "rollout_stability_global": 0.05008631572127342}
+      ]
+    },
+    "wm_decoupled": {
+      "mean": {
+        "latent_return_mean": 13.476524353027344,
+        "imagined_collision_rate": 0.4880833526452382,
+        "collision_mean": 0.5090833803017935,
+        "rollout_stability": 0.5457311471303304,
+        "rollout_stability_global": 0.0945544106264909
+      },
+      "std_across_seeds": {
+        "latent_return_mean": 4.086,
+        "imagined_collision_rate": 0.217,
+        "collision_mean": 0.193,
+        "rollout_stability": 0.046,
+        "rollout_stability_global": 0.049
+      },
+      "seeds": [
+        {"seed": 7, "latent_return_mean": 15.706674575805664, "imagined_collision_rate": 0.29350000619888306, "collision_mean": 0.35512903332710266, "rollout_stability": 0.5607005953788757, "rollout_stability_global": 0.14854934811592102},
+        {"seed": 42, "latent_return_mean": 15.962661743164062, "imagined_collision_rate": 0.4492500126361847, "collision_mean": 0.4469607472419739, "rollout_stability": 0.582409679889679, "rollout_stability_global": 0.05404123291373253},
+        {"seed": 123, "latent_return_mean": 8.760236740112305, "imagined_collision_rate": 0.721500039100647, "collision_mean": 0.7251603603363037, "rollout_stability": 0.4940831661224365, "rollout_stability_global": 0.08107265084981918}
+      ]
+    },
+    "wm_decoupled_no_vis": {
+      "mean": {
+        "latent_return_mean": 17.49738883972168,
+        "imagined_collision_rate": 0.22625001271565756,
+        "collision_mean": 0.2505137075980504,
+        "rollout_stability": 0.1363194907704989,
+        "rollout_stability_global": 0.043335530286034614
+      },
+      "std_across_seeds": {
+        "latent_return_mean": 1.374,
+        "imagined_collision_rate": 0.105,
+        "collision_mean": 0.101,
+        "rollout_stability": 0.022,
+        "rollout_stability_global": 0.020
+      },
+      "seeds": [
+        {"seed": 7, "latent_return_mean": 16.22150421142578, "imagined_collision_rate": 0.18775001168251038, "collision_mean": 0.22278881072998047, "rollout_stability": 0.13438601791858673, "rollout_stability_global": 0.032651301473379135},
+        {"seed": 42, "latent_return_mean": 17.318668365478516, "imagined_collision_rate": 0.34550002217292786, "collision_mean": 0.3624160885810852, "rollout_stability": 0.11517734080553055, "rollout_stability_global": 0.03100362978875637},
+        {"seed": 123, "latent_return_mean": 18.951993942260742, "imagined_collision_rate": 0.14550000429153442, "collision_mean": 0.16633622348308563, "rollout_stability": 0.15939511358737946, "rollout_stability_global": 0.06635165959596634}
+      ]
+    }
+  }
+}

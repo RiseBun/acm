@@ -1,0 +1,344 @@
+{
+  "note": "offline planner-like sanity check; not closed-loop evaluation",
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage1_root": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_stage1_50k",
+    "output_dir": "experiments/nuplan_planner_sanity_50k",
+    "seeds": [
+      7,
+      42,
+      123
+    ],
+    "conditions": [
+      "wm_object",
+      "wm_decoupled_no_vis"
+    ],
+    "batch_size": 128,
+    "loader_workers": 32,
+    "horizon": 5,
+    "max_val_samples": 0
+  },
+  "summary": {
+    "wm_object": {
+      "seeds": [
+        {
+          "condition": "wm_object",
+          "variant": "object_only",
+          "seed": 7,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 9.268582344055176,
+            "teacher_action_mae": 2.169510841369629,
+            "teacher_action_delta_l2": 3.6826441287994385,
+            "policy_action_l2": 3.1017067432403564,
+            "teacher_action_l2": 3.4481289386749268,
+            "latent_return_mean": 1.8347679376602173,
+            "latent_return_std": 3.549142360687256,
+            "imagined_collision_rate": 0.6553999781608582,
+            "collision_mean": 0.6620038151741028,
+            "collision_step_mean": 0.1553327888250351,
+            "rollout_stability": 0.21412082016468048,
+            "ego_progress_proxy": 3.0,
+            "horizon": 5
+          }
+        },
+        {
+          "condition": "wm_object",
+          "variant": "object_only",
+          "seed": 42,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 8.543048858642578,
+            "teacher_action_mae": 1.765200138092041,
+            "teacher_action_delta_l2": 3.4520812034606934,
+            "policy_action_l2": 2.928091049194336,
+            "teacher_action_l2": 3.4036953449249268,
+            "latent_return_mean": 19.55339241027832,
+            "latent_return_std": 4.443767070770264,
+            "imagined_collision_rate": 0.7279000282287598,
+            "collision_mean": 0.694744884967804,
+            "collision_step_mean": 0.3469608426094055,
+            "rollout_stability": 0.6515479683876038,
+            "ego_progress_proxy": 2.985400915145874,
+            "horizon": 5
+          }
+        },
+        {
+          "condition": "wm_object",
+          "variant": "object_only",
+          "seed": 123,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 8.776043891906738,
+            "teacher_action_mae": 1.7758214473724365,
+            "teacher_action_delta_l2": 3.524967670440674,
+            "policy_action_l2": 3.000032901763916,
+            "teacher_action_l2": 3.415924310684204,
+            "latent_return_mean": -16.222740173339844,
+            "latent_return_std": 4.037292003631592,
+            "imagined_collision_rate": 0.4472000002861023,
+            "collision_mean": 0.48466914892196655,
+            "collision_step_mean": 0.12445542961359024,
+            "rollout_stability": 0.236434206366539,
+            "ego_progress_proxy": 2.9999918937683105,
+            "horizon": 5
+          }
+        }
+      ],
+      "mean": {
+        "teacher_action_mse": 8.862557411193848,
+        "teacher_action_mae": 1.9035106897354126,
+        "teacher_action_delta_l2": 3.5532310009002686,
+        "policy_action_l2": 3.009943723678589,
+        "teacher_action_l2": 3.4225828647613525,
+        "latent_return_mean": 1.7218068838119507,
+        "imagined_collision_rate": 0.6101667284965515,
+        "collision_mean": 0.6138059496879578,
+        "collision_step_mean": 0.20891636610031128,
+        "rollout_stability": 0.3673676550388336,
+        "ego_progress_proxy": 2.995131254196167
+      },
+      "std_across_seeds": {
+        "teacher_action_mse": 0.3704231083393097,
+        "teacher_action_mae": 0.23042398691177368,
+        "teacher_action_delta_l2": 0.11785129457712173,
+        "policy_action_l2": 0.0872311219573021,
+        "teacher_action_l2": 0.022952958941459656,
+        "latent_return_mean": 17.888334274291992,
+        "imagined_collision_rate": 0.14571432769298553,
+        "collision_mean": 0.11302755773067474,
+        "collision_step_mean": 0.12054278701543808,
+        "rollout_stability": 0.24636010825634003,
+        "ego_progress_proxy": 0.008426446467638016
+      }
+    },
+    "wm_decoupled_no_vis": {
+      "seeds": [
+        {
+          "condition": "wm_decoupled_no_vis",
+          "variant": "object_relation_decoupled",
+          "seed": 7,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 6.741657257080078,
+            "teacher_action_mae": 1.0651483535766602,
+            "teacher_action_delta_l2": 2.098790168762207,
+            "policy_action_l2": 1.493431568145752,
+            "teacher_action_l2": 3.4481289386749268,
+            "latent_return_mean": 15.841809272766113,
+            "latent_return_std": 4.861967086791992,
+            "imagined_collision_rate": 0.30640000104904175,
+            "collision_mean": 0.31154772639274597,
+            "collision_step_mean": 0.07359582185745239,
+            "rollout_stability": 0.22473721206188202,
+            "ego_progress_proxy": 0.06166817620396614,
+            "horizon": 5
+          }
+        },
+        {
+          "condition": "wm_decoupled_no_vis",
+          "variant": "object_relation_decoupled",
+          "seed": 42,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 6.520999908447266,
+            "teacher_action_mae": 1.0421292781829834,
+            "teacher_action_delta_l2": 2.0409975051879883,
+            "policy_action_l2": 1.4855347871780396,
+            "teacher_action_l2": 3.4036953449249268,
+            "latent_return_mean": 16.53612518310547,
+            "latent_return_std": 6.2233195304870605,
+            "imagined_collision_rate": 0.21619999408721924,
+            "collision_mean": 0.2460629940032959,
+            "collision_step_mean": 0.05155720189213753,
+            "rollout_stability": 0.17556345462799072,
+            "ego_progress_proxy": 2.4440555572509766,
+            "horizon": 5
+          }
+        },
+        {
+          "condition": "wm_decoupled_no_vis",
+          "variant": "object_relation_decoupled",
+          "seed": 123,
+          "n_samples": 10000,
+          "metrics": {
+            "teacher_action_mse": 6.6208906173706055,
+            "teacher_action_mae": 1.135438084602356,
+            "teacher_action_delta_l2": 2.204993486404419,
+            "policy_action_l2": 1.556350588798523,
+            "teacher_action_l2": 3.415924310684204,
+            "latent_return_mean": 11.15816879272461,
+            "latent_return_std": 6.082407474517822,
+            "imagined_collision_rate": 0.2556999921798706,
+            "collision_mean": 0.2727082371711731,
+            "collision_step_mean": 0.05681217834353447,
+            "rollout_stability": 0.26568418741226196,
+            "ego_progress_proxy": 0.7396213412284851,
+            "horizon": 5
+          }
+        }
+      ],
+      "mean": {
+        "teacher_action_mse": 6.627849578857422,
+        "teacher_action_mae": 1.0809053182601929,
+        "teacher_action_delta_l2": 2.114927053451538,
+        "policy_action_l2": 1.5117722749710083,
+        "teacher_action_l2": 3.4225828647613525,
+        "latent_return_mean": 14.51203441619873,
+        "imagined_collision_rate": 0.2594333291053772,
+        "collision_mean": 0.27677300572395325,
+        "collision_step_mean": 0.06065506860613823,
+        "rollout_stability": 0.22199495136737823,
+        "ego_progress_proxy": 1.0817817449569702
+      },
+      "std_across_seeds": {
+        "teacher_action_mse": 0.11049313843250275,
+        "teacher_action_mae": 0.04860908165574074,
+        "teacher_action_delta_l2": 0.08318034559488297,
+        "policy_action_l2": 0.038807302713394165,
+        "teacher_action_l2": 0.022952958941459656,
+        "latent_return_mean": 2.925205945968628,
+        "imagined_collision_rate": 0.04521574452519417,
+        "collision_mean": 0.03293105214834213,
+        "collision_step_mean": 0.011510909534990788,
+        "rollout_stability": 0.0451229065656662,
+        "ego_progress_proxy": 1.2274965047836304
+      }
+    }
+  },
+  "raw": {
+    "wm_object": {
+      "7": {
+        "condition": "wm_object",
+        "variant": "object_only",
+        "seed": 7,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 9.268582344055176,
+          "teacher_action_mae": 2.169510841369629,
+          "teacher_action_delta_l2": 3.6826441287994385,
+          "policy_action_l2": 3.1017067432403564,
+          "teacher_action_l2": 3.4481289386749268,
+          "latent_return_mean": 1.8347679376602173,
+          "latent_return_std": 3.549142360687256,
+          "imagined_collision_rate": 0.6553999781608582,
+          "collision_mean": 0.6620038151741028,
+          "collision_step_mean": 0.1553327888250351,
+          "rollout_stability": 0.21412082016468048,
+          "ego_progress_proxy": 3.0,
+          "horizon": 5
+        }
+      },
+      "42": {
+        "condition": "wm_object",
+        "variant": "object_only",
+        "seed": 42,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 8.543048858642578,
+          "teacher_action_mae": 1.765200138092041,
+          "teacher_action_delta_l2": 3.4520812034606934,
+          "policy_action_l2": 2.928091049194336,
+          "teacher_action_l2": 3.4036953449249268,
+          "latent_return_mean": 19.55339241027832,
+          "latent_return_std": 4.443767070770264,
+          "imagined_collision_rate": 0.7279000282287598,
+          "collision_mean": 0.694744884967804,
+          "collision_step_mean": 0.3469608426094055,
+          "rollout_stability": 0.6515479683876038,
+          "ego_progress_proxy": 2.985400915145874,
+          "horizon": 5
+        }
+      },
+      "123": {
+        "condition": "wm_object",
+        "variant": "object_only",
+        "seed": 123,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 8.776043891906738,
+          "teacher_action_mae": 1.7758214473724365,
+          "teacher_action_delta_l2": 3.524967670440674,
+          "policy_action_l2": 3.000032901763916,
+          "teacher_action_l2": 3.415924310684204,
+          "latent_return_mean": -16.222740173339844,
+          "latent_return_std": 4.037292003631592,
+          "imagined_collision_rate": 0.4472000002861023,
+          "collision_mean": 0.48466914892196655,
+          "collision_step_mean": 0.12445542961359024,
+          "rollout_stability": 0.236434206366539,
+          "ego_progress_proxy": 2.9999918937683105,
+          "horizon": 5
+        }
+      }
+    },
+    "wm_decoupled_no_vis": {
+      "7": {
+        "condition": "wm_decoupled_no_vis",
+        "variant": "object_relation_decoupled",
+        "seed": 7,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 6.741657257080078,
+          "teacher_action_mae": 1.0651483535766602,
+          "teacher_action_delta_l2": 2.098790168762207,
+          "policy_action_l2": 1.493431568145752,
+          "teacher_action_l2": 3.4481289386749268,
+          "latent_return_mean": 15.841809272766113,
+          "latent_return_std": 4.861967086791992,
+          "imagined_collision_rate": 0.30640000104904175,
+          "collision_mean": 0.31154772639274597,
+          "collision_step_mean": 0.07359582185745239,
+          "rollout_stability": 0.22473721206188202,
+          "ego_progress_proxy": 0.06166817620396614,
+          "horizon": 5
+        }
+      },
+      "42": {
+        "condition": "wm_decoupled_no_vis",
+        "variant": "object_relation_decoupled",
+        "seed": 42,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 6.520999908447266,
+          "teacher_action_mae": 1.0421292781829834,
+          "teacher_action_delta_l2": 2.0409975051879883,
+          "policy_action_l2": 1.4855347871780396,
+          "teacher_action_l2": 3.4036953449249268,
+          "latent_return_mean": 16.53612518310547,
+          "latent_return_std": 6.2233195304870605,
+          "imagined_collision_rate": 0.21619999408721924,
+          "collision_mean": 0.2460629940032959,
+          "collision_step_mean": 0.05155720189213753,
+          "rollout_stability": 0.17556345462799072,
+          "ego_progress_proxy": 2.4440555572509766,
+          "horizon": 5
+        }
+      },
+      "123": {
+        "condition": "wm_decoupled_no_vis",
+        "variant": "object_relation_decoupled",
+        "seed": 123,
+        "n_samples": 10000,
+        "metrics": {
+          "teacher_action_mse": 6.6208906173706055,
+          "teacher_action_mae": 1.135438084602356,
+          "teacher_action_delta_l2": 2.204993486404419,
+          "policy_action_l2": 1.556350588798523,
+          "teacher_action_l2": 3.415924310684204,
+          "latent_return_mean": 11.15816879272461,
+          "latent_return_std": 6.082407474517822,
+          "imagined_collision_rate": 0.2556999921798706,
+          "collision_mean": 0.2727082371711731,
+          "collision_step_mean": 0.05681217834353447,
+          "rollout_stability": 0.26568418741226196,
+          "ego_progress_proxy": 0.7396213412284851,
+          "horizon": 5
+        }
+      }
+    }
+  }
+}

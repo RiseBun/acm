@@ -1,0 +1,8 @@
+{
+  "convention": "All mean +/- std entries in paper tables use sample standard deviation across seeds (ddof=1) unless explicitly marked otherwise.",
+  "updated_at": "2026-04-28",
+  "seed_sets": {
+    "stage0_nuscenes": [7, 42, 2026],
+    "stage1": [7, 42, 123]
+  }
+}

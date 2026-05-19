@@ -1,0 +1,165 @@
+{
+  "run_dir": "experiments/nuplan_closed_loop_mvp_5scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents",
+  "n_planners": 2,
+  "planners": [
+    "doorrl_wm_decoupled_no_vis",
+    "doorrl_wm_object"
+  ],
+  "summary": {
+    "doorrl_wm_decoupled_no_vis": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 0.6,
+      "drivable_area_compliance": 1.0,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.10492816605175655,
+      "ego_is_comfortable": 1.0,
+      "time_to_collision_within_bound": 0.6,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.7
+    },
+    "doorrl_wm_object": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 0.4,
+      "drivable_area_compliance": 0.6,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.013791508907448156,
+      "ego_is_comfortable": 0.0,
+      "time_to_collision_within_bound": 0.0,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.3
+    }
+  },
+  "runner_report": [
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5204555.548638035,
+      "end_time": 5204746.336699947,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.1086057327350214,
+      "compute_trajectory_runtimes_median": 0.014720370061695576,
+      "compute_trajectory_runtimes_std": 1.1317753637450283,
+      "duration": 190.78806191217154
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5204792.328280214,
+      "end_time": 5204969.113031737,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.015239664328428323,
+      "compute_trajectory_runtimes_median": 0.014649353921413422,
+      "compute_trajectory_runtimes_std": 0.001768927749488996,
+      "duration": 176.78475152235478
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5205000.219512938,
+      "end_time": 5205180.234852777,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.014698594591269891,
+      "compute_trajectory_runtimes_median": 0.014153146650642157,
+      "compute_trajectory_runtimes_std": 0.001546269306427499,
+      "duration": 180.0153398392722
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5205210.898487861,
+      "end_time": 5205386.72821792,
+      "scenario_name": "336d83c2bf6e5efd",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.015341292520364126,
+      "compute_trajectory_runtimes_median": 0.014659663662314415,
+      "compute_trajectory_runtimes_std": 0.001928170194497093,
+      "duration": 175.82973005902022
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5205416.959446614,
+      "end_time": 5205594.935634705,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.014833142645657063,
+      "compute_trajectory_runtimes_median": 0.01419589901342988,
+      "compute_trajectory_runtimes_std": 0.0016412568900797265,
+      "duration": 177.9761880915612
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5205625.295160089,
+      "end_time": 5205801.667625019,
+      "scenario_name": "693ca17ec8b251d7",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.015176614212493101,
+      "compute_trajectory_runtimes_median": 0.014565277379006147,
+      "compute_trajectory_runtimes_std": 0.0016258018609812208,
+      "duration": 176.37246493063867
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5205831.260362228,
+      "end_time": 5206003.234218563,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.01511771201262338,
+      "compute_trajectory_runtimes_median": 0.014118070714175701,
+      "compute_trajectory_runtimes_std": 0.002636989999788972,
+      "duration": 171.97385633457452
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5206033.329081537,
+      "end_time": 5206206.128243314,
+      "scenario_name": "a040ab916275556d",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.014993431940424762,
+      "compute_trajectory_runtimes_median": 0.014503099024295807,
+      "compute_trajectory_runtimes_std": 0.0014485927705383136,
+      "duration": 172.7991617769003
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5206235.27566868,
+      "end_time": 5206406.840731993,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.014668091406558184,
+      "compute_trajectory_runtimes_median": 0.01417089719325304,
+      "compute_trajectory_runtimes_std": 0.0015235477862831951,
+      "duration": 171.56506331358105
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5206438.461045379,
+      "end_time": 5206612.295996609,
+      "scenario_name": "d178ef27e36c53b6",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.014934796871204904,
+      "compute_trajectory_runtimes_median": 0.014488989487290382,
+      "compute_trajectory_runtimes_std": 0.0014433098838682297,
+      "duration": 173.8349512303248
+    }
+  ],
+  "note": "nuPlan official closed-loop nonreactive simulation MVP; small scenario counts are smoke tests, not final claims."
+}

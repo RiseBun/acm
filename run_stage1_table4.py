@@ -1,10 +1,10 @@
-"""Stage 1 — minimum imagination-RL pipeline.
+"""Stage 1 minimum imagination-RL pipeline.
 
 Trains + evaluates one condition (or ``all`` / ``pilot``) on the same
 nuScenes split as Stage 0 and emits Table 4 metrics (latent return,
 imagined collision rate, rollout stability).
 
-Condition -> representation mapping (from docs/stage1_design.md §3):
+Condition -> representation mapping (from docs/stage1_design.md section 3):
 
     bc           : object_only       , no imagination, action MSE
     ac1          : object_only       , 1-step TD AC (WM detached)
@@ -12,6 +12,8 @@ Condition -> representation mapping (from docs/stage1_design.md §3):
     wm_object    : object_only       , K-step imagination AC
     wm_naive     : object_relation   , K-step imagination AC
     wm_decoupled : object_relation_decoupled_visibility, K-step AC
+    wm_decoupled_rel_to_critic_only:
+                   same decoupled slots, dyn-only actor, dyn+rel critic
 
 Each condition can optionally warm-start from the matching Stage 0
 checkpoint under ``--stage0-root``, so we don't have to re-learn
@@ -40,7 +42,7 @@ from doorrl.data.real_dataset import NuScenesSceneDataset
 from doorrl.evaluation.stage1_metrics import evaluate_stage1
 from doorrl.imagination.task_reward import TaskRewardCfg
 from doorrl.models.doorrl_variant import DoorRLModelVariant, ModelVariant
-from doorrl.schema import SceneBatch
+from doorrl.schema import SceneBatch, TokenType
 from doorrl.training.losses_stage1 import Stage1LossCfg
 from doorrl.training.trainer_stage1 import ImaginationTrainer, Stage1Cfg
 from doorrl.utils import set_seed
@@ -50,6 +52,7 @@ _CONDITIONS = {
     "bc":                  {"variant": "object_only",                          "cond": "bc"},
     "ac1":                 {"variant": "object_only",                          "cond": "ac1"},
     "wm_holistic":         {"variant": "holistic_16slot",                      "cond": "wm"},
+    "wm_set_pma":          {"variant": "set_transformer_pma",                  "cond": "wm"},
     "wm_object":           {"variant": "object_only",                          "cond": "wm"},
     "wm_naive":            {"variant": "object_relation",                      "cond": "wm"},
     # With visibility weighting on the dynamic path (default decoupled variant
@@ -59,6 +62,25 @@ _CONDITIONS = {
     # cause of the decoupled variant's higher imagined-collision rate? Same
     # decoupled abstraction, no visibility multiplicaiton on the dyn path.
     "wm_decoupled_no_vis": {"variant": "object_relation_decoupled",            "cond": "wm"},
+    # DOOR+: same typed dynamic/relation budgets, but relation selector reads
+    # optional confidence/uncertainty token fields and gates low-confidence
+    # relation evidence. Warm-starts from the decoupled no-vis Stage-0 model.
+    "wm_doorplus_uncertainty": {
+        "variant": "object_relation_decoupled_uncertainty",
+        "cond": "wm",
+        "warm_start_variant": "object_relation_decoupled",
+    },
+    # Stage-1 typed-budget ablation. Same architecture as wm_decoupled, but
+    # with --top-k-dyn 14 --top-k-rel 2 (vs default 12+4). The aim is to
+    # test whether the rel budget is the destabiliser revealed by X.
+    "wm_decoupled_14_2":   {"variant": "object_relation_decoupled_visibility", "cond": "wm"},
+    # Fusion ablation: keep relation slots in the world model and critic
+    # value input, but keep the actor policy mean on the dynamic branch only.
+    "wm_decoupled_rel_to_critic_only": {
+        "variant": "object_relation_decoupled_visibility",
+        "cond": "wm",
+        "rel_to_critic_only": True,
+    },
 }
 
 _PILOT_CONDITIONS = ["bc", "wm_object", "wm_decoupled"]
@@ -82,6 +104,18 @@ def parse_args() -> argparse.Namespace:
                         default="/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split")
     parser.add_argument("--nuplan-num-samples", type=int, default=5000)
     parser.add_argument("--nuplan-index-json", type=str, default=None)
+    parser.add_argument(
+        "--nuplan-workers", type=int, default=0,
+        help="Parallel workers for nuPlan NPZ tokenisation. 0/1 = serial.",
+    )
+    parser.add_argument(
+        "--nuplan-lazy", action="store_true",
+        help="Do not pre-materialise nuPlan samples; convert NPZ in DataLoader workers.",
+    )
+    parser.add_argument(
+        "--loader-workers", type=int, default=2,
+        help="PyTorch DataLoader workers. Increase for --nuplan-lazy.",
+    )
     parser.add_argument(
         "--condition", type=str, default="pilot",
         choices=list(_CONDITIONS.keys()) + ["pilot", "all"],
@@ -119,7 +153,92 @@ def parse_args() -> argparse.Namespace:
         "--action-sample-clip", type=float, default=8.0,
         help="Hard cap on sampled action magnitude. v2 pilot used 8.0.",
     )
+    # --- Capacity and typed-budget overrides ----------------------------
+    parser.add_argument(
+        "--top-k", type=int, default=None,
+        help="Override config.model.top_k for capacity-scaling experiments.",
+    )
+    parser.add_argument(
+        "--top-k-dyn", type=int, default=None,
+        help="Override config.model.top_k_dyn (decoupled variants only). "
+             "Default keeps the value from the config file (12).",
+    )
+    parser.add_argument(
+        "--top-k-rel", type=int, default=None,
+        help="Override config.model.top_k_rel (decoupled variants only). "
+             "Default keeps the value from the config file (4). Note: must "
+             "satisfy top_k_dyn + top_k_rel == config.model.top_k.",
+    )
+    parser.add_argument(
+        "--doorplus-train-relfp-rate", type=float, default=0.0,
+        help="For wm_doorplus_uncertainty only: inject low-confidence false-positive "
+             "relation tokens during Stage-1 training.",
+    )
+    parser.add_argument(
+        "--doorplus-fp-confidence", type=float, default=0.05,
+        help="Confidence written to injected false-positive relation tokens.",
+    )
+    parser.add_argument(
+        "--doorplus-safe-confidence", type=float, default=1.0,
+        help="Confidence written to non-corrupted relation tokens during augmentation.",
+    )
     return parser.parse_args()
+
+
+def _relation_mask(batch: SceneBatch) -> torch.Tensor:
+    return (batch.token_types == int(TokenType.RELATION)) & batch.token_mask
+
+
+def _copy_batch(batch: SceneBatch, tokens: torch.Tensor) -> SceneBatch:
+    return SceneBatch(
+        tokens=tokens,
+        token_mask=batch.token_mask,
+        token_types=batch.token_types,
+        actions=batch.actions,
+        next_tokens=batch.next_tokens,
+        rewards=batch.rewards,
+        continues=batch.continues,
+    )
+
+
+def _apply_doorplus_train_relfp(
+    batch: SceneBatch,
+    rate: float,
+    fp_confidence: float,
+    safe_confidence: float,
+) -> SceneBatch:
+    if rate <= 0.0:
+        return batch
+    tokens = batch.tokens.clone()
+    rel_mask = _relation_mask(batch)
+    fp = (torch.rand(batch.token_mask.shape, device=tokens.device) < rate) & rel_mask
+    tokens[..., 15] = torch.where(rel_mask, torch.full_like(tokens[..., 15], safe_confidence), tokens[..., 15])
+    tokens[..., 15] = torch.where(fp, torch.full_like(tokens[..., 15], fp_confidence), tokens[..., 15])
+    tokens[..., 16] = torch.where(fp, torch.ones_like(tokens[..., 16]), torch.zeros_like(tokens[..., 16]))
+    # Same adversarial relation semantics as the post-hoc reliability probe.
+    tokens[..., 6] = torch.where(fp, torch.ones_like(tokens[..., 6]), tokens[..., 6])
+    tokens[..., 8] = torch.where(fp, torch.zeros_like(tokens[..., 8]), tokens[..., 8])
+    tokens[..., 9] = torch.where(fp, torch.ones_like(tokens[..., 9]), tokens[..., 9])
+    tokens[..., 10] = torch.where(fp, torch.ones_like(tokens[..., 10]), tokens[..., 10])
+    return _copy_batch(batch, tokens)
+
+
+class _DoorPlusAugmentedLoader:
+    def __init__(self, loader, args: argparse.Namespace) -> None:
+        self.loader = loader
+        self.args = args
+
+    def __iter__(self):
+        for batch in self.loader:
+            yield _apply_doorplus_train_relfp(
+                batch,
+                rate=float(self.args.doorplus_train_relfp_rate),
+                fp_confidence=float(self.args.doorplus_fp_confidence),
+                safe_confidence=float(self.args.doorplus_safe_confidence),
+            )
+
+    def __len__(self):
+        return len(self.loader)
 
 
 def _build_loaders(args: argparse.Namespace, config: DoorRLConfig):
@@ -130,6 +249,8 @@ def _build_loaders(args: argparse.Namespace, config: DoorRLConfig):
             num_samples=args.nuplan_num_samples,
             index_json=args.nuplan_index_json,
             seed=args.seed,
+            num_workers=getattr(args, "nuplan_workers", 0),
+            materialize_cache=not getattr(args, "nuplan_lazy", False),
         )
     else:
         full = NuScenesSceneDataset(
@@ -153,12 +274,14 @@ def _build_loaders(args: argparse.Namespace, config: DoorRLConfig):
     print(f"scene split: {n_train} train / {n_val} val -> "
           f"{len(train_idx)} train samples / {len(val_idx)} val samples")
 
+    loader_workers = int(getattr(args, "loader_workers", 2))
     loader_kwargs = dict(
         batch_size=config.training.batch_size,
         collate_fn=SceneBatch.collate,
-        num_workers=2, pin_memory=True,
-        persistent_workers=True, prefetch_factor=4,
+        num_workers=loader_workers, pin_memory=True,
     )
+    if loader_workers > 0:
+        loader_kwargs.update(persistent_workers=True, prefetch_factor=4)
     train_loader = DataLoader(Subset(full, train_idx), shuffle=True, **loader_kwargs)
     val_loader = DataLoader(Subset(full, val_idx), shuffle=False, **loader_kwargs)
     return train_loader, val_loader
@@ -223,6 +346,23 @@ def run_condition(
     config.training.epochs = args.epochs
     config.training.batch_size = args.batch_size
     config.seed = args.seed
+    if args.top_k is not None:
+        config.model.top_k = int(args.top_k)
+    if args.top_k_dyn is not None:
+        config.model.top_k_dyn = int(args.top_k_dyn)
+    if args.top_k_rel is not None:
+        config.model.top_k_rel = int(args.top_k_rel)
+    if (args.top_k_dyn is not None) or (args.top_k_rel is not None):
+        if config.model.top_k_dyn + config.model.top_k_rel != config.model.top_k:
+            raise ValueError(
+                f"Typed-budget override violates top_k constraint: "
+                f"top_k_dyn ({config.model.top_k_dyn}) + top_k_rel "
+                f"({config.model.top_k_rel}) != top_k ({config.model.top_k})."
+            )
+        print(f"[budget] top_k_dyn={config.model.top_k_dyn}, "
+              f"top_k_rel={config.model.top_k_rel}")
+    elif args.top_k is not None:
+        print(f"[budget] top_k={config.model.top_k}")
     base_lr = config.training.learning_rate
     if args.lr is not None:
         config.training.learning_rate = float(args.lr)
@@ -240,7 +380,12 @@ def run_condition(
         train_loader, val_loader = loaders
 
     model = DoorRLModelVariant(config.model, ModelVariant(variant_name))
-    _maybe_warm_start(model, args.stage0_root, variant_name)
+    if spec.get("rel_to_critic_only", False):
+        if not hasattr(model, "rel_to_critic_only"):
+            raise ValueError("rel_to_critic_only requires a decoupled variant")
+        model.rel_to_critic_only = True
+        print("[fusion] rel_to_critic_only=True (actor=dyn, critic=dyn+rel)")
+    _maybe_warm_start(model, args.stage0_root, spec.get("warm_start_variant", variant_name))
     if args.freeze_backbone:
         _freeze_backbone(model)
     model.to(device)
@@ -258,11 +403,18 @@ def run_condition(
     )
 
     if not args.eval_only:
+        train_for_fit = train_loader
+        if condition_name == "wm_doorplus_uncertainty" and args.doorplus_train_relfp_rate > 0.0:
+            train_for_fit = _DoorPlusAugmentedLoader(train_loader, args)
+            print(
+                f"[doorplus-train] relfp_rate={args.doorplus_train_relfp_rate} "
+                f"fp_conf={args.doorplus_fp_confidence}"
+            )
         trainer = ImaginationTrainer(
             model=model, config=config.training,
             device=device, stage1_cfg=stage1_cfg,
         )
-        trainer.fit(train_loader, val_loader=val_loader)
+        trainer.fit(train_for_fit, val_loader=val_loader)
         torch.save({
             "condition": condition_name,
             "variant": variant_name,

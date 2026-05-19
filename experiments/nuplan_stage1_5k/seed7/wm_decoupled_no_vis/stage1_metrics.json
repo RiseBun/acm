@@ -1,0 +1,16 @@
+{
+  "condition": "wm_decoupled_no_vis",
+  "variant": "object_relation_decoupled",
+  "seed": 7,
+  "horizon": 5,
+  "metrics": {
+    "latent_return_mean": 16.640457153320312,
+    "latent_return_std": 4.054068088531494,
+    "imagined_collision_rate": 0.26100000739097595,
+    "collision_mean": 0.3722602128982544,
+    "rollout_stability": 0.03624250367283821,
+    "rollout_stability_global": 0.018671292811632156,
+    "horizon": 5,
+    "n_samples": 1000
+  }
+}

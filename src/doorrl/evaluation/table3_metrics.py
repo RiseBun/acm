@@ -30,7 +30,7 @@ Rare Recall@5m 已失区分度 -> 改为 Interaction Recall@1m.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 import torch
@@ -91,6 +91,27 @@ def _nearest_match(
     min_dist, min_local = dist.min(dim=1)
     matched = valid_idx[min_local]
     return min_dist, matched
+
+
+def _collision_counts(pred_bin: int, label: int) -> Tuple[int, int, int, int]:
+    """Return TP/FP/FN/TN counts for one binary collision prediction."""
+    if pred_bin == 1 and label == 1:
+        return 1, 0, 0, 0
+    if pred_bin == 1 and label == 0:
+        return 0, 1, 0, 0
+    if pred_bin == 0 and label == 1:
+        return 0, 0, 1, 0
+    return 0, 0, 0, 1
+
+
+def _compute_f1(tp: int, fp: int, fn: int) -> Tuple[float, float, float]:
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    f1 = (
+        2 * precision * recall / (precision + recall)
+        if (precision + recall) > 0 else 0.0
+    )
+    return precision, recall, f1
 
 
 @dataclass
@@ -309,12 +330,7 @@ class Table3Metrics:
             self.collision_tp, self.collision_fp,
             self.collision_fn, self.collision_tn,
         )
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-        f1 = (
-            2 * precision * recall / (precision + recall)
-            if (precision + recall) > 0 else 0.0
-        )
+        precision, recall, f1 = _compute_f1(tp, fp, fn)
         coll_acc = (
             (tp + tn) / (tp + fp + fn + tn)
             if (tp + fp + fn + tn) > 0 else 0.0
@@ -384,3 +400,211 @@ def evaluate_stage0(
         print(metrics.print_table3_row(variant_name))
 
     return metrics
+
+
+def _sample_rows_from_batch(
+    batch: SceneBatch,
+    output: DoorRLOutput,
+    metadata: Optional[Sequence[Dict[str, object]]] = None,
+) -> List[Dict[str, object]]:
+    """Compute per-sample Stage-0 metric numerators and denominators.
+
+    These rows are intentionally additive: grouping rows by scene or by an
+    adaptive policy reproduces the same metric definitions as ``Table3Metrics``.
+    """
+    pred_next = output.world_model.predicted_next_tokens
+    pred_mask_all = output.abstraction.selected_mask.to(torch.bool)
+    sel_indices = output.abstraction.selected_indices
+    is_set_pred = bool(getattr(output.abstraction, "is_set_prediction", False))
+    pred_prob = output.world_model.predicted_collision.detach()
+    pred_bin = (pred_prob > 0.5).long()
+
+    tokens = batch.tokens
+    next_tokens = batch.next_tokens
+    token_mask = batch.token_mask
+    token_types = batch.token_types
+
+    rows: List[Dict[str, object]] = []
+    batch_size = tokens.size(0)
+    for i in range(batch_size):
+        tt_i = token_types[i]
+        tm_i = token_mask[i]
+
+        dyn_mask = torch.zeros_like(tm_i, dtype=torch.bool)
+        for t in _DYNAMIC_TYPES:
+            dyn_mask |= (tt_i == t)
+        dyn_mask &= tm_i
+
+        rel_mask = (tt_i == int(TokenType.RELATION)) & tm_i
+        risky_rel_count = 0
+        collision_label = 0
+        if rel_mask.any():
+            ttc = tokens[i, rel_mask, _TTC_FEATURE_INDEX]
+            risky_rel_count = int((ttc < _COLLISION_TTC_THRESHOLD).sum().item())
+            collision_label = int(risky_rel_count > 0)
+
+        row: Dict[str, object] = {
+            "batch_local_index": i,
+            "dyn_rollout_se_sum": 0.0,
+            "dyn_rollout_elem_count": 0,
+            "dyn_rollout_mse": None,
+            "rare_ade_sum": 0.0,
+            "rare_ade_count": 0,
+            "rare_ade": None,
+            "interaction_total": 0,
+            "interaction_hit": 0,
+            "interaction_recall_at_1m": None,
+            "action_se_sum": 0.0,
+            "action_elem_count": 0,
+            "action_mse": None,
+            "collision_pred_prob": float(pred_prob[i].item()),
+            "collision_pred_bin": int(pred_bin[i].item()),
+            "collision_label": collision_label,
+            "collision_tp": 0,
+            "collision_fp": 0,
+            "collision_fn": 0,
+            "collision_tn": 0,
+            "num_dynamic_tokens": int(dyn_mask.sum().item()),
+            "num_relation_tokens": int(rel_mask.sum().item()),
+            "num_risky_relation_tokens": risky_rel_count,
+            "num_valid_tokens": int(tm_i.sum().item()),
+        }
+        if metadata is not None and i < len(metadata):
+            row.update(metadata[i])
+
+        tp, fp, fn, tn = _collision_counts(
+            int(pred_bin[i].item()), collision_label,
+        )
+        row.update({
+            "collision_tp": tp,
+            "collision_fp": fp,
+            "collision_fn": fn,
+            "collision_tn": tn,
+        })
+
+        action_se = ((output.policy.action_mean[i] - batch.actions[i]) ** 2).sum().item()
+        action_n = int(batch.actions[i].numel())
+        row["action_se_sum"] = action_se
+        row["action_elem_count"] = action_n
+        row["action_mse"] = action_se / action_n if action_n > 0 else None
+
+        if dyn_mask.sum() == 0:
+            rows.append(row)
+            continue
+
+        gt_xyv = next_tokens[i][dyn_mask][:, :_POS_VEL_DIMS]
+        cur_xy = tokens[i][dyn_mask][:, :2]
+        types_i = tt_i[dyn_mask]
+        pred_xyv_i = pred_next[i][:, :_POS_VEL_DIMS]
+        pred_mask_i = pred_mask_all[i]
+
+        if is_set_pred:
+            slot_is_dyn = pred_mask_i
+        else:
+            slot_types = tt_i.gather(0, sel_indices[i])
+            slot_is_dyn = torch.zeros_like(slot_types, dtype=torch.bool)
+            for t in _DYNAMIC_TYPES:
+                slot_is_dyn |= (slot_types == t)
+        match_mask = pred_mask_i & slot_is_dyn
+
+        min_dist, matched_idx = _nearest_match(
+            pred_xyv_i, match_mask, gt_xyv[:, :2],
+        )
+        if torch.isinf(min_dist).all():
+            rows.append(row)
+            continue
+
+        matched_pred_xyv = pred_xyv_i[matched_idx]
+        se = ((matched_pred_xyv - gt_xyv) ** 2).sum().item()
+        n_elems = int(gt_xyv.numel())
+        row["dyn_rollout_se_sum"] = se
+        row["dyn_rollout_elem_count"] = n_elems
+        row["dyn_rollout_mse"] = se / n_elems if n_elems > 0 else None
+
+        rare_type_mask = torch.zeros_like(types_i, dtype=torch.bool)
+        for t in _RARE_TYPES:
+            rare_type_mask |= (types_i == t)
+        if rare_type_mask.any():
+            rare_dists = min_dist[rare_type_mask]
+            rare_cur_xy = cur_xy[rare_type_mask]
+            rare_sum = rare_dists.sum().item()
+            rare_count = int(rare_type_mask.sum().item())
+            row["rare_ade_sum"] = rare_sum
+            row["rare_ade_count"] = rare_count
+            row["rare_ade"] = rare_sum / rare_count if rare_count > 0 else None
+
+            cur_ego_dist = torch.sqrt((rare_cur_xy * rare_cur_xy).sum(dim=1) + 1e-12)
+            interactive_mask = cur_ego_dist < _INTERACTIVE_EGO_RADIUS_M
+            n_inter = int(interactive_mask.sum().item())
+            row["interaction_total"] = n_inter
+            if n_inter > 0:
+                inter_dists = rare_dists[interactive_mask]
+                n_hit = int((inter_dists < _INTERACTION_RECALL_DIST_M).sum().item())
+                row["interaction_hit"] = n_hit
+                row["interaction_recall_at_1m"] = n_hit / n_inter
+
+        rows.append(row)
+
+    return rows
+
+
+def compute_stage0_group_metrics(rows: Sequence[Dict[str, object]]) -> Dict[str, float]:
+    """Aggregate per-sample rows into the same metrics used by Table 3."""
+    dyn_se = sum(float(r.get("dyn_rollout_se_sum", 0.0) or 0.0) for r in rows)
+    dyn_n = sum(int(r.get("dyn_rollout_elem_count", 0) or 0) for r in rows)
+    action_se = sum(float(r.get("action_se_sum", 0.0) or 0.0) for r in rows)
+    action_n = sum(int(r.get("action_elem_count", 0) or 0) for r in rows)
+    rare_sum = sum(float(r.get("rare_ade_sum", 0.0) or 0.0) for r in rows)
+    rare_n = sum(int(r.get("rare_ade_count", 0) or 0) for r in rows)
+    inter_hit = sum(int(r.get("interaction_hit", 0) or 0) for r in rows)
+    inter_total = sum(int(r.get("interaction_total", 0) or 0) for r in rows)
+    tp = sum(int(r.get("collision_tp", 0) or 0) for r in rows)
+    fp = sum(int(r.get("collision_fp", 0) or 0) for r in rows)
+    fn = sum(int(r.get("collision_fn", 0) or 0) for r in rows)
+    tn = sum(int(r.get("collision_tn", 0) or 0) for r in rows)
+    precision, recall, f1 = _compute_f1(tp, fp, fn)
+    total_coll = tp + fp + fn + tn
+    return {
+        "num_samples": len(rows),
+        "dyn_rollout_mse": dyn_se / dyn_n if dyn_n > 0 else 0.0,
+        "action_mse": action_se / action_n if action_n > 0 else 0.0,
+        "collision_f1": f1,
+        "collision_precision": precision,
+        "collision_recall": recall,
+        "collision_accuracy": (tp + tn) / total_coll if total_coll > 0 else 0.0,
+        "collision_base_rate_pos": (tp + fn) / total_coll if total_coll > 0 else 0.0,
+        "rare_ade": rare_sum / rare_n if rare_n > 0 else 0.0,
+        "rare_ade_count": rare_n,
+        "interaction_recall_at_1m": (
+            inter_hit / inter_total if inter_total > 0 else 0.0
+        ),
+        "interaction_total": inter_total,
+        "interaction_hit": inter_hit,
+        "collision_tp": tp,
+        "collision_fp": fp,
+        "collision_fn": fn,
+        "collision_tn": tn,
+    }
+
+
+def collect_stage0_sample_metrics(
+    model,
+    data_loader,
+    device: torch.device,
+    sample_metadata: Optional[Sequence[Dict[str, object]]] = None,
+) -> List[Dict[str, object]]:
+    """Collect additive per-sample metrics for oracle/adaptive split analysis."""
+    model.eval()
+    rows: List[Dict[str, object]] = []
+    offset = 0
+    with torch.no_grad():
+        for batch in data_loader:
+            batch_size = batch.tokens.size(0)
+            batch_metadata = None
+            if sample_metadata is not None:
+                batch_metadata = sample_metadata[offset: offset + batch_size]
+            batch = batch.to(device)
+            output = model(batch)
+            rows.extend(_sample_rows_from_batch(batch, output, batch_metadata))
+            offset += batch_size
+    return rows

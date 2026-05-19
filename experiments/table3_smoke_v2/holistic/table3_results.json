@@ -1,0 +1,8 @@
+{
+  "rollout_error": 4.3264946937561035,
+  "rollout_error_std": 2.3984787216890973,
+  "reward_error": 0.009291318990290166,
+  "reward_error_std": 0.0020610496893317654,
+  "collision_accuracy": 0.875,
+  "rare_agent_recall": 1.0
+}

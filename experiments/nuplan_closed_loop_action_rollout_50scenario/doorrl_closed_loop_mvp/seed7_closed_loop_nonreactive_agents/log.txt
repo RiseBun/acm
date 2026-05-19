@@ -1,0 +1,305 @@
+2026-04-25 16:05:23,478 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:19}  Building WorkerPool...
+2026-04-25 16:05:23,479 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:101}  Worker: SingleMachineParallelExecutor
+2026-04-25 16:05:23,479 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:102}  Number of nodes: 1
+Number of CPUs per node: 192
+Number of GPUs per node: 0
+Number of threads across all nodes: 192
+2026-04-25 16:05:23,479 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:27}  Building WorkerPool...DONE!
+2026-04-25 16:05:23,479 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:32}  Building experiment folders...
+2026-04-25 16:05:23,479 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:35}  
+
+	Folder where all results are stored: experiments/nuplan_closed_loop_action_rollout_50scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents
+
+2026-04-25 16:05:23,487 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:70}  Building experiment folders...DONE!
+2026-04-25 16:05:23,488 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:52}  Building AbstractCallback...
+2026-04-25 16:05:23,488 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:68}  Building AbstractCallback: 0...DONE!
+2026-04-25 16:05:23,488 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:47}  Building simulations...
+2026-04-25 16:05:23,488 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:53}  Extracting scenarios...
+2026-04-25 16:05:23,488 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/common/utils/distributed_scenario_filter.py:83}  Building Scenarios in mode DistributedMode.SINGLE_NODE
+2026-04-25 16:05:23,489 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:18}  Building AbstractScenarioBuilder...
+2026-04-25 16:05:23,503 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:21}  Building AbstractScenarioBuilder...DONE!
+2026-04-25 16:05:23,503 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:35}  Building ScenarioFilter...
+2026-04-25 16:05:23,504 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:44}  Building ScenarioFilter...DONE!
+2026-04-25 16:05:23,767 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:74}  Building metric engines...
+2026-04-25 16:05:23,884 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:76}  Building metric engines...DONE
+2026-04-25 16:05:23,884 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:80}  Building simulations from 50 scenarios...
+2026-04-25 16:06:06,544 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:133}  Building simulations...DONE!
+2026-04-25 16:06:06,545 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/run_simulation.py:78}  Running simulation...
+2026-04-25 16:06:06,545 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:138}  Executing runners...
+2026-04-25 16:06:06,545 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:82}  Starting 100 simulations using SingleMachineParallelExecutor!
+2026-04-25 17:28:40,483 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:28:40,528 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:28:40,530 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:28:40,530 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 23a1b30d27a05dd5]
+
+2026-04-25 17:28:40,530 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:29:13,774 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:29:13,780 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:29:13,780 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:29:13,780 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 084db2c52bb759e7]
+
+2026-04-25 17:29:13,780 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:31:42,651 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:31:42,662 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:31:42,662 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:31:42,662 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 23a1b30d27a05dd5]
+
+2026-04-25 17:31:42,662 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:31:43,672 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:31:43,672 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:31:43,673 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:31:43,673 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, c3b9acf62496516f]
+
+2026-04-25 17:31:43,673 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:32:25,030 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:32:25,071 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:32:25,071 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:32:25,071 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, 084db2c52bb759e7]
+
+2026-04-25 17:32:25,071 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:32:39,415 ERROR {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py:118}  Running drivable_area_compliance with error: 
+2026-04-25 17:32:39,416 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-25 17:32:39,416 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ Metric Engine failed with: 
+2026-04-25 17:32:39,416 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.06.07.11.59.52_veh-35_00008_00083, c3b9acf62496516f]
+
+2026-04-25 17:32:39,416 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,166 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:123}  Failed Simulation.
+ 'Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 112, in compute_metric_results
+    metric_results[metric.name] = metric.compute(history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/evaluation_metrics/common/drivable_area_compliance.py", line 177, in compute
+    time_series = TimeSeries(unit='boolean', time_stamps=list(time_stamps), values=corners_in_drivable_area)
+  File "<string>", line 7, in __init__
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_result.py", line 127, in __post_init__
+    assert len(self.time_stamps) == len(self.values)
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py", line 27, in run_simulation
+    return sim_runner.run()
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/simulations_runner.py", line 128, in run
+    self.simulation.callback.on_simulation_end(self.simulation.setup, self.planner, self.simulation.history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/multi_callback.py", line 68, in on_simulation_end
+    callback.on_simulation_end(setup, planner, history)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 102, in on_simulation_end
+    run_metric_engine(
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/callback/metric_callback.py", line 24, in run_metric_engine
+    metric_files = metric_engine.compute(history, scenario=scenario, planner_name=planner_name)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 133, in compute
+    all_metrics_results = self.compute_metric_results(history=history, scenario=scenario)
+  File "/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/metrics/metric_engine.py", line 119, in compute_metric_results
+    raise RuntimeError(f"Metric Engine failed with: {e}")
+RuntimeError: Metric Engine failed with: 
+'
+2026-04-25 17:34:26,167 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:127}  Number of successful simulations: 94
+2026-04-25 17:34:26,167 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:128}  Number of failed simulations: 6
+2026-04-25 17:34:26,167 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:132}  Failed simulations [log, token]:
+[2021.06.07.11.59.52_veh-35_00008_00083, 084db2c52bb759e7] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 084db2c52bb759e7] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 23a1b30d27a05dd5] 
+[2021.06.07.11.59.52_veh-35_00008_00083, 23a1b30d27a05dd5] 
+[2021.06.07.11.59.52_veh-35_00008_00083, c3b9acf62496516f] 
+[2021.06.07.11.59.52_veh-35_00008_00083, c3b9acf62496516f] 
+
+2026-04-25 17:34:26,167 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:147}  Finished executing runners!
+2026-04-25 17:34:26,263 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:74}  Saved runner reports to experiments/nuplan_closed_loop_action_rollout_50scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents/runner_report.parquet
+2026-04-25 17:34:26,264 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/time_callback.py:27}  Simulation duration: 01:29:02 [HH:MM:SS]
+2026-04-25 17:34:33,866 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_file_callback.py:79}  Metric files integration: 00:00:07 [HH:MM:SS]
+2026-04-25 17:34:34,977 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_aggregator_callback.py:58}  Running metric aggregator: closed_loop_nonreactive_agents_weighted_average
+2026-04-25 17:34:35,126 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_aggregator_callback.py:69}  Metric aggregator: 00:00:01 [HH:MM:SS]
+2026-04-25 17:34:35,686 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:35,687 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:35,866 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:35,866 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,046 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,047 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,240 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,240 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,800 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,800 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,806 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,807 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,810 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,810 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,814 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:36,814 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,258 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,258 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,264 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,265 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,268 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,268 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,272 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:37,273 INFO {/mnt/volumes/cpfs/prediction/lipeinan/environments/conda/envs/flow_planner/lib/python3.10/site-packages/matplotlib/category.py:223}  Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-25 17:34:46,155 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/main_callback/metric_summary_callback.py:344}  Metric summary: 00:00:11 [HH:MM:SS]
+2026-04-25 17:34:46,158 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/run_simulation.py:80}  Finished running simulation!

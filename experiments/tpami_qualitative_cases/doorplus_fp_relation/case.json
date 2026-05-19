@@ -1,0 +1,36 @@
+{
+  "score": 42,
+  "dataset_index": 4418,
+  "scene_id": "us-nv-las-vegas-strip_0a0a86cff5295b88",
+  "door_fp_selected": [
+    45,
+    47,
+    54
+  ],
+  "doorplus_fp_selected": [],
+  "door_true_risk_selected": [
+    50
+  ],
+  "doorplus_true_risk_selected": [
+    49,
+    50,
+    51,
+    52
+  ],
+  "suppressed_fp_relations": [
+    45,
+    47,
+    54
+  ],
+  "suppressed_fp_proxy_confidence": {
+    "45": 0.29064467549324036,
+    "47": 0.2880825698375702,
+    "54": 0.2624991834163666
+  },
+  "doorplus_true_risk_proxy_confidence": {
+    "49": 0.4590700566768646,
+    "50": 0.457376092672348,
+    "51": 0.45168256759643555,
+    "52": 0.44741708040237427
+  }
+}

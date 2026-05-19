@@ -314,6 +314,8 @@ class NuScenesRealDataAdapter:
                 'token_type': self._token_type_to_str(token_type),
                 'category': ann['category_name'],
                 'visibility': visibility,
+                'confidence': visibility,
+                'uncertainty': 1.0 - visibility,
             }
 
             objects.append(obj)
@@ -415,6 +417,11 @@ class NuScenesRealDataAdapter:
                 'lane_conflict': lane_conflict,
                 'visibility': obj.get('visibility', 1.0),
                 'priority': self._compute_priority(obj, ego_state),
+                'confidence': obj.get('confidence', obj.get('visibility', 1.0)),
+                'uncertainty': obj.get(
+                    'uncertainty',
+                    1.0 - obj.get('visibility', 1.0),
+                ),
             }
             
             relations.append(relation)

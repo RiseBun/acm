@@ -1,0 +1,62 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Caesar et~al.(2020)Caesar, Bankiti, Lang, Vora, Liong, Xu, Krishnan,
+  Pan, Baldan, and Beijbom]{caesar2020nuscenes}
+Holger Caesar, Varun Bankiti, Alex~H. Lang, Sourabh Vora, Venice~Erin Liong,
+  Qiang Xu, Anush Krishnan, Yu~Pan, Giancarlo Baldan, and Oscar Beijbom.
+\newblock nuscenes: A multimodal dataset for autonomous driving.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, 2020.
+
+\bibitem[Caesar et~al.(2021)Caesar, Bankiti, Lang, Xu, Krishnan, Pan, Baldan,
+  and Beijbom]{caesar2021nuplan}
+Holger Caesar, Luca Bankiti, Alex~H. Lang, Walter H.~W. Xu, Anush Krishnan,
+  Yu~Pan, Giancarlo Baldan, and Oscar Beijbom.
+\newblock nuplan: A closed-loop ml-based planning benchmark for autonomous
+  vehicles.
+\newblock \emph{arXiv preprint arXiv:2106.11810}, 2021.
+
+\bibitem[Dauner et~al.(2024)]{dauner2024navsim}
+David Dauner et~al.
+\newblock Navsim: Data-driven non-reactive autonomous vehicle simulation and
+  benchmarking.
+\newblock \emph{arXiv preprint arXiv:2406.15349}, 2024.
+
+\bibitem[Dosovitskiy et~al.(2017)Dosovitskiy, Ros, Codevilla, L{\'o}pez, and
+  Koltun]{dosovitskiy2017carla}
+Alexey Dosovitskiy, Germ{\'a}n Ros, Felipe Codevilla, Antonio L{\'o}pez, and
+  Vladlen Koltun.
+\newblock Carla: An open urban driving simulator.
+\newblock In \emph{Proceedings of the 1st Annual Conference on Robot Learning},
+  2017.
+
+\bibitem[Ha and Schmidhuber(2018)]{ha2018worldmodels}
+David Ha and J{\"u}rgen Schmidhuber.
+\newblock World models.
+\newblock \emph{arXiv preprint arXiv:1803.10122}, 2018.
+
+\bibitem[Hafner et~al.(2023)Hafner, Pasukonis, Ba, and
+  Lillicrap]{hafner2023dreamerv3}
+Danijar Hafner, Jurgis Pasukonis, Jimmy Ba, and Timothy Lillicrap.
+\newblock Mastering diverse domains through world models.
+\newblock \emph{arXiv preprint arXiv:2301.04104}, 2023.
+
+\bibitem[Locatello et~al.(2020)Locatello, Weissenborn, Unterthiner, Mahendran,
+  Heigold, Uszkoreit, Dosovitskiy, and Kipf]{locatello2020slotattention}
+Francesco Locatello, Dirk Weissenborn, Thomas Unterthiner, Aravindh Mahendran,
+  Georg Heigold, Jakob Uszkoreit, Alexey Dosovitskiy, and Thomas Kipf.
+\newblock Object-centric learning with slot attention.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem[Mao et~al.(2023)Mao, Jiang, Tang, et~al.]{mao2023waymax}
+Jiageng Mao, Minqi Jiang, Chen Tang, et~al.
+\newblock Waymax: An accelerated, data-driven simulator for large-scale
+  autonomous driving research.
+\newblock \emph{arXiv preprint arXiv:2310.08710}, 2023.
+
+\end{thebibliography}

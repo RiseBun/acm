@@ -1,0 +1,16 @@
+{
+  "condition": "wm_object",
+  "variant": "object_only",
+  "seed": 7,
+  "horizon": 5,
+  "metrics": {
+    "latent_return_mean": -9.275347709655762,
+    "latent_return_std": 6.533163547515869,
+    "imagined_collision_rate": 0.44600000977516174,
+    "collision_mean": 0.4613555371761322,
+    "rollout_stability": 0.2390851229429245,
+    "rollout_stability_global": 0.0020261164754629135,
+    "horizon": 5,
+    "n_samples": 1000
+  }
+}

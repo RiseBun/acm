@@ -1,0 +1,16 @@
+{
+  "condition": "bc",
+  "variant": "object_only",
+  "seed": 42,
+  "horizon": 5,
+  "metrics": {
+    "latent_return_mean": -2.2551400661468506,
+    "latent_return_std": 0.00032622189610265195,
+    "imagined_collision_rate": 0.0,
+    "collision_mean": 0.2985858917236328,
+    "rollout_stability": 0.05543956160545349,
+    "rollout_stability_global": 0.001609888393431902,
+    "horizon": 5,
+    "n_samples": 10000
+  }
+}

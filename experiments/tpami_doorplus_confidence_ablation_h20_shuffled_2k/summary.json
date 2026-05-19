@@ -1,0 +1,155 @@
+{
+  "note": "post-hoc DOOR+ uncertainty gating; no retraining",
+  "setup": {
+    "config": "/mnt/volumes/cpfs/prediction/lipeinan/code/configs/debug_mvp.json",
+    "nuplan_root": "/mnt/datasets/e2e-nuplan/v1.1/processed_agent64_split",
+    "nuplan_num_samples": 50000,
+    "nuplan_index_json": "/mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_50k_balanced_paths_seed7.json",
+    "stage1_root": "experiments/nuplan_stage1_doorplus_uncertainty_50k_lr5e4",
+    "output_dir": "experiments/tpami_doorplus_confidence_ablation_h20_shuffled_2k",
+    "seeds": [
+      7,
+      42,
+      123
+    ],
+    "conditions": [
+      "doorplus_uncertainty"
+    ],
+    "corruptions": [
+      "relfp0.2"
+    ],
+    "batch_size": 128,
+    "loader_workers": 0,
+    "horizon": 20,
+    "max_val_samples": 2000,
+    "fp_confidence": 0.05,
+    "safe_ttc": 10.0,
+    "confidence_mode": "shuffled"
+  },
+  "summary": {
+    "doorplus_uncertainty": {
+      "relfp0.2": {
+        "mean": {
+          "teacher_action_mse": 7.022958278656006,
+          "teacher_action_delta_l2": 2.4114818572998047,
+          "latent_return_mean": 46.53717041015625,
+          "imagined_collision_rate": 0.9688333868980408,
+          "collision_mean": 0.9237375259399414,
+          "collision_step_mean": 0.046356379985809326,
+          "rollout_stability": 0.020955095067620277,
+          "selected_fp_rel_at_k": 0.12275000661611557,
+          "fp_rel_density_per_k": 0.5571666359901428
+        },
+        "std_across_seeds": {
+          "teacher_action_mse": 0.2330971211194992,
+          "teacher_action_delta_l2": 0.22934186458587646,
+          "latent_return_mean": 20.536914825439453,
+          "imagined_collision_rate": 0.009358595125377178,
+          "collision_mean": 0.012797082774341106,
+          "collision_step_mean": 0.0006763108540326357,
+          "rollout_stability": 0.0032892748713493347,
+          "selected_fp_rel_at_k": 0.029987758025527,
+          "fp_rel_density_per_k": 0.0090737733989954
+        },
+        "seeds": [
+          {
+            "seed": 7,
+            "n_samples": 2000,
+            "teacher_action_mse": 7.206116676330566,
+            "teacher_action_delta_l2": 2.3697688579559326,
+            "latent_return_mean": 67.58279418945312,
+            "latent_return_std": 17.169614791870117,
+            "imagined_collision_rate": 0.9649999737739563,
+            "collision_mean": 0.9127044677734375,
+            "collision_step_mean": 0.04578235745429993,
+            "rollout_stability": 0.02339663729071617,
+            "selected_fp_rel_at_k": 0.12575000524520874,
+            "fp_rel_density_per_k": 0.565500020980835,
+            "confidence_mode": "shuffled"
+          },
+          {
+            "seed": 42,
+            "n_samples": 2000,
+            "teacher_action_mse": 7.102182388305664,
+            "teacher_action_delta_l2": 2.6588172912597656,
+            "latent_return_mean": 26.549890518188477,
+            "latent_return_std": 70.55130767822266,
+            "imagined_collision_rate": 0.9620000123977661,
+            "collision_mean": 0.920741081237793,
+            "collision_step_mean": 0.04618484526872635,
+            "rollout_stability": 0.017214706167578697,
+            "selected_fp_rel_at_k": 0.1511249989271164,
+            "fp_rel_density_per_k": 0.5475000143051147,
+            "confidence_mode": "shuffled"
+          },
+          {
+            "seed": 123,
+            "n_samples": 2000,
+            "teacher_action_mse": 6.760574817657471,
+            "teacher_action_delta_l2": 2.205859422683716,
+            "latent_return_mean": 45.47883224487305,
+            "latent_return_std": 13.191935539245605,
+            "imagined_collision_rate": 0.9794999957084656,
+            "collision_mean": 0.9377669095993042,
+            "collision_step_mean": 0.0471019446849823,
+            "rollout_stability": 0.02225394919514656,
+            "selected_fp_rel_at_k": 0.09137500077486038,
+            "fp_rel_density_per_k": 0.5584999918937683,
+            "confidence_mode": "shuffled"
+          }
+        ]
+      }
+    }
+  },
+  "raw": {
+    "doorplus_uncertainty": {
+      "relfp0.2": {
+        "7": {
+          "seed": 7,
+          "n_samples": 2000,
+          "teacher_action_mse": 7.206116676330566,
+          "teacher_action_delta_l2": 2.3697688579559326,
+          "latent_return_mean": 67.58279418945312,
+          "latent_return_std": 17.169614791870117,
+          "imagined_collision_rate": 0.9649999737739563,
+          "collision_mean": 0.9127044677734375,
+          "collision_step_mean": 0.04578235745429993,
+          "rollout_stability": 0.02339663729071617,
+          "selected_fp_rel_at_k": 0.12575000524520874,
+          "fp_rel_density_per_k": 0.565500020980835,
+          "confidence_mode": "shuffled"
+        },
+        "42": {
+          "seed": 42,
+          "n_samples": 2000,
+          "teacher_action_mse": 7.102182388305664,
+          "teacher_action_delta_l2": 2.6588172912597656,
+          "latent_return_mean": 26.549890518188477,
+          "latent_return_std": 70.55130767822266,
+          "imagined_collision_rate": 0.9620000123977661,
+          "collision_mean": 0.920741081237793,
+          "collision_step_mean": 0.04618484526872635,
+          "rollout_stability": 0.017214706167578697,
+          "selected_fp_rel_at_k": 0.1511249989271164,
+          "fp_rel_density_per_k": 0.5475000143051147,
+          "confidence_mode": "shuffled"
+        },
+        "123": {
+          "seed": 123,
+          "n_samples": 2000,
+          "teacher_action_mse": 6.760574817657471,
+          "teacher_action_delta_l2": 2.205859422683716,
+          "latent_return_mean": 45.47883224487305,
+          "latent_return_std": 13.191935539245605,
+          "imagined_collision_rate": 0.9794999957084656,
+          "collision_mean": 0.9377669095993042,
+          "collision_step_mean": 0.0471019446849823,
+          "rollout_stability": 0.02225394919514656,
+          "selected_fp_rel_at_k": 0.09137500077486038,
+          "fp_rel_density_per_k": 0.5584999918937683,
+          "confidence_mode": "shuffled"
+        }
+      }
+    }
+  }
+}

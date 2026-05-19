@@ -1,0 +1,45 @@
+2026-04-28 07:27:32,819 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:19}  Building WorkerPool...
+2026-04-28 07:27:32,823 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:101}  Worker: SingleMachineParallelExecutor
+2026-04-28 07:27:32,823 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:102}  Number of nodes: 1
+Number of CPUs per node: 8
+Number of GPUs per node: 0
+Number of threads across all nodes: 8
+2026-04-28 07:27:32,823 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:27}  Building WorkerPool...DONE!
+2026-04-28 07:27:32,823 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:32}  Building experiment folders...
+2026-04-28 07:27:32,823 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:35}  
+
+	Folder where all results are stored: /mnt/volumes/cpfs/prediction/lipeinan/code/experiments/nuplan_official_closed_loop_p0/runs/doorrl_closed_loop_mvp/p0_13_seed7_door_bc_pdm
+
+2026-04-28 07:27:32,833 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:70}  Building experiment folders...DONE!
+2026-04-28 07:27:32,834 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:52}  Building AbstractCallback...
+2026-04-28 07:27:32,834 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_callback_builder.py:68}  Building AbstractCallback: 0...DONE!
+2026-04-28 07:27:32,834 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:47}  Building simulations...
+2026-04-28 07:27:32,834 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:53}  Extracting scenarios...
+2026-04-28 07:27:32,835 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/common/utils/distributed_scenario_filter.py:83}  Building Scenarios in mode DistributedMode.SINGLE_NODE
+2026-04-28 07:27:32,835 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:18}  Building AbstractScenarioBuilder...
+2026-04-28 07:27:32,855 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:21}  Building AbstractScenarioBuilder...DONE!
+2026-04-28 07:27:32,855 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:35}  Building ScenarioFilter...
+2026-04-28 07:27:32,856 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:44}  Building ScenarioFilter...DONE!
+2026-04-28 07:27:39,127 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:74}  Building metric engines...
+2026-04-28 07:27:39,328 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:76}  Building metric engines...DONE
+2026-04-28 07:27:39,328 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:80}  Building simulations from 13 scenarios...
+2026-04-28 07:28:40,912 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/builders/simulation_builder.py:133}  Building simulations...DONE!
+2026-04-28 07:28:40,913 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/run_simulation.py:78}  Running simulation...
+2026-04-28 07:28:40,913 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/script/utils.py:138}  Executing runners...
+2026-04-28 07:28:40,913 INFO {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:82}  Starting 52 simulations using SingleMachineParallelExecutor!
+2026-04-28 07:30:05,996 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-28 07:30:05,999 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ index 33 is out of bounds for axis 1 with size 33
+2026-04-28 07:30:05,999 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.05.25.14.24.08_veh-25_01129_01494, 0194edaf63e75241]
+
+2026-04-28 07:30:05,999 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!
+2026-04-28 07:30:10,202 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:32}  ----------- Simulation failed: with the following trace:
+2026-04-28 07:30:10,202 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:34}  Simulation failed with error:
+ index 33 is out of bounds for axis 1 with size 33
+2026-04-28 07:30:10,202 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:38}  
+Failed simulation [log,token]:
+ [2021.05.25.12.30.39_veh-25_00321_01196, 0ef918a26914564e]
+
+2026-04-28 07:30:10,202 WARNING {/mnt/volumes/cpfs/prediction/lipeinan/code/cangku/nuplan-devkit/nuplan/planning/simulation/runner/executor.py:40}  ----------- Simulation failed!

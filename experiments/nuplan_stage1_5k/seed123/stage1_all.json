@@ -1,0 +1,66 @@
+{
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 123,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -1.8420737981796265,
+      "latent_return_std": 22.63124656677246,
+      "imagined_collision_rate": 0.5980000495910645,
+      "collision_mean": 0.5152468681335449,
+      "rollout_stability": 0.14881527423858643,
+      "rollout_stability_global": 0.01655225083231926,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 123,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 22.794578552246094,
+      "latent_return_std": 2.9737696647644043,
+      "imagined_collision_rate": 0.08500000089406967,
+      "collision_mean": 0.14374412596225739,
+      "rollout_stability": 0.8843333721160889,
+      "rollout_stability_global": 0.0917288288474083,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_no_vis": {
+    "condition": "wm_decoupled_no_vis",
+    "variant": "object_relation_decoupled",
+    "seed": 123,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 11.655682563781738,
+      "latent_return_std": 4.5525007247924805,
+      "imagined_collision_rate": 0.2070000171661377,
+      "collision_mean": 0.24147090315818787,
+      "rollout_stability": 0.18273970484733582,
+      "rollout_stability_global": 0.08475001901388168,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_rel_to_critic_only": {
+    "condition": "wm_decoupled_rel_to_critic_only",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 123,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 2.4533658027648926,
+      "latent_return_std": 8.463237762451172,
+      "imagined_collision_rate": 0.17600001394748688,
+      "collision_mean": 0.30684909224510193,
+      "rollout_stability": 0.766355037689209,
+      "rollout_stability_global": 0.04774456098675728,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 123,
+  "n_samples": 2000,
+  "teacher_action_mse": 6.731723785400391,
+  "teacher_action_delta_l2": 2.1345760822296143,
+  "latent_return_mean": 45.48716735839844,
+  "latent_return_std": 13.225386619567871,
+  "imagined_collision_rate": 0.9779999852180481,
+  "collision_mean": 0.9315285086631775,
+  "collision_step_mean": 0.04660031944513321,
+  "rollout_stability": 0.022239692509174347,
+  "selected_fp_rel_at_k": 0.006624999921768904,
+  "fp_rel_density_per_k": 0.5680000185966492,
+  "selected_true_risk_rel_at_k": 0.06812500208616257,
+  "true_risk_rel_density_per_k": 0.1445000022649765,
+  "confidence_mode": "normal"
+}

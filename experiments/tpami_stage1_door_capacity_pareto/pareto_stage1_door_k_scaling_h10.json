@@ -1,0 +1,50 @@
+[
+  {
+    "k": 16,
+    "split": "14/2",
+    "return_mean": -11.957287311553955,
+    "return_std": 7.669565104661954,
+    "collision_rate_mean": 0.8150000174840292,
+    "collision_rate_std": 0.04978955897681263,
+    "collision_mean_mean": 0.8109712402025858,
+    "collision_mean_std": 0.05452944623598022,
+    "forward_ms": 3.1194168090820313,
+    "rollout_h10_ms": 55.599100748697914,
+    "peak_mem_forward_mb": 68.53955078125,
+    "peak_mem_rollout_mb": 110.896484375,
+    "rollout_mem_vs_k16": 1.0,
+    "interpretation": "too constrained"
+  },
+  {
+    "k": 32,
+    "split": "24/8",
+    "return_mean": 1.1677712202072144,
+    "return_std": 3.358859062407118,
+    "collision_rate_mean": 0.8643333713213602,
+    "collision_rate_std": 0.03611554554040038,
+    "collision_mean_mean": 0.8611295620600382,
+    "collision_mean_std": 0.03222675342664389,
+    "forward_ms": 2.9688275146484373,
+    "rollout_h10_ms": 56.42912292480469,
+    "peak_mem_forward_mb": 68.53955078125,
+    "peak_mem_rollout_mb": 166.8037109375,
+    "rollout_mem_vs_k16": 1.5041388541538245,
+    "interpretation": "compact trade-off"
+  },
+  {
+    "k": 64,
+    "split": "52/12",
+    "return_mean": 14.876300811767578,
+    "return_std": 0.7834822691537202,
+    "collision_rate_mean": 0.5480000178019205,
+    "collision_rate_std": 0.0065574449961157575,
+    "collision_mean_mean": 0.555975099404653,
+    "collision_mean_std": 0.009553320240445683,
+    "forward_ms": 3.158547058105469,
+    "rollout_h10_ms": 55.41643269856771,
+    "peak_mem_forward_mb": 83.08935546875,
+    "peak_mem_rollout_mb": 288.2958984375,
+    "rollout_mem_vs_k16": 2.599684742598496,
+    "interpretation": "stronger but costly"
+  }
+]

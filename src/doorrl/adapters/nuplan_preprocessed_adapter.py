@@ -84,6 +84,20 @@ def _is_valid_agent(row: np.ndarray, valid_threshold: float = 1e-6) -> bool:
     return bool(np.abs(row[:6]).sum() > valid_threshold)
 
 
+def _track_confidence(history: np.ndarray) -> float:
+    """Proxy detector/track confidence from preprocessed history continuity.
+
+    Diffusion-Planner NPZs do not expose detector scores. A track observed
+    consistently over the 21-frame past window is usually more reliable than
+    one appearing only at the anchor frame, so use valid-frame density as a
+    deployable confidence proxy in [0, 1].
+    """
+    if history.size == 0:
+        return 0.0
+    valid = np.array([_is_valid_agent(row) for row in history], dtype=np.float32)
+    return float(valid.mean())
+
+
 class NuPlanPreprocessedAdapter:
     """Zero-dependency adapter that reads preprocessed Diffusion-Planner
     NPZ files and converts them into DOOR-RL scene items.
@@ -223,6 +237,8 @@ class NuPlanPreprocessedAdapter:
             one_hot = now[[_AGENT_IS_VEH, _AGENT_IS_PED, _AGENT_IS_CYC]]
             cls_idx = int(np.argmax(one_hot)) if float(one_hot.sum()) > 0.0 else 0
             token_type = self._CLASS_ORDER[cls_idx].name.lower()
+            confidence = _track_confidence(agents_past[i])
+            uncertainty = 1.0 - confidence
 
             objects.append({
                 "x": ax, "y": ay,
@@ -231,6 +247,8 @@ class NuPlanPreprocessedAdapter:
                 "heading": a_heading,
                 "token_type": token_type,
                 "speed": math.hypot(avx, avy),
+                "confidence": confidence,
+                "uncertainty": uncertainty,
             })
 
             # Next-step state from future[:, 0, :] = (x, y, heading) at +0.1 s.
@@ -245,6 +263,8 @@ class NuPlanPreprocessedAdapter:
                 "heading": fh,
                 "token_type": token_type,
                 "speed": math.hypot((fx - ax) / _DT, (fy - ay) / _DT),
+                "confidence": confidence,
+                "uncertainty": uncertainty,
             }
 
         # ---- map elements ------------------------------------------
@@ -346,6 +366,8 @@ class NuPlanPreprocessedAdapter:
                 "lane_conflict": lane_conflict,
                 "visibility": 1.0,
                 "priority": 0.5,
+                "confidence": float(obj.get("confidence", 0.0)),
+                "uncertainty": float(obj.get("uncertainty", 0.0)),
             })
         # Keep the highest-risk relations first, as in the nuScenes adapter.
         relations.sort(key=lambda r: r["risk"], reverse=True)

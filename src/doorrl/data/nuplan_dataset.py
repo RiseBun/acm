@@ -19,10 +19,11 @@ the nuScenes variant:
 """
 from __future__ import annotations
 
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import json
 import random
 from pathlib import Path
-from typing import Iterable, List, Optional, Set
+from typing import Iterable, List, Optional, Set, Tuple
 
 import torch
 from torch.utils.data import Dataset
@@ -30,6 +31,23 @@ from torch.utils.data import Dataset
 from doorrl.adapters.base import TokenizationSpec
 from doorrl.adapters.nuplan_preprocessed_adapter import NuPlanPreprocessedAdapter
 from doorrl.config import DoorRLConfig
+
+
+def _convert_npz_worker(args: Tuple[str, dict, str, int]):
+    """Process-pool worker for nuPlan NPZ -> SceneBatch item conversion."""
+    path_str, spec_kwargs, data_root, max_neighbors = args
+    path = Path(path_str)
+    try:
+        spec = TokenizationSpec(**spec_kwargs)
+        adapter = NuPlanPreprocessedAdapter(
+            spec=spec,
+            data_root=data_root,
+            max_neighbors=max_neighbors,
+        )
+        item = adapter.convert_npz_to_scene_item(path, compute_relations=True)
+        return path.stem, item, None
+    except Exception as exc:
+        return path.stem, None, repr(exc)
 
 
 class NuPlanPreprocessedDataset(Dataset):
@@ -63,6 +81,8 @@ class NuPlanPreprocessedDataset(Dataset):
         num_samples: Optional[int] = None,
         index_json: Optional[str] = None,
         seed: int = 7,
+        num_workers: int = 0,
+        materialize_cache: bool = True,
     ) -> None:
         self.config = config
         self.data_root = Path(data_root)
@@ -81,6 +101,8 @@ class NuPlanPreprocessedDataset(Dataset):
             data_root=str(self.data_root),
             max_neighbors=config.data.max_dynamic_objects,
         )
+        self.num_workers = max(0, int(num_workers))
+        self.materialize_cache = bool(materialize_cache)
 
         # ---- file discovery ------------------------------------------
         self.paths = self._discover(index_json, num_samples)
@@ -96,23 +118,98 @@ class NuPlanPreprocessedDataset(Dataset):
         self._cache_scene_names: List[str] = []
         total = len(self.paths)
         report_every = max(1, total // 20)
-        for index, path in enumerate(self.paths):
-            try:
-                item = self.adapter.convert_npz_to_scene_item(
-                    path, compute_relations=True,
-                )
-            except Exception as exc:
-                print(f"NuPlanPreprocessedDataset: skip {path.name}: {exc}")
-                continue
-            self._cache.append(item)
-            self._cache_scene_names.append(path.stem)  # see class docstring
+        if not self.materialize_cache:
+            self._cache_scene_names = [path.stem for path in self.paths]
+            print(
+                "NuPlanPreprocessedDataset: lazy mode, NPZ conversion will "
+                "run in DataLoader workers",
+                flush=True,
+            )
+            print(
+                f"NuPlanPreprocessedDataset: cache ready, {total} lazy samples",
+                flush=True,
+            )
+            return
+        if self.num_workers > 1:
+            print(
+                f"NuPlanPreprocessedDataset: tokenising with "
+                f"{self.num_workers} workers",
+                flush=True,
+            )
+            spec_kwargs = {
+                "raw_dim": spec.raw_dim,
+                "max_tokens": spec.max_tokens,
+                "max_dynamic_objects": spec.max_dynamic_objects,
+                "max_map_tokens": spec.max_map_tokens,
+                "max_relation_tokens": spec.max_relation_tokens,
+                "action_dim": spec.action_dim,
+            }
+            worker_args = [
+                (str(path), spec_kwargs, str(self.data_root),
+                 config.data.max_dynamic_objects)
+                for path in self.paths
+            ]
+            with ThreadPoolExecutor(max_workers=self.num_workers) as pool:
+                args_iter = iter(worker_args)
+                max_in_flight = max(self.num_workers * 4, self.num_workers)
+                futures = set()
+                submitted = 0
+                completed = 0
 
-            if (index + 1) % report_every == 0 or index + 1 == total:
-                pct = 100.0 * (index + 1) / total
-                print(
-                    f"  tokenised {index + 1}/{total} ({pct:.1f}%)",
-                    flush=True,
-                )
+                for _ in range(min(max_in_flight, total)):
+                    try:
+                        futures.add(pool.submit(_convert_npz_worker, next(args_iter)))
+                        submitted += 1
+                    except StopIteration:
+                        break
+
+                while futures:
+                    done, futures = wait(
+                        futures, return_when=FIRST_COMPLETED
+                    )
+                    for future in done:
+                        completed += 1
+                        stem, item, error = future.result()
+                        if error is not None:
+                            print(
+                                f"NuPlanPreprocessedDataset: skip {stem}: {error}"
+                            )
+                        else:
+                            self._cache.append(item)
+                            self._cache_scene_names.append(stem)
+
+                        try:
+                            futures.add(
+                                pool.submit(_convert_npz_worker, next(args_iter))
+                            )
+                            submitted += 1
+                        except StopIteration:
+                            pass
+
+                        if completed % report_every == 0 or completed == total:
+                            pct = 100.0 * completed / total
+                            print(
+                                f"  tokenised {completed}/{total} ({pct:.1f}%)",
+                                flush=True,
+                            )
+        else:
+            for index, path in enumerate(self.paths):
+                try:
+                    item = self.adapter.convert_npz_to_scene_item(
+                        path, compute_relations=True,
+                    )
+                except Exception as exc:
+                    print(f"NuPlanPreprocessedDataset: skip {path.name}: {exc}")
+                    continue
+                self._cache.append(item)
+                self._cache_scene_names.append(path.stem)  # see class docstring
+
+                if (index + 1) % report_every == 0 or index + 1 == total:
+                    pct = 100.0 * (index + 1) / total
+                    print(
+                        f"  tokenised {index + 1}/{total} ({pct:.1f}%)",
+                        flush=True,
+                    )
 
         print(
             f"NuPlanPreprocessedDataset: cache ready, {len(self._cache)} "
@@ -162,9 +259,13 @@ class NuPlanPreprocessedDataset(Dataset):
     # Dataset protocol
     # ------------------------------------------------------------------
     def __len__(self) -> int:
-        return len(self._cache)
+        return len(self.paths) if not self.materialize_cache else len(self._cache)
 
     def __getitem__(self, index: int):
+        if not self.materialize_cache:
+            return self.adapter.convert_npz_to_scene_item(
+                self.paths[index], compute_relations=True,
+            )
         return self._cache[index]
 
     # ------------------------------------------------------------------

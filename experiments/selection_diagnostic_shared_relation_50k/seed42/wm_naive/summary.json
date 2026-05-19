@@ -1,0 +1,58 @@
+{
+  "n_samples": 10000,
+  "mean": {
+    "cdr": 0.8119369751322197,
+    "critical_agent_miss_rate": 0.18806302486778026,
+    "relation_wasted_slot_rate": 0.20126226951655812,
+    "relation_overallocation_index": 0.3894039214951715,
+    "selected_relation_ratio": 0.3894039214951715,
+    "relation_density": 0.9005325000000003,
+    "rare_ade": 5.023913373295881,
+    "interaction_recall_at_1m": 0.7647388023410394,
+    "teacher_action_mse": 8.745581112466553,
+    "collision_label": 0.294,
+    "collision_prob": 0.2969294326804637
+  },
+  "correlation": {
+    "miss_rate__vs__rare_ade": {
+      "n": 7494,
+      "pearson": 0.17153354427489453,
+      "spearman": 0.34579027083841735
+    },
+    "miss_rate__vs__interaction_recall_at_1m": {
+      "n": 5734,
+      "pearson": -0.6793626518411252,
+      "spearman": -0.6955018245852548
+    },
+    "miss_rate__vs__collision_label": {
+      "n": 9547,
+      "pearson": -0.1665130964614644,
+      "spearman": -0.16121412035214167
+    },
+    "miss_rate__vs__collision_prob": {
+      "n": 9547,
+      "pearson": -0.18460413271090212,
+      "spearman": -0.08887003299126232
+    },
+    "miss_rate__vs__teacher_action_mse": {
+      "n": 9547,
+      "pearson": -0.13889578437094888,
+      "spearman": -0.0911703484325181
+    },
+    "relation_density__vs__selected_relation_ratio": {
+      "n": 10000,
+      "pearson": 0.39830525333685207,
+      "spearman": 0.19136472733478951
+    },
+    "relation_density__vs__cdr": {
+      "n": 9547,
+      "pearson": -0.20337166543074411,
+      "spearman": -0.3142660382812906
+    },
+    "relation_density__vs__rare_ade": {
+      "n": 7725,
+      "pearson": 0.11052656449179318,
+      "spearman": 0.07098426192616009
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 42,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -6.915918350219727,
+      "latent_return_std": 8.918954849243164,
+      "imagined_collision_rate": 0.0,
+      "collision_mean": 0.17426541447639465,
+      "rollout_stability": 1.1270588636398315,
+      "rollout_stability_global": 0.011918989941477776,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 42,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 4.3939104080200195,
+      "latent_return_std": 6.301011562347412,
+      "imagined_collision_rate": 0.30900001525878906,
+      "collision_mean": 0.34661561250686646,
+      "rollout_stability": 0.87601637840271,
+      "rollout_stability_global": 0.02532351203262806,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_no_vis": {
+    "condition": "wm_decoupled_no_vis",
+    "variant": "object_relation_decoupled",
+    "seed": 42,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 10.425544738769531,
+      "latent_return_std": 5.724116802215576,
+      "imagined_collision_rate": 0.27300000190734863,
+      "collision_mean": 0.3626366853713989,
+      "rollout_stability": 0.07291804999113083,
+      "rollout_stability_global": 0.008928702212870121,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  },
+  "wm_decoupled_rel_to_critic_only": {
+    "condition": "wm_decoupled_rel_to_critic_only",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 42,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 7.895549297332764,
+      "latent_return_std": 4.874382972717285,
+      "imagined_collision_rate": 0.2150000035762787,
+      "collision_mean": 0.33554214239120483,
+      "rollout_stability": 0.8775693774223328,
+      "rollout_stability_global": 0.028417527675628662,
+      "horizon": 5,
+      "n_samples": 1000
+    }
+  }
+}

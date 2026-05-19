@@ -1,0 +1,22 @@
+{
+  "name": "nuplan_official_closed_loop_plantf1",
+  "date": "2026-04-28",
+  "seed": 20260428,
+  "requested_size": 1,
+  "actual_size": 1,
+  "source": "PlanTF official-metric smoke scenario",
+  "scenario_filter": "all_scenarios",
+  "db_files": [
+    "/mnt/datasets/e2e-nuplan/20260302/test/2021.05.25.12.30.39_veh-25_00321_01196.db"
+  ],
+  "tokens": [
+    "8de10fd86b825304"
+  ],
+  "scenarios": [
+    {
+      "token": "8de10fd86b825304",
+      "log_name": "2021.05.25.12.30.39_veh-25_00321_01196",
+      "scenario_type": "traversing_traffic_light_intersection"
+    }
+  ]
+}

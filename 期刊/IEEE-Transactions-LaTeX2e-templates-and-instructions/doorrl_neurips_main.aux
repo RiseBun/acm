@@ -1,0 +1,73 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\citation{ha2018worldmodels,hafner2023dreamerv3}
+\citation{caesar2020nuscenes,caesar2021nuplan,dosovitskiy2017carla,mao2023waymax,dauner2024navsim}
+\citation{locatello2020slotattention}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{World models for driving.}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Object-centric and relational representations.}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Decision-sufficient abstraction.}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem Formulation}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Key raw token dimensions used by the current object-relational schema.}}{3}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:token_schema}{{1}{3}{}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Method}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Object-Relational Tokenization}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Unified Top-$K$ Baseline}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Budget-Aware Type Abstraction}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Type-Aware Supervision}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Latent Imagination Policy Learning}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Selection Diagnostics}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Critical Dynamic Retention.}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relation Wasted Slot Rate.}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Experimental Questions}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Experimental protocols used in the paper.}}{5}{}\protected@file@percent }
+\newlabel{tab:protocols}{{2}{5}{}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Stage 0 nuScenes representation sufficiency under a fair 16-slot budget. Lower is better for DynRoll and Rare ADE; higher is better for Collision F1 and IntRec.}}{5}{}\protected@file@percent }
+\newlabel{tab:stage0}{{3}{5}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Datasets and Protocols}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Results}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Fixed-Budget Representation Sufficiency}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Selection Diagnostics Reveal Critical-Agent Misses}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Selection diagnostics. The typed-budget no-visibility condition has high Critical Dynamic Retention and low MissRate, while the naive shared-relation condition exhibits higher critical-agent misses and wasted relation slots.}}{6}{}\protected@file@percent }
+\newlabel{fig:selection_bars}{{1}{6}{}{figure.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Aggregated selection diagnostic summary before the final 50k shared-relation closure. The naive shared-relation row uses the 20k diagnostic run; object-only and typed-budget rows use the 50k diagnostic run.}}{6}{}\protected@file@percent }
+\newlabel{tab:selection_diag}{{4}{6}{}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Latent Planning on nuPlan}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Shared-relation 50k closure.}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Offline Planner-Like Alignment}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Relation Semantics Matter: TTC/Risk Drives the Gain}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Selection diagnostic for the 50k naive shared object-relation condition. The aggregate CDR is $0.452 \pm 0.312$ and the aggregate MissRate is $0.548 \pm 0.312$.}}{7}{}\protected@file@percent }
+\newlabel{tab:selection_diag_50k_naive}{{5}{7}{}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Critical Agent Miss Rate versus Interaction Recall. The diagnostic is intended to connect selector behavior to interaction-sensitive representation quality rather than treating top-$K$ choices as an opaque implementation detail.}}{7}{}\protected@file@percent }
+\newlabel{fig:missrate_intrec}{{2}{7}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}External-Style Imitation Anchor}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Budget Sensitivity}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Type competition, not bad relations.}{7}{}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{doorrl_refs}
+\bibcite{caesar2020nuscenes}{{1}{2020}{{Caesar et~al.}}{{Caesar, Bankiti, Lang, Vora, Liong, Xu, Krishnan, Pan, Baldan, and Beijbom}}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Stage 1 nuPlan 50k latent planning results.}}{8}{}\protected@file@percent }
+\newlabel{tab:nuplan50k}{{6}{8}{}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Offline planner-like sanity check on nuPlan 50k. Lower teacher action MSE and action $\Delta $L2 indicate better alignment with planner-derived action targets.}}{8}{}\protected@file@percent }
+\newlabel{tab:offline_planner}{{7}{8}{}{table.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why not learn the budget?}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why relation density alone is insufficient.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Limitations}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Reproducibility and Artifact Map}{8}{}\protected@file@percent }
+\bibcite{caesar2021nuplan}{{2}{2021}{{Caesar et~al.}}{{Caesar, Bankiti, Lang, Xu, Krishnan, Pan, Baldan, and Beijbom}}}
+\bibcite{dauner2024navsim}{{3}{2024}{{Dauner et~al.}}{{}}}
+\bibcite{dosovitskiy2017carla}{{4}{2017}{{Dosovitskiy et~al.}}{{Dosovitskiy, Ros, Codevilla, L{\'o}pez, and Koltun}}}
+\bibcite{ha2018worldmodels}{{5}{2018}{{Ha and Schmidhuber}}{{}}}
+\bibcite{hafner2023dreamerv3}{{6}{2023}{{Hafner et~al.}}{{Hafner, Pasukonis, Ba, and Lillicrap}}}
+\bibcite{locatello2020slotattention}{{7}{2020}{{Locatello et~al.}}{{Locatello, Weissenborn, Unterthiner, Mahendran, Heigold, Uszkoreit, Dosovitskiy, and Kipf}}}
+\bibcite{mao2023waymax}{{8}{2023}{{Mao et~al.}}{{Mao, Jiang, Tang, et~al.}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Relation semantic ablation on nuPlan 50k. Removing TTC/risk strongly degrades collision and teacher-action metrics, while removing lane/priority is close to neutral.}}{9}{}\protected@file@percent }
+\newlabel{fig:relation_ablation}{{3}{9}{}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Relation feature-group ablation on nuPlan 50k.}}{9}{}\protected@file@percent }
+\newlabel{tab:relation_ablation}{{8}{9}{}{table.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Budget sensitivity. A relation-heavy 10/6 split underperforms the main 12/4 split on nuScenes Stage 0, showing that reserving too many relation slots can again harm dynamic-agent sufficiency.}}{10}{}\protected@file@percent }
+\newlabel{fig:budget}{{4}{10}{}{figure.4}{}}
+\gdef \@abspage@last{10}

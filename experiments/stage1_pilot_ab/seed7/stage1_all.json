@@ -1,0 +1,50 @@
+{
+  "bc": {
+    "condition": "bc",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 10.960107803344727,
+      "latent_return_std": 13.829887390136719,
+      "imagined_collision_rate": 0.6065456867218018,
+      "collision_mean": 0.6200369596481323,
+      "rollout_stability": 0.0014554164372384548,
+      "rollout_stability_global": 0.01089534256607294,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_object": {
+    "condition": "wm_object",
+    "variant": "object_only",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": -4.712656021118164,
+      "latent_return_std": 9.752005577087402,
+      "imagined_collision_rate": 0.9845250844955444,
+      "collision_mean": 0.9844057559967041,
+      "rollout_stability": 0.2938463091850281,
+      "rollout_stability_global": 0.13656200468540192,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  },
+  "wm_decoupled": {
+    "condition": "wm_decoupled",
+    "variant": "object_relation_decoupled_visibility",
+    "seed": 7,
+    "horizon": 5,
+    "metrics": {
+      "latent_return_mean": 4.996774196624756,
+      "latent_return_std": 9.837528228759766,
+      "imagined_collision_rate": 0.7559587359428406,
+      "collision_mean": 0.7716917991638184,
+      "rollout_stability": 0.7346959114074707,
+      "rollout_stability_global": 0.04062458127737045,
+      "horizon": 5,
+      "n_samples": 5622
+    }
+  }
+}

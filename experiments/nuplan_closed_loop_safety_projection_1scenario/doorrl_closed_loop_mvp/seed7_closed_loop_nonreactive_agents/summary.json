@@ -1,0 +1,61 @@
+{
+  "run_dir": "experiments/nuplan_closed_loop_safety_projection_1scenario/doorrl_closed_loop_mvp/seed7_closed_loop_nonreactive_agents",
+  "n_planners": 2,
+  "planners": [
+    "doorrl_wm_decoupled_no_vis",
+    "doorrl_wm_object"
+  ],
+  "summary": {
+    "doorrl_wm_decoupled_no_vis": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 1.0,
+      "drivable_area_compliance": 1.0,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.155516844468633,
+      "ego_is_comfortable": 1.0,
+      "time_to_collision_within_bound": 1.0,
+      "speed_limit_compliance": 1.0,
+      "driving_direction_compliance": 0.5
+    },
+    "doorrl_wm_object": {
+      "score": 0.0,
+      "no_ego_at_fault_collisions": 1.0,
+      "drivable_area_compliance": 0.0,
+      "ego_is_making_progress": 0.0,
+      "ego_progress_along_expert_route": 0.031918858971599386,
+      "ego_is_comfortable": 1.0,
+      "time_to_collision_within_bound": 1.0,
+      "speed_limit_compliance": 0.8779172479376975,
+      "driving_direction_compliance": 0.5
+    }
+  },
+  "runner_report": [
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5275907.041231052,
+      "end_time": 5276077.962669895,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_object",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.339565562671863,
+      "compute_trajectory_runtimes_median": 0.06398277916014194,
+      "compute_trajectory_runtimes_std": 3.3322742443438806,
+      "duration": 170.92143884301186
+    },
+    {
+      "succeeded": true,
+      "error_message": null,
+      "start_time": 5275907.041521072,
+      "end_time": 5276078.315655641,
+      "scenario_name": "00852c6784155139",
+      "planner_name": "doorrl_wm_decoupled_no_vis",
+      "log_name": "2021.06.07.11.59.52_veh-35_00008_00083",
+      "compute_trajectory_runtimes_mean": 0.3806254530900577,
+      "compute_trajectory_runtimes_median": 0.07349495496600866,
+      "compute_trajectory_runtimes_std": 3.7179656486498316,
+      "duration": 171.27413456887007
+    }
+  ],
+  "note": "nuPlan official closed-loop nonreactive simulation MVP; small scenario counts are smoke tests, not final claims."
+}
